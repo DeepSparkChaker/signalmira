@@ -1,0 +1,3 @@
+review_id,text,company,product_id,review_date
+r-001,"The checkout was slow, but support helped.",Example Shop,shop-app,2026-10-01
+r-002,"Fantastic delivery service!",Example Shop,shop-app,2026-10-02

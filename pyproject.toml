@@ -1,0 +1,22 @@
+[project]
+name = "signalmira"
+version = "0.2.0"
+description = "Lightweight feedback ingestion and PostgreSQL persistence"
+requires-python = ">=3.12"
+dependencies = ["pydantic>=2.7,<3", "psycopg[binary]>=3.2,<4"]
+
+[project.optional-dependencies]
+ner = [
+    "gliner2[local]>=2.1.0",
+    "huggingface-hub>=2.3.0",
+    "psycopg[binary]>=3.3.6",
+    "spacy>=3.8.18",
+]
+topics = [
+    "bertopic>=0.17.4",
+    "sentence-transformers>=6.2.0",
+    "umap-learn>=0.5.12",
+]
+
+[tool.uv]
+package = false
