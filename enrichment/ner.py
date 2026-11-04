@@ -99,7 +99,7 @@ def _read_rules(path: str | None) -> list[dict]:
 @dataclass(frozen=True)
 class Config:
     """Stable NER configuration. device can change without changing the chosen model."""
-    profile: str = "accurate"
+    profile: str = "multilingual"  # one model for all languages by default
     device: str = "auto"
     labels: tuple[str, ...] = LABELS
     rules_path: str | None = None
@@ -448,7 +448,7 @@ def main() -> None:
     group.add_argument("--text", help="Paste one review")
     group.add_argument("--stdin", action="store_true", help="Read one review from stdin")
     parser.add_argument("--source", help="Optional database source filter")
-    parser.add_argument("--profile", choices=MODELS, default="accurate")
+    parser.add_argument("--profile", choices=MODELS, default="multilingual")
     parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
     parser.add_argument("--labels", default=",".join(LABELS))
     parser.add_argument("--rules-json", help="spaCy literal patterns in a local JSON file")

@@ -1,0 +1,308 @@
+"""Tenant-specific discovery decisions and reproducible, stratified samples.
+
+All database operations use trusted service credentials. No model dependencies.
+"""
+from __future__ import annotations
+
+import math
+from dataclasses import asdict, dataclass
+from datetime import datetime, timedelta, timezone
+
+
+@dataclass(frozen=True)
+class Policy:
+    """Defaults are operational starting points, not learned accuracy thresholds."""
+    days: int = 14
+    weekly_min_new: int = 200
+    volume_trigger: int = 5000
+    drift_min_new: int = 500
+    drift_unassigned_rate: float = .30
+    cooldown_hours: int = 24
+    bootstrap_min: int = 100
+    max_docs: int = 5000
+    new_fraction: float = .65
+    sample_mode: str = "hybrid"  # or new-only
+    profile: str = "multilingual_m3"  # fixed default; optional tenant override
+
+    def __post_init__(self):
+        if (not 1 <= self.days <= 365 or not 1 <= self.weekly_min_new <= 1_000_000
+                or not 1 <= self.volume_trigger <= 10_000_000
+                or not 1 <= self.drift_min_new <= 10_000_000
+                or not 0 <= self.drift_unassigned_rate <= 1
+                or not 0 <= self.cooldown_hours <= 720
+                or not 30 <= self.bootstrap_min <= 50_000
+                or not 30 <= self.max_docs <= 50_000
+                or not 0 <= self.new_fraction <= 1
+                or self.sample_mode not in ("hybrid", "new-only")
+                or self.profile not in ("fast", "accurate", "multilingual", "multilingual_m3")):
+            raise ValueError("Invalid discovery policy")
+
+
+DDL = (
+    """CREATE TABLE IF NOT EXISTS sm_topic_policies (
+         tenant_id TEXT PRIMARY KEY, config JSONB NOT NULL,
+         updated_at TIMESTAMPTZ NOT NULL DEFAULT now())""",
+    """CREATE TABLE IF NOT EXISTS sm_topic_discovery_state (
+         tenant_id TEXT PRIMARY KEY,
+         last_discovery_at TIMESTAMPTZ,
+         pending_taxonomy_id UUID,
+         updated_at TIMESTAMPTZ NOT NULL DEFAULT now())""",
+    """CREATE TABLE IF NOT EXISTS sm_topic_discovery_seen (
+         tenant_id TEXT NOT NULL, source TEXT NOT NULL, review_id TEXT NOT NULL,
+         content_hash TEXT NOT NULL,
+         PRIMARY KEY (tenant_id,source,review_id),
+         FOREIGN KEY (tenant_id,source,review_id)
+           REFERENCES feedback_reviews (tenant_id,source,review_id) ON DELETE CASCADE)""",
+)
+
+
+def initialize(conn):
+    with conn.transaction():
+        for query in DDL:
+            conn.execute(query)
+
+
+def get_policy(conn, tenant: str) -> Policy:
+    row = conn.execute("SELECT config FROM sm_topic_policies WHERE tenant_id=%s", (tenant,)).fetchone()
+    return Policy(**row["config"]) if row else Policy()
+
+
+def save_policy(conn, tenant: str, policy: Policy):
+    import json
+    with conn.transaction():
+        conn.execute("""INSERT INTO sm_topic_policies (tenant_id,config)
+            VALUES (%s,%s::jsonb) ON CONFLICT (tenant_id)
+            DO UPDATE SET config=EXCLUDED.config,updated_at=now()""",
+            (tenant, json.dumps(asdict(policy))))
+    return asdict(policy)
+
+
+def decide(policy: Policy, *, new_count: int, unassigned_count: int,
+           assigned_count: int, last_discovery_at: datetime | None,
+           pending: bool, now: datetime, active: bool) -> dict:
+    """Pure and deterministic policy. Unassigned drift needs sufficient assignment coverage."""
+    since_days = ((now - last_discovery_at).total_seconds() / 86400
+                  if last_discovery_at else None)
+    rate = unassigned_count / assigned_count if assigned_count else None
+    cooldown = (since_days is not None and since_days * 24 < policy.cooldown_hours)
+    reasons = []
+    if pending:
+        reasons.append("candidate_pending_review")
+    elif last_discovery_at is None:
+        if new_count >= policy.bootstrap_min:
+            reasons.append("bootstrap")
+    elif not cooldown:
+        if new_count >= policy.volume_trigger:
+            reasons.append("volume")
+        if (new_count >= policy.drift_min_new
+                and assigned_count >= max(policy.drift_min_new, math.ceil(new_count * .9))
+                and rate is not None and rate >= policy.drift_unassigned_rate and active):
+            reasons.append("emerging_topics")
+        if since_days >= policy.days and new_count >= policy.weekly_min_new:
+            reasons.append("weekly")
+    return dict(due=bool(reasons) and not pending, reasons=reasons,
+                new_or_changed=new_count, assigned_changed=assigned_count,
+                unassigned_changed=unassigned_count,
+                unassigned_rate=round(rate, 4) if rate is not None else None,
+                elapsed_days=round(since_days, 2) if since_days is not None else None,
+                pending_review=pending, has_active_taxonomy=active,
+                policy=asdict(policy))
+
+
+def check(conn, tenant: str, now: datetime | None = None) -> dict:
+    """Count changes against the exact previous source hashes (not review dates)."""
+    now = now or datetime.now(timezone.utc)
+    policy = get_policy(conn, tenant)
+    status = conn.execute("""SELECT s.last_discovery_at,s.pending_taxonomy_id,
+         EXISTS(SELECT 1 FROM sm_topic_active WHERE tenant_id=%s) AS has_active
+         FROM (SELECT 1) v LEFT JOIN sm_topic_discovery_state s ON s.tenant_id=%s""",
+         (tenant, tenant)).fetchone()
+    counts = conn.execute("""SELECT count(*) AS total,
+        count(a.topic_id) AS assigned,
+        count(*) FILTER (WHERE a.topic_id=-1) AS unassigned
+        FROM feedback_reviews f
+        LEFT JOIN sm_topic_discovery_seen s ON s.tenant_id=f.tenant_id
+         AND s.source=f.source AND s.review_id=f.review_id
+        LEFT JOIN sm_topic_active active ON active.tenant_id=f.tenant_id
+        LEFT JOIN sm_topic_assignments a ON a.tenant_id=f.tenant_id
+          AND a.taxonomy_id=active.taxonomy_id AND a.source=f.source
+          AND a.review_id=f.review_id AND a.content_hash=f.content_hash
+        WHERE f.tenant_id=%s
+          AND (s.review_id IS NULL OR s.content_hash IS DISTINCT FROM f.content_hash)""",
+        (tenant,)).fetchone()
+    result = decide(policy,new_count=counts["total"], assigned_count=counts["assigned"],
+                    unassigned_count=counts["unassigned"],
+                    last_discovery_at=status["last_discovery_at"],
+                    pending=status["pending_taxonomy_id"] is not None,
+                    active=status["has_active"],now=now)
+    result["tenant_id"] = tenant
+    result["pending_taxonomy_id"] = (str(status["pending_taxonomy_id"])
+                                     if status["pending_taxonomy_id"] else None)
+    return result
+
+
+def create_source_snapshot(conn, tenant: str):
+    """Freeze IDs/hashes in PostgreSQL, not Python RAM, to prevent lost updates.
+
+    Created before training, so data arriving mid-run is not marked processed.
+    """
+    conn.execute("DROP TABLE IF EXISTS pg_temp._sm_topic_input_snapshot")
+    conn.execute("""CREATE TEMP TABLE _sm_topic_input_snapshot ON COMMIT PRESERVE ROWS AS
+        SELECT f.source,f.review_id,f.content_hash,f.updated_at,f.review_date,
+            f.product_id,
+            coalesce(l.language, nullif(left(lower(f.attributes->>'language'),16),''),'und') AS lang,
+            coalesce(a.topic_id,-1) AS old_topic,
+            (s.review_id IS NULL OR s.content_hash IS DISTINCT FROM f.content_hash) AS fresh
+        FROM feedback_reviews f
+        LEFT JOIN feedback_language l ON l.tenant_id=f.tenant_id
+         AND l.source=f.source AND l.review_id=f.review_id
+         AND l.input_hash=f.content_hash
+        LEFT JOIN sm_topic_discovery_seen s ON s.tenant_id=f.tenant_id
+         AND s.source=f.source AND s.review_id=f.review_id
+        LEFT JOIN sm_topic_active active ON active.tenant_id=f.tenant_id
+        LEFT JOIN sm_topic_assignments a ON a.tenant_id=f.tenant_id
+         AND a.taxonomy_id=active.taxonomy_id AND a.source=f.source
+         AND a.review_id=f.review_id AND a.content_hash=f.content_hash
+        WHERE f.tenant_id=%s""", (tenant,))
+    conn.execute("CREATE UNIQUE INDEX ON _sm_topic_input_snapshot (source,review_id)")
+    conn.execute("ANALYZE _sm_topic_input_snapshot")
+
+
+def allocate_strata(sizes: dict[tuple[int,str],int], seats: int) -> dict[tuple[int,str],int]:
+    """Square-root quotas protect rare strata without giving each equal weight."""
+    sizes = {k:int(v) for k,v in sizes.items() if v>0}
+    seats = min(seats,sum(sizes.values()))
+    quotas={k:0 for k in sizes}
+    while seats:
+        candidates={k:math.sqrt(v) for k,v in sizes.items() if quotas[k]<v}
+        if not candidates:
+            break
+        denom=sum(candidates.values())
+        shares={k:seats*w/denom for k,w in candidates.items()}
+        increments={k:min(sizes[k]-quotas[k],int(share)) for k,share in shares.items()}
+        assigned=sum(increments.values())
+        if assigned==0:
+            key=max(candidates, key=lambda k:(shares[k],str(k)))
+            increments[key]=1
+            assigned=1
+        for key,amount in increments.items():
+            quotas[key]+=amount
+        seats-=assigned
+    return {k:v for k,v in quotas.items() if v}
+
+
+def select_sample(conn, tenant: str, *, max_docs: int, new_fraction: float,
+                  sample_mode: str, seed: int, source: str | None = None) -> tuple[list[dict],dict]:
+    """Select changed reviews plus historical strata (old topic × language).
+
+    History cycles across products within each stratum to avoid one SKU dominating.
+    """
+    if sample_mode not in ("hybrid","new-only") or not 0 <= new_fraction <= 1:
+        raise ValueError("Invalid sampling configuration")
+    where = "WHERE (%s::text IS NULL OR s.source=%s::text)"
+    counts = conn.execute(f"""SELECT count(*) FILTER (WHERE fresh) AS fresh,
+         count(*) FILTER (WHERE NOT fresh) AS old
+         FROM _sm_topic_input_snapshot s {where}""", (source,source)).fetchone()
+    nnew,nold = counts["fresh"], counts["old"]
+    if sample_mode == "new-only":
+        recent_n=min(max_docs,nnew)
+        history_n=0
+    else:
+        recent_n=min(nnew,round(max_docs*new_fraction))
+        history_n=min(nold,max_docs-recent_n)
+        recent_n=min(nnew,max_docs-history_n)
+    recent=conn.execute(f"""SELECT f.source,f.review_id,f.text,f.content_hash,s.lang
+        FROM _sm_topic_input_snapshot s JOIN feedback_reviews f
+          ON f.tenant_id=%s AND f.source=s.source AND f.review_id=s.review_id
+          AND f.content_hash=s.content_hash
+        {where} AND s.fresh
+        ORDER BY s.updated_at DESC,s.source,s.review_id LIMIT %s""",
+        (tenant,source,source,recent_n)).fetchall() if recent_n else []
+    history=[]
+    if history_n:
+        grouped=conn.execute(f"""SELECT s.old_topic,s.lang,count(*) AS n
+          FROM _sm_topic_input_snapshot s {where} AND NOT s.fresh
+          GROUP BY s.old_topic,s.lang""",(source,source)).fetchall()
+        allocation=allocate_strata({(r["old_topic"],r["lang"]):r["n"] for r in grouped},history_n)
+        conn.execute("DROP TABLE IF EXISTS pg_temp._sm_topic_quotas")
+        conn.execute("CREATE TEMP TABLE _sm_topic_quotas (old_topic INT, lang TEXT, quota INT) ON COMMIT PRESERVE ROWS")
+        with conn.cursor() as cur:
+            cur.executemany("INSERT INTO _sm_topic_quotas VALUES (%s,%s,%s)",
+                            [(a,b,n) for (a,b),n in allocation.items()])
+        history=conn.execute(f"""WITH by_product AS (
+          SELECT s.source,s.review_id,s.content_hash,s.old_topic,s.lang,
+           row_number() OVER (PARTITION BY s.old_topic,s.lang,coalesce(s.product_id,'')
+             ORDER BY md5(s.source || ':' || s.review_id || ':' || %s::text)) AS sku_rank,
+           md5(s.source || ':' || s.review_id || ':' || %s::text) AS stable_order
+          FROM _sm_topic_input_snapshot s
+          {where} AND NOT s.fresh
+        ), ranked AS (
+          SELECT *,row_number() OVER (PARTITION BY old_topic,lang
+             ORDER BY sku_rank,stable_order) AS rn FROM by_product
+        ) SELECT f.source,f.review_id,f.text,f.content_hash,r.lang
+          FROM ranked r JOIN _sm_topic_quotas q ON q.old_topic=r.old_topic AND q.lang=r.lang
+          JOIN feedback_reviews f ON f.tenant_id=%s AND f.source=r.source
+           AND f.review_id=r.review_id AND f.content_hash=r.content_hash
+          WHERE r.rn<=q.quota ORDER BY r.old_topic,r.lang,r.rn""",
+          (seed,seed,source,source,tenant)).fetchall()
+    rows = recent+history
+    return rows,dict(selected_new=len(recent),selected_historical=len(history),
+                     available_new=nnew,available_historical=nold,
+                     stratification="old_topic x language, with product diversity")
+
+
+def complete_discovery(conn, tenant: str, taxonomy_id, source: str | None = None,
+                       selected_rows: list[dict] | None = None):
+    """Mark only the reviewed source versions, in the candidate-creation transaction.
+
+    Other incoming and unsampled reviews remain eligible for future discovery.
+    When selected_rows=None, preserve the original full-snapshot behavior.
+    """
+    join = ""
+    if selected_rows is not None:
+        conn.execute("""CREATE TEMP TABLE _sm_discovery_selected (
+            source TEXT, review_id TEXT, content_hash TEXT) ON COMMIT DROP""")
+        with conn.cursor() as cur:
+            with cur.copy("""COPY _sm_discovery_selected
+                 (source,review_id,content_hash) FROM STDIN""") as cp:
+                for row in selected_rows:
+                    cp.write_row((row["source"], row["review_id"], row["content_hash"]))
+        join = """JOIN _sm_discovery_selected chosen
+            ON chosen.source=x.source AND chosen.review_id=x.review_id
+           AND chosen.content_hash=x.content_hash"""
+    conn.execute(f"""INSERT INTO sm_topic_discovery_seen AS s
+      (tenant_id,source,review_id,content_hash)
+      SELECT %s,x.source,x.review_id,x.content_hash
+      FROM _sm_topic_input_snapshot x {join}
+      JOIN feedback_reviews f
+        ON f.tenant_id=%s AND f.source=x.source AND f.review_id=x.review_id
+       AND f.content_hash=x.content_hash
+      WHERE (%s::text IS NULL OR x.source=%s::text)
+      ON CONFLICT (tenant_id,source,review_id) DO UPDATE
+         SET content_hash=EXCLUDED.content_hash
+         WHERE s.content_hash IS DISTINCT FROM EXCLUDED.content_hash""",
+         (tenant,tenant,source,source))
+    conn.execute("""INSERT INTO sm_topic_discovery_state
+        (tenant_id,last_discovery_at,pending_taxonomy_id)
+        VALUES (%s,now(),%s) ON CONFLICT (tenant_id) DO UPDATE
+        SET last_discovery_at=EXCLUDED.last_discovery_at,
+            pending_taxonomy_id=EXCLUDED.pending_taxonomy_id,updated_at=now()""",
+        (tenant,taxonomy_id))
+
+
+def clear_pending(conn, tenant: str, taxonomy_id):
+    conn.execute("""UPDATE sm_topic_discovery_state
+        SET pending_taxonomy_id=NULL,updated_at=now()
+        WHERE tenant_id=%s AND pending_taxonomy_id=%s""",(tenant,taxonomy_id))
+
+
+def reject(conn, tenant: str, taxonomy_id):
+    """Reject a candidate and clear its pending flag; historical state remains auditable."""
+    with conn.transaction():
+        row=conn.execute("""UPDATE sm_topic_discovery_state
+             SET pending_taxonomy_id=NULL,updated_at=now()
+             WHERE tenant_id=%s AND pending_taxonomy_id=%s
+             RETURNING tenant_id""",(tenant,taxonomy_id)).fetchone()
+        if row is None:
+            raise ValueError("No matching pending taxonomy")
+    return {"tenant_id":tenant,"rejected_taxonomy_id":str(taxonomy_id)}

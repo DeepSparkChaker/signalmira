@@ -1,7 +1,7 @@
 # Local PostgreSQL only; production connects to Cloud SQL separately.
 services:
   db:
-    image: postgres:17-alpine
+    image: pgvector/pgvector:0.8.7-pg17-bookworm
     environment:
       POSTGRES_DB: signalmira
       POSTGRES_USER: signalmira

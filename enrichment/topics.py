@@ -1,187 +1,826 @@
-"""SignalMira optional topic discovery: reproducible per-tenant BERTopic snapshots.
+"""SignalMira topic engine: tenant-driven discovery, stratified sampling, stable assignment.
 
-Once: python enrichment/topics.py --init
-Run:  python enrichment/topics.py --tenant demo --profile accurate --max-docs 5000
+Use: python -m enrichment.topics --init
+     python -m enrichment.topics --tenant demo --discover --profile multilingual_m3 --no-offline
+     python -m enrichment.topics --tenant demo --assign --taxonomy CANDIDATE_UUID
+     python -m enrichment.topics --tenant demo --activate CANDIDATE_UUID
+     python -m enrichment.topics --tenant demo --assign
 
-Not called per review. Discovery is a bounded scheduled/on-demand batch;
-keep dashboard taxonomies separate from these evolving exploratory topics.
+English profiles: fast, accurate. Multilingual: multilingual (light), multilingual_m3.
+Discovery is scheduled; daily assignment is incremental. One review = one topic.
+
+Designed for a trusted background worker, not an unauthenticated web endpoint.
+Business categories must be human-reviewed. Discovered topics are exploratory.
 """
 from __future__ import annotations
 
 import argparse
+import hashlib
+import json
 import os
-from collections import Counter
+from collections import defaultdict
+from dataclasses import dataclass, replace
 from datetime import date
-from uuid import uuid4
+from functools import lru_cache
+from collections import Counter
+from importlib.metadata import PackageNotFoundError, version
+from pathlib import Path
+from uuid import UUID, uuid4
+from enrichment import topic_policy as policy
 
+# The model choice is explicitly versioned. Do not change based on GPU availability.
 EMBEDDERS = {
-    "fast": "sentence-transformers/all-MiniLM-L6-v2",
-    "accurate": "BAAI/bge-base-en-v1.5",
-    "multilingual": "sentence-transformers/paraphrase-multilingual-mpnet-base-v2",
+    "fast": ("sentence-transformers/all-MiniLM-L6-v2", 384),
+    "accurate": ("BAAI/bge-base-en-v1.5", 768),
+    "multilingual": ("sentence-transformers/paraphrase-multilingual-mpnet-base-v2", 768),
+    "multilingual_m3": ("BAAI/bge-m3", 1024),
 }
+
+# Separate v3 tables: preserve old taxonomies/snapshots; version the encoder contract.
+# Do not use topic vectors as RAG vectors unless their entire contract matches.
+EMBEDDING_CONFIG = "topic-st-v4:normalized:512tokens:no-prompt"  # unchanged vectors: preserve cache compatibility
+
 DDL = (
-    """CREATE TABLE IF NOT EXISTS topic_runs (
-        tenant_id TEXT NOT NULL, run_id UUID NOT NULL,
-        model_name TEXT NOT NULL, sample_count INT NOT NULL,
-        start_date DATE, source_filter TEXT, random_seed INT NOT NULL,
-        created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
-        PRIMARY KEY (tenant_id,run_id)
+    """CREATE TABLE IF NOT EXISTS topic_embedding_cache (
+        tenant_id TEXT NOT NULL, source TEXT NOT NULL, review_id TEXT NOT NULL,
+        model_name TEXT NOT NULL, model_revision TEXT NOT NULL,
+        content_hash TEXT NOT NULL, dimensions INT NOT NULL,
+        embedding_config TEXT NOT NULL DEFAULT 'legacy',
+        embedding BYTEA NOT NULL, updated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+        PRIMARY KEY (tenant_id, source, review_id, model_name, model_revision),
+        FOREIGN KEY (tenant_id, source, review_id)
+          REFERENCES feedback_reviews (tenant_id, source, review_id) ON DELETE CASCADE
     )""",
-    """CREATE TABLE IF NOT EXISTS topic_labels (
-        tenant_id TEXT NOT NULL, run_id UUID NOT NULL, topic_id INT NOT NULL,
-        name TEXT NOT NULL, review_count INT NOT NULL,
-        PRIMARY KEY (tenant_id,run_id,topic_id),
-        FOREIGN KEY (tenant_id,run_id) REFERENCES topic_runs ON DELETE CASCADE
+    """CREATE TABLE IF NOT EXISTS sm_topic_taxonomies (
+        tenant_id TEXT NOT NULL, taxonomy_id UUID NOT NULL,
+        model_name TEXT NOT NULL, model_revision TEXT NOT NULL,
+        dimensions INT NOT NULL, train_count INT NOT NULL,
+        train_outliers INT NOT NULL, input_digest TEXT NOT NULL,
+        settings JSONB NOT NULL, created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+        PRIMARY KEY (tenant_id, taxonomy_id)
     )""",
-    """CREATE TABLE IF NOT EXISTS topic_assignments (
-        tenant_id TEXT NOT NULL,run_id UUID NOT NULL,
-        source TEXT NOT NULL,review_id TEXT NOT NULL,topic_id INT NOT NULL,
-        PRIMARY KEY (tenant_id,run_id,source,review_id),
-        FOREIGN KEY (tenant_id,run_id,topic_id)
-          REFERENCES topic_labels ON DELETE CASCADE,
-        FOREIGN KEY (tenant_id,source,review_id)
-          REFERENCES feedback_reviews ON DELETE CASCADE
+    """CREATE TABLE IF NOT EXISTS sm_topic_definitions (
+        tenant_id TEXT NOT NULL, taxonomy_id UUID NOT NULL,
+        topic_id INT NOT NULL, name TEXT NOT NULL, keywords JSONB NOT NULL,
+        example_ids JSONB NOT NULL, train_count INT NOT NULL,
+        centroid BYTEA,
+        PRIMARY KEY (tenant_id, taxonomy_id, topic_id),
+        FOREIGN KEY (tenant_id, taxonomy_id)
+          REFERENCES sm_topic_taxonomies ON DELETE CASCADE
     )""",
+    """CREATE TABLE IF NOT EXISTS sm_topic_active (
+        tenant_id TEXT PRIMARY KEY, taxonomy_id UUID NOT NULL,
+        activated_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+        FOREIGN KEY (tenant_id, taxonomy_id)
+          REFERENCES sm_topic_taxonomies (tenant_id, taxonomy_id)
+    )""",
+    """CREATE TABLE IF NOT EXISTS sm_topic_assignments (
+        tenant_id TEXT NOT NULL, taxonomy_id UUID NOT NULL,
+        source TEXT NOT NULL, review_id TEXT NOT NULL,
+        content_hash TEXT NOT NULL, topic_id INT NOT NULL,
+        similarity DOUBLE PRECISION,
+        assigned_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+        PRIMARY KEY (tenant_id, taxonomy_id, source, review_id),
+        FOREIGN KEY (tenant_id, taxonomy_id, topic_id)
+          REFERENCES sm_topic_definitions (tenant_id, taxonomy_id, topic_id),
+        FOREIGN KEY (tenant_id, source, review_id)
+          REFERENCES feedback_reviews (tenant_id, source, review_id) ON DELETE CASCADE
+    )""",
+    "ALTER TABLE topic_embedding_cache ADD COLUMN IF NOT EXISTS embedding_config TEXT NOT NULL DEFAULT 'legacy'",
+    "ALTER TABLE sm_topic_taxonomies ADD COLUMN IF NOT EXISTS activated_once TIMESTAMPTZ",
+    """UPDATE sm_topic_taxonomies t SET activated_once=a.activated_at
+       FROM sm_topic_active a WHERE t.tenant_id=a.tenant_id
+       AND t.taxonomy_id=a.taxonomy_id AND t.activated_once IS NULL""",
+    "CREATE INDEX IF NOT EXISTS sm_topic_assignment_filter_idx ON sm_topic_assignments (tenant_id, taxonomy_id, topic_id)",
 )
 
 
+@dataclass(frozen=True)
+class Settings:
+    """Immutable discovery settings. Thresholds are similarity gates, not probabilities."""
+    profile: str = "multilingual_m3"  # fixed default for new taxonomies
+    source: str | None = None
+    since: str | None = None
+    max_docs: int = 5000
+    min_topic_size: int = 10
+    min_samples: int = 5
+    batch_size: int = 8
+    seed: int = 42
+    device: str = "auto"
+    revision: str | None = None
+    offline: bool = True
+    min_similarity: float = 0.48
+    min_margin: float = 0.02
+    sample_mode: str = "hybrid"   # hybrid or new-only
+    new_fraction: float = 0.70
+
+    def __post_init__(self):
+        if self.profile not in EMBEDDERS or self.device not in ("auto", "cpu", "cuda"):
+            raise ValueError("Unknown embedding profile or device")
+        if not 30 <= self.max_docs <= 50000 or not 2 <= self.min_topic_size <= self.max_docs:
+            raise ValueError("max_docs must be 30..50000; min_topic_size must be valid")
+        if not 1 <= self.min_samples <= self.min_topic_size or not 1 <= self.batch_size <= 128:
+            raise ValueError("Invalid min_samples or batch_size")
+        if self.sample_mode not in ("hybrid", "new-only"):
+            raise ValueError("sample_mode must be hybrid or new-only")
+        if not 0 <= self.new_fraction <= 1:
+            raise ValueError("new_fraction must be between 0 and 1")
+        if not 0 <= self.min_similarity <= 1 or not 0 <= self.min_margin < 1:
+            raise ValueError("Similarity/margin must be in [0, 1]")
+        if self.since:
+            date.fromisoformat(self.since)
+        if self.revision and (len(self.revision) != 40 or
+                              any(c not in "0123456789abcdef" for c in self.revision.lower())):
+            raise ValueError("revision must be a 40-character Hugging Face commit SHA")
+
+
 def connect():
+    """Use a trusted service DB URL; configure Cloud SQL/RLS separately."""
     import psycopg
     from psycopg.rows import dict_row
-    dsn = os.environ["DATABASE_URL"].replace("postgresql+psycopg://", "postgresql://", 1)
-    return psycopg.connect(dsn, autocommit=True, row_factory=dict_row)
+    url = os.environ["DATABASE_URL"].replace("postgresql+psycopg://", "postgresql://", 1)
+    return psycopg.connect(url, autocommit=True, row_factory=dict_row)
 
 
 def initialize(conn):
-    """Local prototype DDL; replace with migrations for production."""
+    """Idempotent developer bootstrap; deploy using versioned migrations."""
     with conn.transaction():
         for statement in DDL:
             conn.execute(statement)
+    policy.initialize(conn)
 
 
-def discover(conn, tenant: str, *, profile: str = "accurate", source: str | None = None,
-             since: str | None = None, max_docs: int = 5000, min_topic_size: int = 10,
-             batch_size: int = 32, seed: int = 42, offline: bool = False,
-             save_model: str | None = None) -> dict:
-    """Discover topics in one bounded snapshot and persist versioned assignments."""
-    if not tenant or profile not in EMBEDDERS:
-        raise ValueError("Provide tenant and a valid profile")
-    if not 30 <= max_docs <= 50000 or not 2 <= min_topic_size <= max_docs:
-        raise ValueError("max_docs 30..50000; min_topic_size 2..max_docs")
-    if not 1 <= batch_size <= 128:
-        raise ValueError("batch_size must be 1..128")
-    start_date = date.fromisoformat(since) if since else None
-    lock = conn.execute("SELECT pg_try_advisory_lock(hashtext(%s), hashtext(%s)) AS ok",
-                        ("signalmira_topics", tenant)).fetchone()["ok"]
-    if not lock:
-        raise RuntimeError("Topic discovery already running for this tenant")
+def _lock(conn, tenant: str):
+    """One topic job per tenant, including promotion, on the same connection."""
+    if not isinstance(tenant, str) or not tenant.strip():
+        raise ValueError("Trusted tenant ID required")
+    ok = conn.execute(
+        "SELECT pg_try_advisory_lock(hashtext(%s), hashtext(%s)) AS ok",
+        ("signalmira_topic_v3", tenant)
+    ).fetchone()["ok"]
+    if not ok:
+        raise RuntimeError("Topic job already running for this tenant")
+
+
+def _unlock(conn, tenant):
+    conn.execute("SELECT pg_advisory_unlock(hashtext(%s), hashtext(%s))",
+                 ("signalmira_topic_v3", tenant))
+
+
+def _device(requested: str):
+    if requested == "cpu":
+        return "cpu"
     try:
-        query = """SELECT source,review_id,text FROM feedback_reviews
-            WHERE tenant_id=%s AND length(trim(text)) > 0"""
-        params: list = [tenant]
-        if source is not None:
-            query += " AND source=%s"
-            params.append(source)
-        if start_date is not None:
-            query += " AND review_date >= %s"
-            params.append(start_date)
-        query += " ORDER BY review_date DESC NULLS LAST, source,review_id LIMIT %s"
-        params.append(max_docs)
-        rows = conn.execute(query, params).fetchall()
-        if len(rows) < max(30, 2 * min_topic_size):
-            raise ValueError("Not enough reviews for reliable topic discovery")
-        if offline:
-            os.environ["HF_HUB_OFFLINE"] = "1"
-            os.environ["TRANSFORMERS_OFFLINE"] = "1"
-        from sentence_transformers import SentenceTransformer
+        import torch
+        gpu = torch.cuda.is_available()
+    except (ImportError, OSError):
+        gpu = False
+    if requested == "cuda" and not gpu:
+        raise RuntimeError("CUDA unavailable to PyTorch")
+    return "cuda" if gpu else "cpu"
+
+
+def _snapshot(model: str, revision: str | None, offline: bool):
+    """Resolve weights to a real commit, never use 'latest' in a cache key."""
+    from huggingface_hub import snapshot_download
+    path = Path(snapshot_download(repo_id=model, revision=revision,
+                                  local_files_only=offline))
+    sha = path.name
+    if len(sha) != 40 or any(c not in "0123456789abcdef" for c in sha.lower()):
+        raise RuntimeError("Cannot verify exact model checkpoint commit")
+    return sha, str(path)
+
+
+@lru_cache(maxsize=1)
+def _encoder(path: str, device: str):
+    """One cached model per checkpoint/device per worker; bound review length."""
+    from sentence_transformers import SentenceTransformer
+    model = SentenceTransformer(path, device=device, local_files_only=True)
+    model.max_seq_length = 512
+    return model
+
+
+# Keyword text is distinct from original text. It never enters the encoder.
+NEGATIONS = frozenset({"no", "not", "never", "without", "pas", "jamais", "ne", "nunca",
+                       "sin", "不", "没", "没有", "لا", "ليس", "غير"})
+
+
+@lru_cache(maxsize=1)
+def _stopwords():
+    """Small cached ISO stopword dictionaries; only needed for multilingual runs."""
+    try:
+        from stopwordsiso import stopwords
+    except ImportError as exc:
+        raise RuntimeError("Multilingual topics require: uv add --optional topics stopwordsiso jieba") from exc
+    return {lang: frozenset(stopwords(lang)) - NEGATIONS
+            for lang in ("en", "fr", "es", "zh", "ar")}
+
+
+def _multilingual_tokens(text: str) -> list[str]:
+    """Split Unicode words; segment Chinese accurately via jieba on demand."""
+    import re
+    import unicodedata
+    text = unicodedata.normalize("NFKC", text).lower()
+    # Arabic diacritics are irrelevant for keyword topics, not original evidence.
+    text = re.sub(r"[\u064b-\u065f\u0670]", "", text)
+    parts = re.findall(r"[\u3400-\u9fff]+|[^\W_]+", text, re.UNICODE)
+    out = []
+    for part in parts:
+        if "\u3400" <= part[0] <= "\u9fff":
+            try:
+                import jieba
+            except ImportError as exc:
+                raise RuntimeError("Chinese tokenization requires jieba") from exc
+            out.extend(w.strip() for w in jieba.cut(part, HMM=False) if w.strip())
+        else:
+            out.append(part)
+    return out
+
+
+def _english_tokens(text: str) -> list[str]:
+    """Lightweight review tokenization; expand common negated contractions."""
+    import re
+    text = text.lower()
+    text = re.sub(r"\bwon['’]t\b", "will not", text)
+    text = re.sub(r"\bcan['’]t\b", "can not", text)
+    text = re.sub(r"\b(does|do|did|is|are|was|were|has|have|had|would|could|should)n['’]t\b",
+                  r"\1 not", text)
+    return re.findall(r"(?u)\b[^\W_]+(?:[-'][^\W_]+)*\b", text)
+
+
+def _keyword_text(text: str, *, profile: str, language: str = "und") -> str:
+    """Clean ONLY c-TF-IDF text; keep negations as phrases such as not_working."""
+    from sklearn.feature_extraction.text import ENGLISH_STOP_WORDS
+    tokens = _english_tokens(text) if profile in ("fast", "accurate") else _multilingual_tokens(text)
+    if profile in ("fast", "accurate"):
+        stops = (set(ENGLISH_STOP_WORDS) | {"does", "did", "do", "really", "very"}) - NEGATIONS
+    else:
+        by_lang = _stopwords()
+        stops = set(by_lang[language]) if language in by_lang else set().union(*by_lang.values())
+    retained = []
+    pending_negation = None
+    for token in tokens:
+        if token in NEGATIONS:
+            pending_negation = token
+        elif token not in stops and (len(token) > 1 or token.isdigit() or '\u3400' <= token[:1] <= '\u9fff'):
+            if pending_negation:
+                retained.append(pending_negation + "_" + token)
+                pending_negation = None
+            retained.append(token)
+    return " ".join(retained) or "unspecified_feedback"
+
+
+def _language_counts(rows):
+    return dict(sorted(Counter((r.get("lang") or "und") for r in rows).items()))
+
+
+def _selected(conn, tenant: str, cfg: Settings):
+    """Freeze an input cohort in PostgreSQL, sample new plus old-topic strata."""
+    policy.create_source_snapshot(conn, tenant)
+    rows, metrics = policy.select_sample(
+        conn, tenant, max_docs=cfg.max_docs,
+        new_fraction=cfg.new_fraction,
+        sample_mode="new-only" if cfg.sample_mode == "new-only" else "hybrid",
+        seed=cfg.seed, source=cfg.source,
+    )
+    return rows, metrics
+
+
+def _vectors(conn, tenant, rows, model, sha, dim, device, path, batch_size):
+    """Fetch cached vectors, encode misses only, and COPY guarded cache updates."""
+    import numpy as np
+    from itertools import batched
+    matrix = np.empty((len(rows), dim), dtype=np.float32)
+    hits = misses = 0
+    for start in range(0, len(rows), 256):
+        page = rows[start:start + 256]
+        old = {(r["source"], r["review_id"]): r for r in conn.execute(
+            """SELECT source,review_id,content_hash,dimensions,embedding_config,embedding
+               FROM topic_embedding_cache
+               WHERE tenant_id=%s AND model_name=%s AND model_revision=%s
+                 AND source=ANY(%s) AND review_id=ANY(%s)""",
+            (tenant, model, sha, list({r["source"] for r in page}),
+             list({r["review_id"] for r in page}))
+        )}
+        missing = []
+        for i, row in enumerate(page):
+            entry = old.get((row["source"], row["review_id"]))
+            if (entry and entry["content_hash"] == row["content_hash"]
+                    and entry["dimensions"] == dim
+                    and entry["embedding_config"] == EMBEDDING_CONFIG):
+                payload = bytes(entry["embedding"])
+                if len(payload) == dim * 4:
+                    vector = np.frombuffer(payload, dtype="<f4")
+                    if np.isfinite(vector).all() and 0.95 < np.linalg.norm(vector) < 1.05:
+                        matrix[start + i] = vector
+                        hits += 1
+                        continue
+            missing.append(i)
+        if not missing:
+            continue
+        encoder = _encoder(path, device)
+        if encoder.get_sentence_embedding_dimension() != dim:
+            raise RuntimeError("Embedding dimension mismatch")
+        new_records = []
+        for group in batched(missing, batch_size):
+            embeddings = encoder.encode([page[j]["text"] for j in group],
+                                        batch_size=len(group), show_progress_bar=False,
+                                        convert_to_numpy=True, normalize_embeddings=True)
+            embeddings = np.asarray(embeddings, dtype=np.float32)
+            if embeddings.shape != (len(group), dim) or not np.isfinite(embeddings).all():
+                raise RuntimeError("Invalid vectors returned by embedding model")
+            for j, vector in zip(group, embeddings, strict=True):
+                row = page[j]
+                matrix[start + j] = vector
+                new_records.append((row["source"], row["review_id"],
+                                    row["content_hash"], vector.astype("<f4").tobytes()))
+        # Cache writes are independent of taxonomy transaction; stale-source writes are rejected.
+        with conn.transaction():
+            conn.execute("""CREATE TEMP TABLE _sm_embedding_input (
+                source TEXT, review_id TEXT, content_hash TEXT, embedding BYTEA)
+                ON COMMIT DROP""")
+            with conn.cursor() as cur:
+                with cur.copy("COPY _sm_embedding_input (source,review_id,content_hash,embedding) FROM STDIN") as copy:
+                    for row in new_records:
+                        copy.write_row(row)
+            conn.execute("""INSERT INTO topic_embedding_cache AS cache
+                (tenant_id,source,review_id,model_name,model_revision,content_hash,dimensions,embedding_config,embedding)
+                SELECT %s,i.source,i.review_id,%s,%s,i.content_hash,%s,%s,i.embedding
+                FROM _sm_embedding_input i
+                JOIN feedback_reviews f ON f.tenant_id=%s AND f.source=i.source
+                  AND f.review_id=i.review_id AND f.content_hash=i.content_hash
+                ON CONFLICT (tenant_id,source,review_id,model_name,model_revision)
+                DO UPDATE SET content_hash=EXCLUDED.content_hash,
+                  dimensions=EXCLUDED.dimensions,embedding_config=EXCLUDED.embedding_config,
+                  embedding=EXCLUDED.embedding, updated_at=now()""", (tenant, model, sha, dim, EMBEDDING_CONFIG, tenant))
+        misses += len(new_records)
+    return matrix, hits, misses
+
+
+def _cards(rows, topic_ids, topic_model, vectors):
+    """Human-reviewable labels and evidence IDs, without copying original review text."""
+    import numpy as np
+    grouped = defaultdict(list)
+    for i, topic_id in enumerate(topic_ids):
+        grouped[int(topic_id)].append(i)
+    cards = {}
+    for topic_id, indices in sorted(grouped.items()):
+        words = topic_model.get_topic(topic_id) if topic_id >= 0 else None
+        keywords = [word for word, _ in (words or [])[:8]]
+        center = None
+        if topic_id >= 0:
+            center = vectors[indices].mean(axis=0)
+            norm = float(np.linalg.norm(center))
+            if norm <= 1e-9:
+                raise RuntimeError("Zero topic centroid")
+            center = (center / norm).astype("<f4")
+            proximity = vectors[indices] @ center
+            examples = [indices[int(i)] for i in np.argsort(-proximity)[:3]]
+        else:
+            examples = indices[:3]
+        cards[topic_id] = dict(
+            name=", ".join(keywords[:5]) if keywords else (
+                "Unassigned / emerging" if topic_id == -1 else f"Topic {topic_id}"),
+            keywords=keywords, train_count=len(indices),
+            example_ids=[{"source": rows[i]["source"], "review_id": rows[i]["review_id"]}
+                         for i in examples],
+            centroid=center.tobytes() if center is not None else None,
+        )
+    cards.setdefault(-1, dict(name="Unassigned / emerging", keywords=[], train_count=0,
+                              example_ids=[], centroid=None))
+    if not any(k >= 0 for k in cards):
+        raise ValueError("No stable topics found; try more diverse feedback or a lower min_topic_size")
+    return cards
+
+
+def _check_source_snapshot(conn, tenant, rows):
+    """Fail if source reviews changed between extraction and persistence."""
+    conn.execute("""CREATE TEMP TABLE _sm_topic_source (
+        source TEXT, review_id TEXT, content_hash TEXT) ON COMMIT DROP""")
+    with conn.cursor() as cur:
+        with cur.copy("COPY _sm_topic_source (source,review_id,content_hash) FROM STDIN") as cp:
+            for r in rows:
+                cp.write_row((r["source"], r["review_id"], r["content_hash"]))
+    matched = conn.execute("""SELECT f.source,f.review_id,f.content_hash
+        FROM feedback_reviews f JOIN _sm_topic_source s
+          ON f.source=s.source AND f.review_id=s.review_id
+        WHERE f.tenant_id=%s FOR SHARE OF f""", (tenant,)).fetchall()
+    expected = {(r["source"],r["review_id"]):r["content_hash"] for r in rows}
+    actual = {(r["source"],r["review_id"]):r["content_hash"] for r in matched}
+    if expected != actual:
+        raise RuntimeError("Source reviews changed during job; retry")
+
+
+def _versions():
+    output = {}
+    for package in ("bertopic", "sentence-transformers", "numpy", "umap-learn", "hdbscan"):
+        try:
+            output[package] = version(package)
+        except PackageNotFoundError:
+            output[package] = "unknown"
+    return output
+
+
+def discover(conn, tenant: str, cfg: Settings = Settings(), *, require_due: bool = False):
+    """One candidate taxonomy; a human should review labels before activation."""
+    _lock(conn, tenant)
+    try:
+        status = policy.check(conn, tenant)
+        if status["pending_review"]:
+            raise ValueError("Candidate pending review; activate or --reject it before rediscovery")
+        if require_due and not status["due"]:
+            return {"action": "skipped", "decision": status}
+        if cfg.since is not None:
+            raise ValueError("--since is not supported for change-based discovery; new records are tracked by content hash")
+        rows, sampling = _selected(conn, tenant, cfg)
+        if len(rows) < max(30, 2 * cfg.min_topic_size):
+            raise ValueError("Not enough reviews; need at least 30 and 2× min_topic_size")
+        model, dim = EMBEDDERS[cfg.profile]
+        sha, path = _snapshot(model, cfg.revision, cfg.offline)
+        device = _device(cfg.device)
+        if cfg.profile in ("fast", "accurate"):
+            known_non_english = sum(r.get("lang") not in (None, "", "und", "en") for r in rows)
+            if known_non_english > len(rows) * 0.05:
+                raise ValueError("English profile selected with >5% declared non-English reviews; use multilingual")
+        vectors, hits, misses = _vectors(conn, tenant, rows, model, sha, dim,
+                                        device, path, cfg.batch_size)
+
         from bertopic import BERTopic
+        from bertopic.vectorizers import ClassTfidfTransformer
+        from hdbscan import HDBSCAN
+        from sklearn.feature_extraction.text import CountVectorizer
         from umap import UMAP
 
-        try:
-            import torch
-            device = "cuda" if torch.cuda.is_available() else "cpu"
-        except (ImportError, OSError):
-            device = "cpu"
-        model_id = EMBEDDERS[profile]
-        embedder = SentenceTransformer(model_id, device=device, local_files_only=offline)
-        texts = [r["text"] for r in rows]
-        embeddings = embedder.encode(texts, batch_size=batch_size,
-                                     show_progress_bar=False, convert_to_numpy=True,
-                                     normalize_embeddings=True)
-        # UMAP randomness is fixed; models/versions and input data must also be versioned.
-        reducer = UMAP(n_neighbors=min(15, len(texts)-1), n_components=5,
-                       min_dist=0.0, metric="cosine", random_state=seed)
-        topic_model = BERTopic(embedding_model=embedder, umap_model=reducer,
-                              min_topic_size=min_topic_size,
-                              calculate_probabilities=False, low_memory=True,
-                              verbose=False)
-        topic_ids, _ = topic_model.fit_transform(texts, embeddings)
-        counts = Counter(int(x) for x in topic_ids)
-        run_id = uuid4()
-        labels = {}
-        for number, count in sorted(counts.items()):
-            words = topic_model.get_topic(number) if number >= 0 else None
-            label = ", ".join(word for word, _ in (words or [])[:5]) if number >= 0 else "outlier"
-            labels[number] = label or f"topic-{number}"
-
-        # A retrained snapshot gets a new run ID: never silently renumber dashboard labels.
+        # Use full text for vectors, cleaned text only for c-TF-IDF.
+        # Language metadata wins; unknown-language rows use multilingual stopword union.
+        keyword_docs = [_keyword_text(r["text"], profile=cfg.profile,
+                                      language=r.get("lang") or "und") for r in rows]
+        vectorizer = CountVectorizer(ngram_range=(1, 2), lowercase=False,
+                                     min_df=1, max_features=30000)
+        topic_model = BERTopic(
+            embedding_model=None,
+            umap_model=UMAP(n_components=5, n_neighbors=min(15, len(rows)-1),
+                            min_dist=0, metric="cosine", random_state=cfg.seed,
+                            low_memory=True),
+            hdbscan_model=HDBSCAN(min_cluster_size=cfg.min_topic_size,
+                                 min_samples=cfg.min_samples,
+                                 core_dist_n_jobs=1, prediction_data=False),
+            vectorizer_model=vectorizer,
+            ctfidf_model=ClassTfidfTransformer(reduce_frequent_words=True),
+            calculate_probabilities=False, low_memory=True, verbose=False,
+        )
+        topic_ids, _ = topic_model.fit_transform(keyword_docs, vectors)
+        cards = _cards(rows, topic_ids, topic_model, vectors)
+        digest = hashlib.sha256(json.dumps([(r["source"], r["review_id"],
+                                              r["content_hash"]) for r in rows],
+                                             separators=(",", ":")).encode()).hexdigest()
+        taxonomy_id = uuid4()
+        cfg_metadata = dict(profile=cfg.profile, source=cfg.source, since=cfg.since,
+                            seed=cfg.seed, min_topic_size=cfg.min_topic_size,
+                            min_samples=cfg.min_samples, max_docs=cfg.max_docs,
+                            min_similarity=cfg.min_similarity, min_margin=cfg.min_margin,
+                            sample_mode=cfg.sample_mode,
+                            embedding_config=EMBEDDING_CONFIG,
+                            language_mode="multilingual" if cfg.profile.startswith("multilingual") else "english",
+                            method="BERTopic-HDBSCAN-discovery + normalized-centroid-assignment-v2",
+                            sample="latest updated_at + stratified old topic x language x product",
+                            keyword_preprocessing=("English cTFIDF: keyword cleanup; "
+                                                   "multilingual cTFIDF: ISO + jieba; negation phrases"),
+                            languages=_language_counts(rows),
+                            libraries=_versions())
         with conn.transaction():
-            conn.execute("""INSERT INTO topic_runs
-                (tenant_id,run_id,model_name,sample_count,start_date,source_filter,random_seed)
-                VALUES (%s,%s,%s,%s,%s,%s,%s)""",
-                (tenant, run_id, model_id, len(rows), start_date, source, seed))
+            _check_source_snapshot(conn, tenant, rows)
+            conn.execute("""INSERT INTO sm_topic_taxonomies
+                (tenant_id,taxonomy_id,model_name,model_revision,dimensions,
+                 train_count,train_outliers,input_digest,settings)
+                VALUES (%s,%s,%s,%s,%s,%s,%s,%s,%s::jsonb)""",
+                (tenant, taxonomy_id, model, sha, dim, len(rows),
+                 sum(int(x) == -1 for x in topic_ids), digest,
+                 json.dumps(cfg_metadata, sort_keys=True)))
             with conn.cursor() as cur:
-                cur.executemany("""INSERT INTO topic_labels
-                    (tenant_id,run_id,topic_id,name,review_count)
-                    VALUES (%s,%s,%s,%s,%s)""", [
-                    (tenant, run_id, k, name, counts[k]) for k, name in labels.items()])
-                # executemany uses psycopg3 pipeline optimization; memory is bounded by max_docs.
-                for i in range(0, len(rows), 250):
-                    cur.executemany("""INSERT INTO topic_assignments
-                        (tenant_id,run_id,source,review_id,topic_id)
-                        VALUES (%s,%s,%s,%s,%s)""", [
-                        (tenant, run_id, row["source"], row["review_id"], int(topic_ids[j]))
-                        for j, row in enumerate(rows[i:i+250], start=i)])
-        if save_model:
-            # Safe and compact; save_model path is admin-managed, not derived from tenant.
-            topic_model.save(save_model, serialization="safetensors", save_ctfidf=True,
-                             save_embedding_model=model_id)
-        return {"tenant_id": tenant, "run_id": str(run_id), "model": model_id,
-                "device": device, "review_count": len(rows), "topics": [
-                    {"id": k, "label": labels[k], "reviews": counts[k]}
-                    for k in sorted(labels) ]}
+                cur.executemany("""INSERT INTO sm_topic_definitions
+                    (tenant_id,taxonomy_id,topic_id,name,keywords,example_ids,train_count,centroid)
+                    VALUES (%s,%s,%s,%s,%s::jsonb,%s::jsonb,%s,%s)""", [
+                    (tenant, taxonomy_id, number, card["name"],
+                     json.dumps(card["keywords"]), json.dumps(card["example_ids"]),
+                     card["train_count"], card["centroid"])
+                    for number, card in cards.items()])
+            # Atomic with candidate creation; unsampled reviews remain eligible.
+            policy.complete_discovery(conn, tenant, taxonomy_id, source=cfg.source,
+                                      selected_rows=rows)
+        return dict(taxonomy_id=str(taxonomy_id), tenant_id=tenant, model=model,
+                    revision=sha, device=device, trained=len(rows), cache_hits=hits,
+                    new_embeddings=misses,
+                    discovered_topics=sum(k >= 0 for k in cards),
+                    outliers=sum(int(x) == -1 for x in topic_ids),
+                    sample=sampling, languages=_language_counts(rows),
+                    quality_warnings=[
+                        "A topic covers >40% of discovery feedback; review its evidence and consider splitting or rejecting it"
+                        for v in cards.values() if v["train_count"] > 0.4 * len(rows)
+                        and v["name"] != "Unassigned / emerging"
+                    ],
+                    topics=[{"topic_id": k, "name": v["name"],
+                             "reviews": v["train_count"], "example_ids": v["example_ids"]}
+                            for k,v in cards.items()])
     finally:
-        conn.execute("SELECT pg_advisory_unlock(hashtext(%s), hashtext(%s))",
-                     ("signalmira_topics", tenant))
+        _unlock(conn, tenant)
+
+
+def activate(conn, tenant: str, taxonomy_id: str):
+    """Promote only after complete backfill, preventing an empty dashboard."""
+    identifier = UUID(str(taxonomy_id))
+    _lock(conn, tenant)
+    try:
+        with conn.transaction():
+            exists = conn.execute("""SELECT 1 FROM sm_topic_taxonomies
+               WHERE tenant_id=%s AND taxonomy_id=%s""", (tenant, identifier)).fetchone()
+            if not exists:
+                raise ValueError("Taxonomy not found for tenant")
+            pending = conn.execute("""SELECT count(*) AS missing FROM feedback_reviews f
+                LEFT JOIN sm_topic_assignments a
+                  ON a.tenant_id=f.tenant_id AND a.taxonomy_id=%s
+                 AND a.source=f.source AND a.review_id=f.review_id
+                 AND a.content_hash=f.content_hash
+                WHERE f.tenant_id=%s AND length(btrim(f.text))>0
+                  AND a.review_id IS NULL""", (identifier, tenant)).fetchone()["missing"]
+            if pending:
+                raise ValueError(f"Candidate has {pending} unassigned reviews; run --assign --taxonomy first")
+            conn.execute("""UPDATE sm_topic_taxonomies SET activated_once=COALESCE(activated_once,now())
+                WHERE tenant_id=%s AND taxonomy_id=%s""",(tenant,identifier))
+            conn.execute("""INSERT INTO sm_topic_active (tenant_id,taxonomy_id)
+                VALUES (%s,%s) ON CONFLICT (tenant_id)
+                DO UPDATE SET taxonomy_id=EXCLUDED.taxonomy_id,activated_at=now()""",
+                (tenant, identifier))
+            # Clear pending after successful activation.
+            policy.clear_pending(conn, tenant, identifier)
+        return {"tenant_id": tenant, "active_taxonomy_id": str(identifier)}
+    finally:
+        _unlock(conn, tenant)
+
+
+def rename_topic(conn, tenant: str, taxonomy_id: str, topic_id: int, label: str):
+    """Curate a candidate label without silently rewriting active dashboards."""
+    if not 1 <= len(label.strip()) <= 120 or topic_id < 0:
+        raise ValueError("Provide a concise label and a nonnegative topic ID")
+    tid = UUID(str(taxonomy_id))
+    _lock(conn, tenant)
+    try:
+        with conn.transaction():
+            active = conn.execute("""SELECT 1 FROM sm_topic_taxonomies
+                WHERE tenant_id=%s AND taxonomy_id=%s AND activated_once IS NOT NULL""",
+                (tenant, tid)).fetchone()
+            if active:
+                raise ValueError("Cannot rename a previously activated taxonomy; create a new version")
+            changed = conn.execute("""UPDATE sm_topic_definitions SET name=%s
+                WHERE tenant_id=%s AND taxonomy_id=%s AND topic_id=%s""",
+                (label.strip(), tenant, tid, topic_id)).rowcount
+            if not changed:
+                raise ValueError("Topic not found")
+    finally:
+        _unlock(conn, tenant)
+    return dict(taxonomy_id=str(tid), topic_id=topic_id, label=label.strip())
+
+
+def _choose_topics(embeddings, topic_ids, centers, threshold: float, margin: float):
+    """Batch cosine assignment, with -1 for weak/ambiguous matches."""
+    import numpy as np
+    embeddings = np.asarray(embeddings, dtype=np.float32)
+    centers = np.asarray(centers, dtype=np.float32)
+    if embeddings.ndim != 2 or centers.ndim != 2 or embeddings.shape[1] != centers.shape[1]:
+        raise ValueError("Vector dimension mismatch")
+    if len(topic_ids) != len(centers) or len(topic_ids) == 0:
+        raise ValueError("Missing taxonomy centroids")
+    if not np.isfinite(embeddings).all() or not np.isfinite(centers).all():
+        raise ValueError("Nonfinite topic vectors")
+    # Both embeddings and topic centroids are L2-normalized at creation time.
+    scores = embeddings @ centers.T
+    best = np.argmax(scores, axis=1)
+    high = scores[np.arange(len(best)), best]
+    if len(topic_ids) > 1:
+        second = np.partition(scores, -2, axis=1)[:, -2]
+        gap = high - second
+    else:
+        gap = np.full(len(best), 1.0, dtype=np.float32)
+    chosen = []
+    for i, index in enumerate(best):
+        chosen.append((int(topic_ids[index]) if high[i] >= threshold and gap[i] >= margin else -1,
+                       float(high[i])))
+    return chosen
+
+
+def _read_taxonomy(conn, tenant, taxonomy_id=None):
+    if taxonomy_id is None:
+        row = conn.execute("""SELECT t.* FROM sm_topic_active a
+            JOIN sm_topic_taxonomies t ON t.tenant_id=a.tenant_id
+             AND t.taxonomy_id=a.taxonomy_id WHERE a.tenant_id=%s""", (tenant,)).fetchone()
+    else:
+        row = conn.execute("""SELECT * FROM sm_topic_taxonomies
+            WHERE tenant_id=%s AND taxonomy_id=%s""",
+            (tenant, UUID(str(taxonomy_id)))).fetchone()
+    if not row:
+        raise ValueError("Taxonomy not found; discover a candidate or activate one")
+    if row["settings"].get("embedding_config") != EMBEDDING_CONFIG:
+        raise RuntimeError("This taxonomy used a different encoder contract; rediscover before assignment")
+    topics = conn.execute("""SELECT topic_id,centroid FROM sm_topic_definitions
+        WHERE tenant_id=%s AND taxonomy_id=%s AND topic_id>=0
+        ORDER BY topic_id""", (tenant, row["taxonomy_id"])).fetchall()
+    import numpy as np
+    ids = [r["topic_id"] for r in topics]
+    centers = np.stack([np.frombuffer(bytes(r["centroid"]), dtype="<f4")
+                        for r in topics]) if topics else np.empty((0,row["dimensions"]))
+    if not ids or centers.shape[1] != row["dimensions"]:
+        raise RuntimeError("Incomplete taxonomy centroids")
+    return row, ids, centers
+
+
+def _save_assignment_page(conn, tenant, taxonomy_id, rows, predictions):
+    """Guard source hash and upsert a whole page in one transaction."""
+    with conn.transaction():
+        conn.execute("""CREATE TEMP TABLE _sm_assignment_input (
+            source TEXT, review_id TEXT, content_hash TEXT,
+            topic_id INT, similarity DOUBLE PRECISION) ON COMMIT DROP""")
+        with conn.cursor() as cur:
+            with cur.copy("COPY _sm_assignment_input (source,review_id,content_hash,topic_id,similarity) FROM STDIN") as cp:
+                for r,(topic_id,score) in zip(rows,predictions,strict=True):
+                    cp.write_row((r["source"],r["review_id"],r["content_hash"],topic_id,score))
+        # Verify values while holding shared row locks until this transaction commits.
+        current = conn.execute("""SELECT f.source,f.review_id,f.content_hash
+            FROM feedback_reviews f JOIN _sm_assignment_input i
+              ON f.source=i.source AND f.review_id=i.review_id
+            WHERE f.tenant_id=%s FOR SHARE OF f""", (tenant,)).fetchall()
+        expected = {(r["source"],r["review_id"]):r["content_hash"] for r in rows}
+        actual = {(r["source"],r["review_id"]):r["content_hash"] for r in current}
+        if expected != actual:
+            raise RuntimeError("Source rows changed during assignment; retry")
+        conn.execute("""INSERT INTO sm_topic_assignments AS a
+            (tenant_id,taxonomy_id,source,review_id,content_hash,topic_id,similarity)
+            SELECT %s,%s,source,review_id,content_hash,topic_id,similarity
+            FROM _sm_assignment_input WHERE TRUE
+            ON CONFLICT (tenant_id,taxonomy_id,source,review_id)
+            DO UPDATE SET content_hash=EXCLUDED.content_hash,
+              topic_id=EXCLUDED.topic_id, similarity=EXCLUDED.similarity,
+              assigned_at=now()
+            WHERE a.content_hash IS DISTINCT FROM EXCLUDED.content_hash
+               OR a.topic_id IS DISTINCT FROM EXCLUDED.topic_id""",
+            (tenant,taxonomy_id))
+
+
+def assign(conn, tenant: str, *, source: str | None = None,
+           page_size: int = 256, batch_size: int = 32,
+           device: str = "auto", offline: bool = True, limit: int = 0,
+           taxonomy_id: str | None = None):
+    """Incrementally assign new/changed feedback to one activated fixed taxonomy."""
+    if not 1 <= page_size <= 1000 or not 1 <= batch_size <= 128 or limit < 0:
+        raise ValueError("Invalid page size, batch size or limit")
+    _lock(conn, tenant)
+    try:
+        tax, ids, centers = _read_taxonomy(conn, tenant, taxonomy_id)
+        tid = tax["taxonomy_id"]
+        settings = tax["settings"]
+        model = tax["model_name"]
+        sha, path = _snapshot(model, tax["model_revision"], offline)
+        if sha != tax["model_revision"]:
+            raise RuntimeError("Taxonomy model revision mismatch")
+        dev = _device(device)
+        last_source = last_id = ""
+        processed = unknown = hit_count = encoded = 0
+        while True:
+            query = """SELECT r.source,r.review_id,r.text,r.content_hash
+                FROM feedback_reviews r
+                LEFT JOIN sm_topic_assignments a
+                  ON a.tenant_id=r.tenant_id AND a.source=r.source
+                 AND a.review_id=r.review_id AND a.taxonomy_id=%s
+                 AND a.content_hash=r.content_hash
+                WHERE r.tenant_id=%s AND (r.source,r.review_id)>(%s,%s)
+                  AND length(btrim(r.text))>0 AND a.review_id IS NULL"""
+            params = [tid,tenant,last_source,last_id]
+            if source:
+                query += " AND r.source=%s"
+                params.append(source)
+            query += " ORDER BY r.source,r.review_id LIMIT %s"
+            params.append(min(page_size, limit-processed) if limit else page_size)
+            rows = conn.execute(query, params).fetchall()
+            if not rows:
+                break
+            last_source, last_id = rows[-1]["source"],rows[-1]["review_id"]
+            vectors,hits,misses = _vectors(conn,tenant,rows,model,sha,tax["dimensions"],
+                                          dev,path,batch_size)
+            predictions = _choose_topics(vectors,ids,centers,
+                float(settings["min_similarity"]),float(settings["min_margin"]))
+            _save_assignment_page(conn,tenant,tid,rows,predictions)
+            processed += len(rows)
+            unknown += sum(t==-1 for t,_ in predictions)
+            hit_count += hits
+            encoded += misses
+            if limit and processed >= limit:
+                break
+        return dict(tenant_id=tenant,taxonomy_id=str(tid),processed=processed,
+                    unassigned=unknown,cache_hits=hit_count,new_embeddings=encoded)
+    finally:
+        _unlock(conn, tenant)
 
 
 def main():
+    """CLI for local WSL or a trusted daily Cloud Run Job."""
+    import json
+    from dataclasses import asdict
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--init", action="store_true")
+    mode = parser.add_mutually_exclusive_group()
+    mode.add_argument("--init", action="store_true")
+    mode.add_argument("--discover", action="store_true", help="Force a candidate discovery (admin only)")
+    mode.add_argument("--check", action="store_true", help="Only report eligibility; no model loading")
+    mode.add_argument("--auto", action="store_true", help="Discover only if policy says due")
+    mode.add_argument("--set-policy", action="store_true", help="Persist a tenant's policy overrides")
+    mode.add_argument("--assign", action="store_true")
+    mode.add_argument("--activate", metavar="UUID")
+    mode.add_argument("--reject", metavar="UUID", help="Reject pending candidate, retain audit history")
+    mode.add_argument("--rename", type=int, metavar="TOPIC_ID")
     parser.add_argument("--tenant")
-    parser.add_argument("--profile", choices=list(EMBEDDERS), default="accurate")
-    parser.add_argument("--source", help="Only this review source")
-    parser.add_argument("--since", help="Start date, YYYY-MM-DD")
-    parser.add_argument("--max-docs", type=int, default=5000)
+    parser.add_argument("--taxonomy")
+    parser.add_argument("--name")
+    parser.add_argument("--profile", choices=EMBEDDERS, default=None)
+    parser.add_argument("--source")
+    parser.add_argument("--max-docs", type=int, default=None)
     parser.add_argument("--min-topic-size", type=int, default=10)
-    parser.add_argument("--batch-size", type=int, default=32)
+    parser.add_argument("--min-samples", type=int, default=5)
+    parser.add_argument("--sample-mode", choices=("hybrid", "new-only"), default=None)
+    parser.add_argument("--new-ratio", type=float, default=None, help="Fraction of new feedback, e.g. 0.70")
+    parser.add_argument("--batch-size", type=int, default=8)
+    parser.add_argument("--page-size", type=int, default=256)
+    parser.add_argument("--limit", type=int, default=0)
+    parser.add_argument("--min-similarity", type=float, default=.48)
+    parser.add_argument("--min-margin", type=float, default=.02)
     parser.add_argument("--seed", type=int, default=42)
-    parser.add_argument("--offline", action="store_true", help="Only cached model weights")
-    parser.add_argument("--save-model", help="Optional admin-controlled directory for safetensors")
+    parser.add_argument("--device", choices=("auto", "cpu", "cuda"), default="auto")
+    parser.add_argument("--revision")
+    parser.add_argument("--offline", action=argparse.BooleanOptionalAction, default=True)
+    parser.add_argument("--days", type=int, default=None)
+    parser.add_argument("--weekly-min-new", type=int, default=None)
+    parser.add_argument("--volume-trigger", type=int, default=None)
+    parser.add_argument("--drift-min-new", type=int, default=None)
+    parser.add_argument("--drift-unassigned-rate", type=float, default=None)
+    parser.add_argument("--cooldown-hours", type=int, default=None)
+    parser.add_argument("--bootstrap-min", type=int, default=None)
     args = parser.parse_args()
     if not args.init and not args.tenant:
-        parser.error("--tenant required")
+        parser.error("--tenant required unless --init")
+
     with connect() as conn:
         if args.init:
             initialize(conn)
-            print("Topic discovery tables ready")
-        else:
-            import json
-            print(json.dumps(discover(conn, args.tenant, profile=args.profile,
-                source=args.source, since=args.since, max_docs=args.max_docs,
-                min_topic_size=args.min_topic_size, batch_size=args.batch_size,
-                seed=args.seed, offline=args.offline, save_model=args.save_model),
-                ensure_ascii=False, indent=2))
+            print("Topic engine and discovery policy tables ready")
+            return
+        if args.set_policy:
+            old = policy.get_policy(conn, args.tenant)
+            mapping = dict(days=args.days, weekly_min_new=args.weekly_min_new,
+                volume_trigger=args.volume_trigger, drift_min_new=args.drift_min_new,
+                drift_unassigned_rate=args.drift_unassigned_rate,
+                cooldown_hours=args.cooldown_hours, bootstrap_min=args.bootstrap_min,
+                max_docs=args.max_docs, new_fraction=args.new_ratio,
+                sample_mode=args.sample_mode, profile=args.profile)
+            changes = {k: v for k, v in mapping.items() if v is not None}
+            print(json.dumps(policy.save_policy(conn, args.tenant, replace(old, **changes)), indent=2))
+            return
+        if args.check:
+            print(json.dumps(policy.check(conn, args.tenant), indent=2))
+            return
+        if args.reject:
+            print(json.dumps(policy.reject(conn,args.tenant,UUID(args.reject)),indent=2))
+            return
+        if args.activate:
+            print(json.dumps(activate(conn,args.tenant,args.activate),indent=2))
+            return
+        if args.rename is not None:
+            if not args.taxonomy or not args.name:
+                parser.error("--rename requires --taxonomy UUID and --name LABEL")
+            print(json.dumps(rename_topic(conn,args.tenant,args.taxonomy,args.rename,args.name),indent=2))
+            return
+        if args.assign:
+            print(json.dumps(assign(conn,args.tenant,source=args.source,
+                  page_size=args.page_size,batch_size=args.batch_size,
+                  device=args.device,offline=args.offline,
+                  limit=args.limit,taxonomy_id=args.taxonomy),indent=2))
+            return
+        configured = policy.get_policy(conn,args.tenant)
+        if args.auto:
+            status = policy.check(conn,args.tenant)
+            if not status["due"]:
+                print(json.dumps({"action":"skipped","decision":status},indent=2))
+                return
+        # Fixed multilingual default from Policy; explicit admin policy/CLI overrides
+        # are honored. Never change the encoder of an already active taxonomy.
+        chosen = args.profile or configured.profile
+        cfg=Settings(profile=chosen, source=args.source,
+            max_docs=configured.max_docs if args.max_docs is None else args.max_docs,
+            min_topic_size=args.min_topic_size,min_samples=args.min_samples,
+            batch_size=args.batch_size,seed=args.seed,device=args.device,
+            revision=args.revision,offline=args.offline,
+            min_similarity=args.min_similarity,min_margin=args.min_margin,
+            sample_mode=args.sample_mode or configured.sample_mode,
+            new_fraction=configured.new_fraction if args.new_ratio is None else args.new_ratio)
+        result=discover(conn,args.tenant,cfg,require_due=args.auto)
+        result["action"] = "candidate_created"
+        print(json.dumps(result,ensure_ascii=False,indent=2))
 
 
 if __name__ == "__main__":

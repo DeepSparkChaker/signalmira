@@ -1,0 +1,67 @@
+"""Fast, offline tests for the topic engine's model routing and business rules."""
+import sys
+import unittest
+from pathlib import Path
+
+import numpy as np
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
+from enrichment.topics import (  # noqa: E402
+    EMBEDDERS, EMBEDDING_CONFIG, Settings, _choose_topics,
+    _multilingual_tokens, _selected,
+)
+
+
+class TopicTests(unittest.TestCase):
+    def test_english_and_multilingual_profiles(self):
+        self.assertEqual(EMBEDDERS['accurate'], ('BAAI/bge-base-en-v1.5', 768))
+        self.assertEqual(EMBEDDERS['multilingual_m3'], ('BAAI/bge-m3', 1024))
+        self.assertIn('512', EMBEDDING_CONFIG)
+
+    def test_settings_validation(self):
+        for kwargs in (dict(profile='unknown'), dict(batch_size=0),
+                       dict(min_similarity=2), dict(sample_mode='random'),
+                       dict(revision='not-a-sha')):
+            with self.subTest(kwargs=kwargs):
+                with self.assertRaises(ValueError):
+                    Settings(**kwargs)
+
+    def test_multilingual_tokens(self):
+        tokens = _multilingual_tokens('The battery / batería / البطارية / 电池耗电')
+        self.assertIn('battery', tokens)
+        self.assertIn('batería', tokens)
+        self.assertIn('البطارية', tokens)
+        self.assertIn('电池', tokens)
+        self.assertIn('池耗', tokens)
+
+    def test_cosine_assignment_known_unknown_and_ambiguous(self):
+        centers = np.array([[1., 0.], [0., 1.]], dtype='float32')
+        x = np.array([[1., 0.], [.0, 1.], [.1, .1], [.7, .7]], dtype='float32')
+        x = x / np.linalg.norm(x, axis=1)[:, None]
+        result = _choose_topics(x, [10, 20], centers, .75, .05)
+        self.assertEqual([r[0] for r in result], [10, 20, -1, -1])
+
+    def test_one_topic_is_assignable(self):
+        x = np.array([[1., 0.], [-1., 0.]], dtype='float32')
+        result = _choose_topics(x, [9], [[1., 0.]], .5, .05)
+        self.assertEqual([x[0] for x in result], [9, -1])
+
+    def test_bounded_sampling_hybrid(self):
+        class Dummy:
+            def execute(self, sql, args=None):
+                self.sql = sql
+                self.args = args
+                if 'md5(' in sql:
+                    self.rows = [{'source':'s', 'review_id':str(i), 'content_hash':'x','text':'x'} for i in range(0,30)]
+                else:
+                    self.rows = [{'source':'s', 'review_id':str(i), 'content_hash':'x','text':'x'} for i in range(30,45)]
+                return self
+            def fetchall(self):
+                return self.rows
+        result = _selected(Dummy(), 'demo', Settings(max_docs=30, sample_mode='hybrid'))
+        self.assertEqual(len(result), 30)
+        self.assertEqual(len(set((r['source'],r['review_id']) for r in result)), 30)
+
+
+if __name__ == '__main__':
+    unittest.main()
