@@ -177,10 +177,11 @@ class FakeConn:
             return DummyCursor(result)
         if "to_regclass('public.rag_embeddings_hnsw_cosine_idx')" in sql:
             return DummyCursor([{"idx": "public.rag_embeddings_hnsw_cosine_idx" if self.hnsw else None}])
-        if "FROM public.rag_embeddings e" in sql:
+        if "WITH nearest AS MATERIALIZED" in sql:
             assert self.scopes == [params[1]]
             assert "WHERE e.tenant_id=%s AND e.model_key=%s" in sql
-            assert "ORDER BY e.embedding <=> %s::vector(1024) LIMIT %s" in sql
+            assert "eligible.input_hash=e.chunk_input_hash" in sql
+            assert "ORDER BY nearest.distance" in sql
             return DummyCursor([])
         if "SELECT extversion FROM pg_extension" in sql:
             return DummyCursor([{"extversion": "0.8.1"}])
@@ -255,11 +256,12 @@ def test_search_scoped_and_modes(monkeypatch):
     emb = FakeEmbedder()
     assert db.search(conn, "a", "payment failed", emb, source="one", product_id="p", k=3) == []
     sql, params, scope = next((sql, pars, scope) for sql, pars, scope in conn.queries
-                              if "FROM public.rag_embeddings e" in sql)
+                              if "WITH nearest AS MATERIALIZED" in sql)
     assert scope == ("a",) and params[1:3] == ["a", emb.spec.model_key]
     assert params[3:5] == ["one", "p"]
-    assert "AND c.source=%s" in sql and "AND c.product_id=%s" in sql
-    assert any("enable_indexscan=off" in s for s, _, _ in conn.queries)
+    assert "AND eligible.source=%s" in sql and "AND eligible.product_id=%s" in sql
+    assert isinstance(params[0], np.ndarray) and params[0].shape == (1024,)
+    assert "+ 0" in sql and not any("enable_indexscan=off" in s for s, _, _ in conn.queries)
     with pytest.raises(RuntimeError, match="HNSW index is missing"):
         db.search(conn, "a", "payment failed", emb, mode="hnsw")
     conn.hnsw = True

@@ -1,0 +1,45 @@
+{
+  "retriever": "SignalMira PostgreSQL BM25 + Qwen3 embeddings + pgvector + SQL RRF",
+  "database": "signalmira_beir",
+  "mode": "exact",
+  "reranker": "qwen",
+  "fused_k": 50,
+  "unique_docs": true,
+  "rerank_candidate_limit": 25,
+  "queries": 100,
+  "baseline_rrf": {
+    "queries": 100,
+    "k": 8,
+    "recall@8": 0.1654,
+    "ndcg@8": 0.3902,
+    "hit@8": 0.78,
+    "mrr@8": 0.5845,
+    "precision@8": 0.3075
+  },
+  "reranked": {
+    "queries": 100,
+    "k": 8,
+    "recall@8": 0.1671,
+    "ndcg@8": 0.4271,
+    "hit@8": 0.79,
+    "mrr@8": 0.6518,
+    "precision@8": 0.3325
+  },
+  "candidate_recall_at_25": 0.2404,
+  "fusion_document_recall": 0.2654,
+  "stage_ms": {
+    "embed_ms": {
+      "p50": 33.9,
+      "p95": 42.0
+    },
+    "postgres_ms": {
+      "p50": 69.9,
+      "p95": 82.7
+    },
+    "rerank_ms": {
+      "p50": 255.7,
+      "p95": 299.9
+    }
+  },
+  "predictions": "tests/data/beir_eval/experiment_50_unique25.jsonl"
+}

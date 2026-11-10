@@ -1,0 +1,57 @@
+{
+  "source": "Multilingual-NLP/M-ABSA",
+  "revision": "521ab96c3fc0acb4f844205d0e05382734fc89f2",
+  "domain": "phone",
+  "split": "test",
+  "count": 150,
+  "languages": {
+    "en": {
+      "eligible": 445,
+      "selected": 30,
+      "excluded": {
+        "triplets_count": 73,
+        "unmapped_or_empty_gold": 4
+      }
+    },
+    "fr": {
+      "eligible": 347,
+      "selected": 30,
+      "excluded": {
+        "invalid_line": 100,
+        "triplets_count": 73,
+        "unmapped_or_empty_gold": 2
+      }
+    },
+    "es": {
+      "eligible": 445,
+      "selected": 30,
+      "excluded": {
+        "triplets_count": 73,
+        "unmapped_or_empty_gold": 4
+      }
+    },
+    "ar": {
+      "eligible": 445,
+      "selected": 30,
+      "excluded": {
+        "triplets_count": 73,
+        "unmapped_or_empty_gold": 4
+      }
+    },
+    "zh": {
+      "eligible": 444,
+      "selected": 30,
+      "excluded": {
+        "triplets_count": 69,
+        "length": 5,
+        "unmapped_or_empty_gold": 4
+      }
+    }
+  },
+  "metric_scope": "coarse_category_family_and_sentiment_ONLY",
+  "not_evaluated": [
+    "overall_sentiment",
+    "reported_problem",
+    "customer_suggestion"
+  ]
+}

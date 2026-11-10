@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import math
 import os
 import statistics
 import numpy as np
@@ -83,18 +84,51 @@ WHERE existing.chunk_input_hash IS DISTINCT FROM EXCLUDED.chunk_input_hash
 RETURNING chunk_id
 """
 
-SEARCH_BASE = """
+# Find nearest chunk IDs first; hydrate full review metadata only for final k.
+# The EXISTS guard also excludes vectors whose source chunk changed since indexing.
+# Optional source/product filters MUST be inside this candidate selection, before LIMIT.
+NEAREST_BASE = """
+WITH nearest AS MATERIALIZED (
+    SELECT e.chunk_id, (e.embedding <=> %s::vector(1024)) AS distance
+    FROM public.rag_embeddings AS e
+    WHERE e.tenant_id=%s AND e.model_key=%s
+      AND EXISTS (
+          SELECT 1 FROM public.rag_chunks AS eligible
+          WHERE eligible.tenant_id=e.tenant_id AND eligible.chunk_id=e.chunk_id
+            AND eligible.input_hash=e.chunk_input_hash
+            AND eligible.chunker_version=e.chunker_version
+"""
+
+HYDRATE = """
+)
 SELECT c.chunk_id, c.source, c.review_id, c.chunk_index, c.chunk_text,
        c.start_index, c.end_index, c.company, c.product_id, c.review_date,
        COALESCE(l.language, c.language) AS language,
-       1.0 - (e.embedding <=> %s::vector(1024)) AS similarity
-FROM public.rag_embeddings e
-JOIN public.rag_chunks c ON c.tenant_id=e.tenant_id AND c.chunk_id=e.chunk_id
-LEFT JOIN public.feedback_language l
+       1.0 - nearest.distance AS similarity
+FROM nearest
+JOIN public.rag_chunks AS c ON c.tenant_id=%s AND c.chunk_id=nearest.chunk_id
+LEFT JOIN public.feedback_language AS l
   ON l.tenant_id=c.tenant_id AND l.source=c.source AND l.review_id=c.review_id
  AND l.input_hash=c.review_content_hash
-WHERE e.tenant_id=%s AND e.model_key=%s
+ORDER BY nearest.distance, c.chunk_id
 """
+
+
+def _search_sql(mode: str, *, source: str | None, product_id: str | None) -> str:
+    """Build fixed SQL with value placeholders; never interpolate user input."""
+    query = NEAREST_BASE
+    if source is not None:
+        query += " AND eligible.source=%s\n"
+    if product_id is not None:
+        query += " AND eligible.product_id=%s\n"
+    # pgvector ANN indexes require ORDER BY the bare distance operator.
+    # + 0 disables the ANN index for the *exact* baseline while keeping the
+    # B-tree chunk/tenant indexes available (unlike enable_indexscan=off).
+    distance = "e.embedding <=> %s::vector(1024)"
+    if mode == "exact":
+        distance = f"({distance}) + 0"
+    query += f"      )\n    ORDER BY {distance}\n    LIMIT %s\n"
+    return query + HYDRATE
 
 
 def initialize(conn) -> None:
@@ -120,11 +154,6 @@ def create_hnsw(conn) -> None:
     conn.execute("""CREATE INDEX CONCURRENTLY IF NOT EXISTS rag_embeddings_hnsw_cosine_idx
                     ON public.rag_embeddings USING hnsw
                     (embedding vector_cosine_ops) WITH (m=16, ef_construction=64)""")
-
-
-def _vector_text(values) -> str:
-    """One query vector: 1024 floats; direct adapter is used for batch writes."""
-    return json.dumps(checked_vector(values).tolist(), separators=(",", ":"), allow_nan=False)
 
 
 def sync(conn, tenant: str, embedder: Embedder, *, page_size: int = 64,
@@ -190,32 +219,32 @@ def sync(conn, tenant: str, embedder: Embedder, *, page_size: int = 64,
 def search_vector(conn, tenant: str, query_vector, *, model_key: str,
                   k: int = 10, mode: str = "exact", source: str | None = None,
                   product_id: str | None = None) -> list[dict]:
-    """Read only one authorized tenant; default exact cosine neighbors.
+    """Tenant-scoped search; exact baseline or opt-in HNSW.
 
-    HNSW filtering can reduce recall at small or selective tenants; measure
-    agreement with exact mode before deploying approximate search by default.
+    Tenant/model/source/product and source-hash constraints are applied
+    BEFORE top-k selection; only the final k rows join language metadata.
+    HNSW may return fewer than k with selective filters; compare to exact.
     """
     tenant = validate_tenant(tenant)
     if not 1 <= k <= 100 or mode not in ("exact", "hnsw"):
         raise ValueError("k=1..100; mode exact or hnsw")
     if not isinstance(model_key, str) or not re.fullmatch(r"[0-9a-f]{64}", model_key):
         raise ValueError("model_key must be the registered embedding contract key")
-    vector = _vector_text(query_vector)
-    query, params = SEARCH_BASE, [vector, tenant, model_key]
+    vector = checked_vector(query_vector)   # validated, contiguous float32 ndarray
+    query = _search_sql(mode, source=source, product_id=product_id)
+    params = [vector, tenant, model_key]
     if source is not None:
-        query += " AND c.source=%s"
         params.append(source)
     if product_id is not None:
-        query += " AND c.product_id=%s"
         params.append(product_id)
-    query += " ORDER BY e.embedding <=> %s::vector(1024) LIMIT %s"
-    params.extend((vector, k))
+    params.extend((vector, k, tenant))
 
+    # Register the vector adapter on THIS connection. In production pools,
+    # register once in the pool's configure callback instead.
+    from pgvector.psycopg import register_vector
+    register_vector(conn)
     with tenant_transaction(conn, tenant):
-        if mode == "exact":
-            # Force the exact baseline even if an HNSW index already exists.
-            conn.execute("SET LOCAL enable_indexscan=off")
-        else:
+        if mode == "hnsw":
             present = conn.execute(
                 "SELECT to_regclass('public.rag_embeddings_hnsw_cosine_idx') AS idx"
             ).fetchone()["idx"]
@@ -234,29 +263,34 @@ def search(conn, tenant: str, query: str, embedder: Embedder, **filters) -> list
 def benchmark(conn, tenant: str, query: str, embedder: Embedder, *, k: int = 10,
               repeats: int = 5, source: str | None = None,
               product_id: str | None = None) -> dict:
-    """Compare ANN candidate agreement with exact reference (no relevance labels)."""
+    """Compare ANN agreement with one exact reference (not semantic relevance)."""
     if not 1 <= repeats <= 30:
         raise ValueError("repeats must be between 1 and 30")
     vector = embedder.encode_query(query)
-    results = {}
-    for mode in ("exact", "hnsw"):
-        durations = []
-        last = []
-        for _ in range(repeats):
-            start = time.perf_counter()
-            last = search_vector(conn, tenant, vector, model_key=embedder.spec.model_key,
-                                 k=k, mode=mode, source=source, product_id=product_id)
-            durations.append((time.perf_counter() - start) * 1000)
-        results[mode] = {"count": len(last),
-                         "median_ms": round(statistics.median(durations), 2),
-                         "p95_ms": round(sorted(durations)[max(0, int(repeats * .95 + .95) - 1)], 2),
-                         "chunk_ids": [str(r["chunk_id"]) for r in last]}
-    expected = set(results["exact"]["chunk_ids"])
-    actual = set(results["hnsw"]["chunk_ids"])
-    results["hnsw"]["agreement_with_exact_at_k"] = (
-        round(len(expected & actual) / len(expected), 4) if expected else None
-    )
-    return results
+    kwargs = dict(model_key=embedder.spec.model_key, k=k,
+                  source=source, product_id=product_id)
+    start = time.perf_counter()
+    exact = search_vector(conn, tenant, vector, mode="exact", **kwargs)
+    exact_ms = (time.perf_counter() - start) * 1000
+    durations = []
+    last = []
+    for _ in range(repeats):
+        start = time.perf_counter()
+        last = search_vector(conn, tenant, vector, mode="hnsw", **kwargs)
+        durations.append((time.perf_counter() - start) * 1000)
+    expected = {str(r["chunk_id"]) for r in exact}
+    actual = {str(r["chunk_id"]) for r in last}
+    return {
+        "exact": {"count": len(exact), "latency_ms": round(exact_ms, 2),
+                  "chunk_ids": [str(r["chunk_id"]) for r in exact]},
+        "hnsw": {"count": len(last),
+                 "median_ms": round(statistics.median(durations), 2),
+                 "p95_ms": round(sorted(durations)[math.ceil(.95 * repeats) - 1], 2),
+                 "chunk_ids": [str(r["chunk_id"]) for r in last],
+                 "agreement_with_exact_at_k": (
+                     round(len(expected & actual) / len(expected), 4)
+                     if expected else None)},
+    }
 
 
 def _embedder(args) -> Embedder:

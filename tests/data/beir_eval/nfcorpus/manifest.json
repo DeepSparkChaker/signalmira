@@ -1,0 +1,7 @@
+{
+  "dataset": "nfcorpus",
+  "queries": 100,
+  "documents": 3633,
+  "positive_judgments": 4352,
+  "folder": "tests/data/beir_eval/nfcorpus"
+}

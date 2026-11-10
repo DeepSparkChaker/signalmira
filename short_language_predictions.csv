@@ -1,0 +1,101 @@
+﻿id,language,text,original,margin_0.12,margin_0.10,margin_0.08,margin_0.05,top_candidate,top_score,margin
+ar-01,ar,البطارية ضعيفة.,ar,ar,ar,ar,ar,ARABIC,0.9999,0.9999
+ar-02,ar,التوصيل تأخر.,ar,ar,ar,ar,ar,ARABIC,0.9701,0.9407
+ar-03,ar,المنتج ممتاز.,ar,ar,ar,ar,ar,ARABIC,0.9226,0.8776
+ar-04,ar,خدمة سيئة.,ar,ar,ar,ar,ar,ARABIC,0.9995,0.9991
+ar-05,ar,السعر مرتفع.,ar,ar,ar,ar,ar,ARABIC,0.9896,0.9811
+ar-06,ar,الجودة رائعة.,ar,ar,ar,ar,ar,ARABIC,0.9944,0.9889
+ar-07,ar,لا يعمل.,ar,ar,ar,ar,ar,ARABIC,0.8795,0.7747
+ar-08,ar,أنصح به.,ar,ar,ar,ar,ar,ARABIC,0.9197,0.8410
+ar-09,ar,لا أنصح به.,ar,ar,ar,ar,ar,ARABIC,0.8686,0.7443
+ar-10,ar,وصل مكسوراً.,ar,ar,ar,ar,ar,ARABIC,0.8930,0.7873
+ar-11,ar,التغليف جيد.,ar,ar,ar,ar,ar,ARABIC,0.9959,0.9935
+ar-12,ar,الهاتف بطيء.,ar,ar,ar,ar,ar,ARABIC,0.9409,0.8817
+ar-13,ar,الصوت واضح.,ar,ar,ar,ar,ar,ARABIC,0.8700,0.7431
+ar-14,ar,الصوت منخفض.,ar,ar,ar,ar,ar,ARABIC,0.9972,0.9947
+ar-15,ar,التطبيق يتوقف.,ar,ar,ar,ar,ar,ARABIC,0.9752,0.9505
+ar-16,ar,الدفع فشل.,ar,ar,ar,ar,ar,ARABIC,0.9828,0.9670
+ar-17,ar,الدعم لم يرد.,ar,ar,ar,ar,ar,ARABIC,0.9388,0.9078
+ar-18,ar,الطلب ناقص.,ar,ar,ar,ar,ar,ARABIC,0.9373,0.8828
+ar-19,ar,اللون جميل.,ar,ar,ar,ar,ar,ARABIC,0.9926,0.9859
+ar-20,ar,الحجم صغير.,ar,ar,ar,ar,ar,ARABIC,0.8794,0.7685
+ar-21,ar,الشحن سريع.,ar,ar,ar,ar,ar,ARABIC,0.9793,0.9590
+ar-22,ar,البطارية تنفد بسرعة.,ar,ar,ar,ar,ar,ARABIC,0.9996,0.9991
+ar-23,ar,تجربة ممتازة.,ar,ar,ar,ar,ar,ARABIC,0.9515,0.9045
+ar-24,ar,مخيب للآمال.,ar,ar,ar,ar,ar,ARABIC,0.9863,0.9726
+ar-25,ar,يستحق السعر.,ar,ar,ar,ar,ar,ARABIC,0.9869,0.9766
+ar-26,ar,لا يستحق الثمن.,ar,ar,ar,ar,ar,ARABIC,0.9788,0.9620
+ar-27,ar,وصل قبل الموعد.,ar,ar,ar,ar,ar,ARABIC,0.8720,0.7807
+ar-28,ar,الشاشة مكسورة.,ar,ar,ar,ar,ar,ARABIC,0.9991,0.9982
+ar-29,ar,الاتصال ينقطع.,ar,ar,ar,ar,ar,ARABIC,0.9418,0.9112
+ar-30,ar,سهل الاستخدام.,ar,ar,ar,ar,ar,ARABIC,0.9059,0.8119
+ar-31,ar,التركيب صعب.,ar,ar,ar,ar,ar,ARABIC,0.9745,0.9491
+ar-32,ar,المنتج أصلي.,ar,ar,ar,ar,ar,ARABIC,0.9598,0.9196
+ar-33,ar,اشتريت اثنين.,ar,ar,ar,ar,ar,ARABIC,0.9442,0.8887
+ar-34,ar,سيء جداً.,ar,ar,ar,ar,ar,ARABIC,0.7291,0.4626
+es-01,es,La batería falla.,und,es,es,es,es,SPANISH,0.5152,0.4562
+es-02,es,Entrega muy lenta.,und,es,es,es,es,SPANISH,0.2784,0.2098
+es-03,es,Producto excelente.,und,es,es,es,es,SPANISH,0.3951,0.2716
+es-04,es,Mal servicio.,und,es,es,es,es,SPANISH,0.2673,0.1801
+es-05,es,Demasiado caro.,es,es,es,es,es,SPANISH,0.6162,0.4866
+es-06,es,Buena calidad.,und,es,es,es,es,SPANISH,0.4994,0.2902
+es-07,es,No funciona.,und,und,und,und,und,SPANISH,0.2787,0.0104
+es-08,es,Lo recomiendo.,es,es,es,es,es,SPANISH,0.6881,0.6625
+es-09,es,No lo recomiendo.,es,es,es,es,es,SPANISH,0.7022,0.6761
+es-10,es,Llegó roto.,und,es,es,es,es,SPANISH,0.4445,0.2427
+es-11,es,Buen embalaje.,und,ts,ts,ts,ts,TSONGA,0.2877,0.1848
+es-12,es,El móvil es lento.,und,es,es,es,es,SPANISH,0.2538,0.1586
+es-13,es,Sonido claro.,und,es,es,es,es,SPANISH,0.4530,0.3960
+es-14,es,Sonido muy bajo.,und,es,es,es,es,SPANISH,0.4628,0.4033
+es-15,es,La aplicación falla.,es,es,es,es,es,SPANISH,0.9007,0.8118
+es-16,es,El pago falló.,und,und,und,und,und,SPANISH,0.1931,0.0469
+es-17,es,Sin respuesta.,es,es,es,es,es,SPANISH,0.6473,0.5979
+es-18,es,Faltan piezas.,und,es,es,es,es,SPANISH,0.3944,0.2632
+es-19,es,Color precioso.,und,es,es,es,es,SPANISH,0.4194,0.2425
+es-20,es,Tamaño pequeño.,es,es,es,es,es,SPANISH,0.9903,0.9806
+es-21,es,Carga rápida.,und,es,es,es,es,SPANISH,0.5463,0.1733
+es-22,es,Poca batería.,es,es,es,es,es,SPANISH,0.7311,0.6164
+es-23,es,Muy buena compra.,und,es,es,es,es,SPANISH,0.3710,0.2948
+es-24,es,Una decepción.,es,es,es,es,es,SPANISH,0.7849,0.6998
+es-25,es,Vale la pena.,und,und,und,und,und,TSONGA,0.0698,0.0166
+es-26,es,No vale el precio.,und,und,und,und,es,SPANISH,0.1782,0.0746
+es-27,es,Llegó temprano.,es,es,es,es,es,SPANISH,0.7318,0.6706
+es-28,es,Pantalla rota.,und,und,und,und,und,CATALAN,0.1925,0.0359
+es-29,es,Pierde conexión.,es,es,es,es,es,SPANISH,0.9441,0.9272
+es-30,es,Fácil de usar.,und,und,und,und,es,SPANISH,0.3053,0.0566
+es-31,es,Difícil de instalar.,und,und,und,und,es,SPANISH,0.3768,0.0572
+es-32,es,Es original.,und,und,und,und,und,ESPERANTO,0.0777,0.0089
+es-33,es,Compré dos.,und,fr,fr,fr,fr,FRENCH,0.4014,0.2641
+fr-01,fr,Batterie faible.,und,fr,fr,fr,fr,FRENCH,0.5181,0.3893
+fr-02,fr,Livraison lente.,fr,fr,fr,fr,fr,FRENCH,0.6804,0.6502
+fr-03,fr,Excellent produit.,und,fr,fr,fr,fr,FRENCH,0.3961,0.2803
+fr-04,fr,Service médiocre.,fr,fr,fr,fr,fr,FRENCH,0.6159,0.4584
+fr-05,fr,Trop cher.,und,und,und,und,und,GERMAN,0.0589,0.0022
+fr-06,fr,Bonne qualité.,fr,fr,fr,fr,fr,FRENCH,0.8342,0.8029
+fr-07,fr,Ne fonctionne pas.,fr,fr,fr,fr,fr,FRENCH,0.7919,0.7711
+fr-08,fr,Je recommande.,und,fr,fr,fr,fr,FRENCH,0.3102,0.2241
+fr-09,fr,Je déconseille.,fr,fr,fr,fr,fr,FRENCH,0.9109,0.8655
+fr-10,fr,Arrivé cassé.,fr,fr,fr,fr,fr,FRENCH,0.9700,0.9589
+fr-11,fr,Emballage soigné.,fr,fr,fr,fr,fr,FRENCH,0.8846,0.8594
+fr-12,fr,Téléphone lent.,fr,fr,fr,fr,fr,FRENCH,0.9828,0.9767
+fr-13,fr,Son clair.,und,und,und,und,fr,FRENCH,0.1331,0.0700
+fr-14,fr,Son trop faible.,und,fr,fr,fr,fr,FRENCH,0.2739,0.2053
+fr-15,fr,L’application plante.,und,fr,fr,fr,fr,FRENCH,0.4196,0.1735
+fr-16,fr,Paiement refusé.,fr,fr,fr,fr,fr,FRENCH,0.9357,0.9176
+fr-17,fr,Aucune réponse.,fr,fr,fr,fr,fr,FRENCH,0.9787,0.9714
+fr-18,fr,Pièces manquantes.,fr,fr,fr,fr,fr,FRENCH,0.9585,0.9217
+fr-19,fr,Belle couleur.,fr,fr,fr,fr,fr,FRENCH,0.8220,0.7909
+fr-20,fr,Taille trop petite.,und,fr,fr,fr,fr,FRENCH,0.4919,0.3983
+fr-21,fr,Charge rapide.,und,fr,fr,fr,fr,FRENCH,0.2894,0.1947
+fr-22,fr,Batterie décevante.,fr,fr,fr,fr,fr,FRENCH,0.7170,0.4870
+fr-23,fr,Très bon achat.,und,fr,fr,fr,fr,FRENCH,0.3031,0.2196
+fr-24,fr,Quelle déception.,fr,fr,fr,fr,fr,FRENCH,0.9348,0.8984
+fr-25,fr,Ça vaut le coup.,und,fr,fr,fr,fr,FRENCH,0.2191,0.1680
+fr-26,fr,Prix injustifié.,fr,fr,fr,fr,fr,FRENCH,0.5800,0.4375
+fr-27,fr,Livré en avance.,fr,fr,fr,fr,fr,FRENCH,0.7513,0.6520
+fr-28,fr,Écran fissuré.,fr,fr,fr,fr,fr,FRENCH,0.9007,0.8417
+fr-29,fr,Connexion instable.,und,fr,fr,fr,fr,FRENCH,0.4074,0.1897
+fr-30,fr,Facile à utiliser.,und,fr,fr,fr,fr,FRENCH,0.4795,0.3838
+fr-31,fr,Installation difficile.,fr,fr,fr,fr,fr,FRENCH,0.7676,0.6583
+fr-32,fr,Produit authentique.,fr,fr,fr,fr,fr,FRENCH,0.6410,0.5432
+fr-33,fr,J’en ai acheté deux.,fr,fr,fr,fr,fr,FRENCH,0.5778,0.5402

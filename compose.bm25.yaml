@@ -1,0 +1,12 @@
+services:
+  db:
+    build:
+      context: .
+      dockerfile: Dockerfile.pg-bm25
+
+    image: signalmira/postgres-bm25:pg17-v1.5.1
+
+    command:
+      - postgres
+      - -c
+      - shared_preload_libraries=pg_textsearch

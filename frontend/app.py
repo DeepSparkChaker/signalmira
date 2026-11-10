@@ -16,6 +16,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parents[1]))
 import streamlit as st
 from frontend import service
 from frontend.prepare_models import ner_ready
+from frontend.retrieval_lab import LabConfig, EMBEDDING_REVISION, SAMPLE_QUERY, SAMPLE_REVIEW_ID, SAMPLE_REVIEW_TEXT, warm_selected, search_lab
 
 
 st.set_page_config(page_title="SignalMira", page_icon="◈", layout="wide")
@@ -89,6 +90,12 @@ def get_overview(tenant: str):
     return service.overview(tenant)
 
 
+@st.cache_resource(max_entries=1, show_spinner=False)
+def retrieval_worker(config: LabConfig):
+    """One global, thread-safe embedder + selected reranker per app process."""
+    return warm_selected(config)
+
+
 st.title("◈ SignalMira")
 st.caption("Customer feedback → clear, actionable signals")
 
@@ -102,9 +109,32 @@ st.caption("Local preview · tenant dropdown is not authentication")
 
 # Keep each workspace's cached UI results separate.
 if st.session_state.get("_workspace") != tenant:
-    for key in ("stats", "rows", "analysis", "review_input"):
+    for key in ("stats", "rows", "analysis", "review_input", "retrieval_output"):
         st.session_state.pop(key, None)
     st.session_state["_workspace"] = tenant
+
+# First Streamlit page execution blocks here until the selected GPU models
+# are warm; subsequent reruns/sessions reuse them. Strict HTTP readiness
+# before the first connection requires FastAPI lifespan (future milestone).
+lab_models = None
+lab_problem = None
+lab_enabled = os.getenv("SIGNALMIRA_RETRIEVAL_LAB", "1") == "1"
+if lab_enabled:
+    try:
+        model_choice = os.getenv("SIGNALMIRA_RERANKER_MODEL", "qwen").strip().lower()
+        lab_config = LabConfig(
+            embedding_revision=os.getenv("SIGNALMIRA_EMBEDDING_SHA", "") or EMBEDDING_REVISION,
+            reranker_model=model_choice,
+            reranker_revision=os.getenv("SIGNALMIRA_RERANKER_SHA", ""),
+            device=os.getenv("SIGNALMIRA_MODEL_DEVICE", "cuda"),
+            timeout_s=float(os.getenv("SIGNALMIRA_RERANK_TIMEOUT", "10")),
+        )
+        with st.spinner(f"Warming Qwen embeddings + {model_choice} reranker (selected only)…"):
+            lab_models = retrieval_worker(lab_config)
+    except Exception as exc:
+        lab_problem = str(exc)
+        # Existing review browser and NER panels remain available.
+        st.warning(f"Retrieval Lab disabled: {lab_problem}")
 
 if os.getenv("SIGNALMIRA_PREWARM", "0") == "1":
     try:
@@ -369,3 +399,86 @@ if state and state[:5] == (tenant, text, profile, device, opinions):
 
 st.caption("Local MVP · Existing PostgreSQL/NLP engines · Future service layer: FastAPI")
 
+
+
+
+st.divider()
+st.subheader("Retrieval Lab · BM25 + dense + RRF + reranker")
+st.caption("Read-only local evaluation. The question is not saved. Models are shared across reruns; database reads are tenant-scoped.")
+if not lab_enabled:
+    st.info("Set SIGNALMIRA_RETRIEVAL_LAB=1 to enable this lab.")
+elif lab_models is None:
+    st.error("Retrieval models unavailable. Set SIGNALMIRA_RERANKER_SHA to the selected model's pinned SHA and check local model snapshots.")
+else:
+    embedder, ranker, warmup = lab_models
+    st.caption(
+        f"Warm: Qwen embedding + {lab_config.reranker_model} | "
+        f"Startup: embed {warmup['embedding_warmup_ms'] / 1000:.1f}s, "
+        f"rerank {warmup['reranker_warmup_ms'] / 1000:.1f}s"
+    )
+    with st.form("retrieval_lab_form"):
+        rag_query = st.text_input("Search customer feedback", value=SAMPLE_QUERY, max_chars=2048)
+        rc1, rc2, rc3 = st.columns(3)
+        lexical = rc1.selectbox("Lexical search", ["bm25", "fts"])
+        retrieval_mode = rc2.selectbox("Dense mode", ["exact", "hnsw"])
+        only_source = rc3.text_input("Source filter (optional)", value="uci-amazon", max_chars=120)
+        accept_idf = st.checkbox("Allow shared BM25 corpus statistics (LOCAL demo only)", value=False,
+                                 help="Required for the pg_textsearch backend; not strict corpus-level tenant isolation.")
+        run_retrieval = st.form_submit_button("Search and compare top 8", type="primary")
+    if run_retrieval:
+        st.session_state.pop("retrieval_output", None)
+        try:
+            service.guard(tenant)
+            if lexical == "bm25" and not accept_idf:
+                raise ValueError("Enable the shared BM25 statistics checkbox, or select FTS.")
+            with st.spinner("Retrieving and reranking…"):
+                with service.connect() as conn:
+                    report = search_lab(
+                        conn, tenant, rag_query, embedder, ranker,
+                        lexical_backend=lexical, allow_shared_idf=accept_idf,
+                        mode=retrieval_mode, source=only_source.strip() or None,
+                    )
+            st.session_state["retrieval_output"] = (tenant, report)
+        except Exception as exc:
+            st.error(f"Retrieval failed: {type(exc).__name__}: {exc}")
+    saved = st.session_state.get("retrieval_output")
+    if saved and saved[0] == tenant:
+        report = saved[1]
+        if report["status"] == "rrf_fallback":
+            st.warning(f"Reranker fallback to RRF: {report['reason']}")
+        a, b, c, d = st.columns(4)
+        a.metric("Embedding", f"{report['embedding_ms']:.0f} ms")
+        b.metric("PostgreSQL hybrid", f"{report['postgres_ms']:.0f} ms")
+        c.metric("Rerank", f"{report['rerank_ms']:.0f} ms")
+        d.metric("Candidates", report["candidate_count"])
+        st.caption(f"Status: {report['status']} · measured total {report['total_ms']:.0f} ms (excludes Streamlit render)")
+        reference_found = any(row.get("review_id") == SAMPLE_REVIEW_ID for row in report["results"])
+        if report["query"] == SAMPLE_QUERY:
+            if reference_found:
+                st.success(f"Reference review {SAMPLE_REVIEW_ID} appears in the top 8.")
+            else:
+                st.info(f"Reference review {SAMPLE_REVIEW_ID} is not in this top 8; inspect filters/indexes and rankings.")
+            st.caption(f"Reference review: ‘{SAMPLE_REVIEW_TEXT}’")
+        left, right = st.columns(2)
+        def rows_for_display(items):
+            return [{
+                "RRF rank": hit.get("rrf_rank"),
+                "Review": hit.get("review_id"),
+                "Text": hit.get("chunk_text"),
+                "Rerank score": round(float(hit["rerank_score"]), 3)
+                                if hit.get("rerank_score") is not None else None,
+                "Dense rank": hit.get("dense_rank"),
+                "BM25 rank": hit.get("sparse_rank"),
+            } for hit in items]
+        with left:
+            st.markdown("**Original RRF top 8**")
+            st.dataframe(rows_for_display(report["rrf_top8"]), hide_index=True, use_container_width=True)
+        with right:
+            st.markdown("**After Qwen/BGE reranking — top 8**")
+            st.dataframe(rows_for_display(report["results"]), hide_index=True, use_container_width=True)
+        with st.expander("Inspect exact source chunks and IDs"):
+            for i, hit in enumerate(report["results"], start=1):
+                st.markdown(f"**{i}. {hit.get('review_id', '—')}** · chunk `{hit.get('chunk_id', '')}`")
+                st.write(hit.get("chunk_text", ""))
+                st.caption(f"RRF rank: {hit.get('rrf_rank')} · RRF score: {hit.get('rrf_score')} · "
+                           f"rerank score: {hit.get('rerank_score', '—')}")

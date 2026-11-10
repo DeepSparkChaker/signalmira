@@ -1,0 +1,1001 @@
+id,language,length_group,char_length,text,top_language,top_score,runner_up,margin,original_0.57_0.12,margin_0.12,margin_0.10,margin_0.05
+fr-medium-039,fr,medium,78,Le service client a résolu le problème. L’installation ne demande aucun outil.,fr,0.99171,en,0.98959,fr,fr,fr,fr
+ar-very_long-039,ar,very_long,207,الخامات أضعف مما توقعت عند الشراء. الشاشة واضحة حتى تحت ضوء الشمس. جودة الصوت ممتازة مقارنة بالسعر. اضطررت للتواصل مع خدمة العملاء مرتين. تم التركيب دون الحاجة إلى أدوات. انخفض الأداء بعد أسبوع من الاستخدام.,ar,1.00000,ur,1.00000,ar,ar,ar,ar
+en-long-038,en,long,156,Installation required no extra tools. The charging cable stopped working. The instructions skipped an important step. I would recommend it for everyday use.,en,1.00000,fr,1.00000,en,en,en,en
+en-very_short-046,en,very_short,25,Instructions are unclear.,en,0.64221,fr,0.55680,en,en,en,en
+es-very_short-019,es,very_short,14,Se apaga solo.,tn,0.19977,tl,0.11972,und,und,tn,tn
+fr-very_short-011,fr,very_short,13,Achat rapide.,fr,0.17132,eo,0.09037,und,und,und,fr
+fr-short-038,fr,short,31,Arrivé cassé. Équipe serviable.,fr,0.98249,pt,0.97811,fr,fr,fr,fr
+en-very_short-017,en,very_short,17,Charging is slow.,en,0.31941,tl,0.24925,und,en,en,en
+en-medium-040,en,medium,64,Performance dropped after a week. The material is easy to clean.,en,0.68739,da,0.60270,en,en,en,en
+en-medium-016,en,medium,65,I received a different color. Shipping updates were not accurate.,en,0.95052,tl,0.93570,en,en,en,en
+ar-medium-033,ar,medium,98,حجم المنتج أصغر مما توحي به الصور. توقف سلك الشحن عن العمل بعد أيام. كانت تحديثات الشحن غير دقيقة.,ar,0.99911,fa,0.99821,ar,ar,ar,ar
+ar-long-021,ar,long,128,ظهر العطل نفسه في الجهاز البديل. توقف الجهاز أثناء الإعداد الأول. كانت إجراءات الإرجاع معقدة ومزعجة. وهذا أمر مزعج في منتج جديد.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_short-017,es,very_short,14,Diseño bonito.,es,0.96230,eu,0.92460,es,es,es,es
+es-very_long-005,es,very_long,289,El vendedor respondió en menos de una hora. Las notificaciones de envío eran incorrectas. El rendimiento empeoró después de una semana. Se bloqueó durante la instalación. La pantalla se ve bien incluso con sol. Me cobraron dos veces por error. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+en-short-034,en,short,34,Good value. Product arrived early.,en,0.82262,tl,0.78945,en,en,en,en
+ar-very_short-030,ar,very_short,11,يعمل بثبات.,ar,0.99571,fa,0.99176,ar,ar,ar,ar
+en-very_long-005,en,very_long,282,The battery charges much faster now. The refund process was confusing. The packaging protected everything inside. The product feels comfortable for long sessions. It works well with my older laptop. The package arrived earlier than promised. The replacement unit had the same issue.,en,1.00000,da,1.00000,en,en,en,en
+fr-medium-029,fr,medium,80,Le microphone capte trop de bruit. La connexion avec mon téléphone était facile.,fr,0.98419,eo,0.98135,fr,fr,fr,fr
+ar-very_short-040,ar,very_short,15,الوصف غير دقيق.,ar,0.79104,fa,0.58434,ar,ar,ar,ar
+ar-short-046,ar,short,26,جودة رائعة. سهل الاستخدام.,ar,0.99742,fa,0.99557,ar,ar,ar,ar
+en-medium-007,en,medium,71,The charging cable stopped working. It stopped responding during setup.,en,0.88170,tl,0.84138,en,en,en,en
+ar-long-022,ar,long,120,تم التركيب دون الحاجة إلى أدوات. يعمل بشكل جيد مع حاسوبي القديم. من الصعب الضغط على الأزرار. وهذا أمر مزعج في منتج جديد.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+ar-long-041,ar,long,103,رد البائع على رسالتي خلال ساعة. الخامات أضعف مما توقعت عند الشراء. انخفض الأداء بعد أسبوع من الاستخدام.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-medium-036,fr,medium,69,Le son est excellent pour ce prix. Le microphone capte trop de bruit.,fr,0.61979,en,0.49182,fr,fr,fr,fr
+fr-very_short-048,fr,very_short,16,Mieux que prévu.,fr,0.94887,pt,0.93770,fr,fr,fr,fr
+es-short-003,es,short,30,No conecta. Se calienta mucho.,es,0.57484,pt,0.48114,es,es,es,es
+en-long-027,en,long,105,The refund process was confusing. The charging cable stopped working. It works well with my older laptop.,en,0.93815,tl,0.92314,en,en,en,en
+en-short-049,en,short,34,Not worth buying. Easy to install.,en,0.50268,tl,0.41830,und,en,en,en
+es-very_long-007,es,very_long,229,La entrega se retrasó varios días. Cuesta bastante pulsar los botones. Se bloqueó durante la instalación. El sonido es excelente para este precio. Los materiales parecen demasiado frágiles. Funciona bien con mi ordenador antiguo.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_short-031,ar,very_short,10,وصل مبكرا.,ar,0.97770,fa,0.95753,ar,ar,ar,ar
+fr-very_short-009,fr,very_short,17,Très confortable.,fr,0.95873,yo,0.93682,fr,fr,fr,fr
+es-very_short-007,es,very_short,14,Buena calidad.,es,0.49941,pt,0.29018,und,es,es,es
+fr-long-009,fr,long,124,Le vendeur a répondu en moins d’une heure. Le service client a résolu le problème. Il fonctionne avec mon ancien ordinateur.,fr,0.99989,nl,0.99987,fr,fr,fr,fr
+ar-short-021,ar,short,32,لا يتصل بالشبكة. لا يستحق السعر.,ar,0.99924,fa,0.99858,ar,ar,ar,ar
+fr-very_long-015,fr,very_long,220,J’ai reçu la mauvaise couleur. La batterie est vide avant la fin de la journée. Les performances ont baissé après une semaine. La livraison a pris plusieurs jours de retard. J’ai dû contacter le service client deux fois.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+en-very_long-013,en,very_long,209,I would recommend it for everyday use. The product is smaller than the photos suggest. The instructions skipped an important step. The packaging protected everything inside. The seller answered within an hour.,en,1.00000,fr,1.00000,en,en,en,en
+ar-short-025,ar,short,28,الحجم غير مناسب. قطعة ناقصة.,ar,0.96929,fa,0.94933,ar,ar,ar,ar
+es-medium-035,es,medium,93,Tuve que escribir al servicio técnico dos veces. Las instrucciones omiten un paso importante.,es,0.99288,pt,0.98924,es,es,es,es
+en-very_long-047,en,very_long,272,The product is smaller than the photos suggest. The instructions skipped an important step. Installation required no extra tools. I received a different color. The replacement unit had the same issue. It works well with my older laptop. The buttons are difficult to press.,en,1.00000,nl,1.00000,en,en,en,en
+fr-long-030,fr,long,128,J’ai dû contacter le service client deux fois. La livraison a pris plusieurs jours de retard. Le microphone capte trop de bruit.,fr,0.99402,en,0.98899,fr,fr,fr,fr
+ar-very_long-011,ar,very_long,201,وصل الصندوق متضررا بشكل واضح. توقف سلك الشحن عن العمل بعد أيام. جودة الصوت ممتازة مقارنة بالسعر. اضطررت للتواصل مع خدمة العملاء مرتين. يبقى الجهاز مريحا حتى بعد ساعات. ولاحظت الفرق منذ الاستخدام الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-medium-043,fr,medium,87,L’emballage a bien protégé le produit. Le produit paraît plus petit que sur les photos.,fr,0.97004,tl,0.96428,fr,fr,fr,fr
+es-short-040,es,short,29,Compra rápida. Se apaga solo.,es,0.40887,pt,0.05248,und,und,und,es
+ar-medium-014,ar,medium,98,توقف الجهاز أثناء الإعداد الأول. رد البائع على رسالتي خلال ساعة. توقف سلك الشحن عن العمل بعد أيام.,ar,0.99992,fa,0.99985,ar,ar,ar,ar
+en-very_long-043,en,very_long,231,It stopped responding during setup. The buttons are difficult to press. It works well with my older laptop. The replacement unit had the same issue. Customer support resolved the issue. and the experience improved after the update.,en,1.00000,tl,1.00000,en,en,en,en
+ar-medium-021,ar,medium,62,ساعدني الدعم في حل المشكلة. الخامات أضعف مما توقعت عند الشراء.,ar,0.99993,fa,0.99986,ar,ar,ar,ar
+en-long-017,en,long,124,The product is smaller than the photos suggest. The screen is bright enough outdoors. I would recommend it for everyday use.,en,0.99041,tl,0.98600,en,en,en,en
+ar-very_long-020,ar,very_long,209,الشاشة واضحة حتى تحت ضوء الشمس. تم خصم المبلغ مرتين عن طريق الخطأ. أصبحت البطارية تشحن بسرعة أكبر. تأخر التسليم عدة أيام إضافية. توقف سلك الشحن عن العمل بعد أيام. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_long-019,ar,very_long,227,نفدت البطارية قبل نهاية اليوم. يلتقط الميكروفون الكثير من الضوضاء. يعمل بشكل جيد مع حاسوبي القديم. يبقى الجهاز مريحا حتى بعد ساعات. توقف الجهاز أثناء الإعداد الأول. وصل الصندوق متضررا بشكل واضح. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_short-033,es,very_short,11,Hace ruido.,es,0.40589,pt,0.31769,und,es,es,es
+ar-short-009,ar,short,28,سهل الاستخدام. يستحق الشراء.,ar,0.98972,fa,0.97972,ar,ar,ar,ar
+es-short-023,es,short,30,Muy cómodo. Pedido equivocado.,es,0.87162,pt,0.75340,es,es,es,es
+ar-medium-027,ar,medium,100,حافظ التغليف على المنتج من التلف. كانت إجراءات الإرجاع معقدة ومزعجة. رد البائع على رسالتي خلال ساعة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-047,en,short,35,Wrong item sent. Excellent support.,en,0.29308,fr,0.14975,und,en,en,en
+en-short-021,en,short,42,Bad customer service. Amazing performance.,en,0.56910,tl,0.49315,und,en,en,en
+en-short-012,en,short,38,No instructions. Really disappointing.,en,0.88773,tl,0.81319,en,en,en,en
+ar-long-019,ar,long,131,توقف الجهاز أثناء الإعداد الأول. نفدت البطارية قبل نهاية اليوم. يبقى الجهاز مريحا حتى بعد ساعات. وبشكل عام أنا راض عن عملية الشراء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-008,es,medium,90,La atención al cliente resolvió el problema. El rendimiento empeoró después de una semana.,es,0.99810,pt,0.99698,es,es,es,es
+fr-short-028,fr,short,34,Très solide. Connexion impossible.,fr,0.60139,ca,0.24577,fr,fr,fr,fr
+fr-short-036,fr,short,35,Ventilateur bruyant. Aucune notice.,fr,0.91233,tl,0.89443,fr,fr,fr,fr
+es-short-036,es,short,33,Se apaga solo. Parece de calidad.,es,0.51868,pt,0.12867,und,es,es,es
+es-very_short-021,es,very_short,20,La aplicación falla.,es,0.90067,ca,0.81183,es,es,es,es
+es-long-010,es,long,155,Resulta cómodo durante varias horas. Las instrucciones omiten un paso importante. Se bloqueó durante la instalación. La caja llegó completamente aplastada.,es,1.00000,ca,1.00000,es,es,es,es
+en-short-024,en,short,31,Feels premium. Works perfectly.,en,0.58093,tl,0.52616,en,en,en,en
+es-very_short-048,es,very_short,21,Mejor de lo esperado.,es,0.60836,pt,0.49897,es,es,es,es
+es-very_short-031,es,very_short,15,Llegó temprano.,es,0.73180,pl,0.67064,es,es,es,es
+es-short-046,es,short,34,Servicio excelente. Diseño bonito.,es,0.83461,pt,0.80693,es,es,es,es
+fr-very_long-031,fr,very_long,303,La connexion avec mon téléphone était facile. Le son est excellent pour ce prix. Il reste confortable même après plusieurs heures. La livraison a pris plusieurs jours de retard. La surface est facile à nettoyer. Le vendeur a répondu en moins d’une heure. La batterie est vide avant la fin de la journée.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+en-very_short-034,en,very_short,18,The buttons stick.,en,0.17424,de,0.06576,und,und,und,en
+fr-medium-005,fr,medium,77,Le carton était écrasé à la livraison. L’installation ne demande aucun outil.,fr,0.99781,en,0.99706,fr,fr,fr,fr
+en-short-027,en,short,35,The app freezes. Excellent support.,en,0.42640,fr,0.33759,und,en,en,en
+ar-very_long-021,ar,very_long,224,تم التركيب دون الحاجة إلى أدوات. تأخر التسليم عدة أيام إضافية. توقف الجهاز أثناء الإعداد الأول. رد البائع على رسالتي خلال ساعة. أصبحت البطارية تشحن بسرعة أكبر. وتحسن الوضع بعد تحديث البرنامج. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_long-011,en,very_long,240,The screen is bright enough outdoors. The seller answered within an hour. I had to contact support twice. The instructions skipped an important step. Audio quality is excellent for the price. but the initial setup took longer than expected.,en,1.00000,tl,1.00000,en,en,en,en
+es-short-015,es,short,36,Compra rápida. La batería dura poco.,es,0.75305,pt,0.57933,es,es,es,es
+en-long-019,en,long,190,I had to contact support twice. The instructions skipped an important step. Shipping updates were not accurate. I received a different color. The product feels comfortable for long sessions.,en,1.00000,fr,1.00000,en,en,en,en
+ar-medium-009,ar,medium,65,نفدت البطارية قبل نهاية اليوم. الخامات أضعف مما توقعت عند الشراء.,ar,0.99997,fa,0.99993,ar,ar,ar,ar
+en-long-003,en,long,141,Delivery took several extra days. Customer support resolved the issue. The refund process was confusing. The battery charges much faster now.,en,0.99339,tl,0.98824,en,en,en,en
+ar-medium-019,ar,medium,92,ظهر العطل نفسه في الجهاز البديل. تم خصم المبلغ مرتين عن طريق الخطأ. يمكن تنظيف السطح بسهولة.,ar,0.99953,fa,0.99906,ar,ar,ar,ar
+fr-very_long-011,fr,very_long,269,Il fonctionne avec mon ancien ordinateur. La connexion avec mon téléphone était facile. J’ai dû contacter le service client deux fois. Le produit de remplacement avait le même défaut. Les performances ont baissé après une semaine. La notice oublie une étape importante.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-short-012,ar,short,27,الوصف غير دقيق. قطعة ناقصة.,ar,0.98528,fa,0.97188,ar,ar,ar,ar
+en-very_short-026,en,very_short,12,Never again.,en,0.33004,nl,0.25990,und,en,en,en
+ar-short-006,ar,short,28,تجربة مخيبة. لا يستحق السعر.,ar,0.99724,ur,0.99472,ar,ar,ar,ar
+ar-very_long-003,ar,very_long,209,وصل الصندوق متضررا بشكل واضح. يمكن تنظيف السطح بسهولة. أنصح به للاستخدام اليومي. جودة الصوت ممتازة مقارنة بالسعر. حافظ التغليف على المنتج من التلف. ولاحظت الفرق منذ الاستخدام الأول. وهذا أمر مزعج في منتج جديد.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-long-004,es,long,126,El embalaje protegió bien el producto. El micrófono capta demasiado ruido. El producto de sustitución tenía el mismo problema.,es,0.99958,pt,0.99932,es,es,es,es
+ar-very_short-002,ar,very_short,14,التوصيل متأخر.,ar,0.97083,fa,0.94177,ar,ar,ar,ar
+fr-very_short-012,fr,very_short,25,Bon rapport qualité-prix.,fr,0.76936,nb,0.73837,fr,fr,fr,fr
+ar-short-034,ar,short,32,البطارية ضعيفة. الدليل غير واضح.,ar,0.99956,fa,0.99911,ar,ar,ar,ar
+es-long-002,es,long,200,Me cobraron dos veces por error. El embalaje protegió bien el producto. Las notificaciones de envío eran incorrectas. La atención al cliente resolvió el problema. El proceso de devolución fue confuso.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_long-015,en,very_long,230,Audio quality is excellent for the price. Customer support resolved the issue. It stopped responding during setup. I received a different color. The packaging protected everything inside. so I would choose another model next time.,en,1.00000,tl,1.00000,en,en,en,en
+en-medium-047,en,medium,60,I received a different color. The material is easy to clean.,en,0.84128,yo,0.81821,en,en,en,en
+es-short-027,es,short,36,No encaja bien. La aplicación falla.,es,0.93356,ca,0.89400,es,es,es,es
+ar-very_long-029,ar,very_long,213,اضطررت للتواصل مع خدمة العملاء مرتين. الشاشة واضحة حتى تحت ضوء الشمس. يلتقط الميكروفون الكثير من الضوضاء. وصل الصندوق متضررا بشكل واضح. وصلني لون مختلف عن الذي طلبته. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-029,en,short,34,Arrived damaged. A complete waste.,en,0.59658,it,0.54642,en,en,en,en
+en-medium-043,en,medium,71,The buttons are difficult to press. It works well with my older laptop.,en,0.68642,tl,0.65063,en,en,en,en
+es-medium-004,es,medium,68,Me cobraron dos veces por error. La superficie se limpia fácilmente.,es,0.89432,pt,0.84020,es,es,es,es
+fr-medium-013,fr,medium,94,Les matériaux semblent plus fragiles que prévu. J’ai dû contacter le service client deux fois.,fr,0.99516,pt,0.99268,fr,fr,fr,fr
+ar-medium-034,ar,medium,60,كانت إجراءات الإرجاع معقدة ومزعجة. أنصح به للاستخدام اليومي.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+es-long-049,es,long,146,Tuve que escribir al servicio técnico dos veces. El producto de sustitución tenía el mismo problema. La batería se agotó antes de terminar el día.,es,0.99967,pt,0.99944,es,es,es,es
+fr-very_long-027,fr,very_long,210,Il reste confortable même après plusieurs heures. Le son est excellent pour ce prix. L’emballage a bien protégé le produit. L’installation ne demande aucun outil. Les matériaux semblent plus fragiles que prévu.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+es-short-035,es,short,28,Sonido claro. Una decepción.,es,0.88246,yo,0.86068,es,es,es,es
+es-very_short-039,es,very_short,15,Muy resistente.,es,0.31103,pt,0.25796,und,es,es,es
+ar-very_long-009,ar,very_long,231,يلتقط الميكروفون الكثير من الضوضاء. وصلني لون مختلف عن الذي طلبته. تم التركيب دون الحاجة إلى أدوات. تأخر التسليم عدة أيام إضافية. الخامات أضعف مما توقعت عند الشراء. توقف سلك الشحن عن العمل بعد أيام. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-long-031,ar,long,129,اضطررت للتواصل مع خدمة العملاء مرتين. من الصعب الضغط على الأزرار. ساعدني الدعم في حل المشكلة. يلتقط الميكروفون الكثير من الضوضاء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-medium-002,ar,medium,89,يمكن تنظيف السطح بسهولة. ساعدني الدعم في حل المشكلة. انخفض الأداء بعد أسبوع من الاستخدام.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-long-037,es,long,119,Las instrucciones omiten un paso importante. El cable de carga dejó de funcionar. El tamaño es menor de lo que parecía.,es,0.99293,ca,0.98744,es,es,es,es
+en-long-025,en,long,180,I would recommend it for everyday use. Customer support resolved the issue. The box was crushed when it arrived. The buttons are difficult to press. I had to contact support twice.,en,1.00000,tl,1.00000,en,en,en,en
+fr-short-049,fr,short,30,Très élégant. Mieux que prévu.,fr,0.99370,yo,0.98919,fr,fr,fr,fr
+es-medium-025,es,medium,87,Los materiales parecen demasiado frágiles. Las instrucciones omiten un paso importante.,es,0.99500,pt,0.99120,es,es,es,es
+en-very_long-023,en,very_long,232,The seller answered within an hour. The battery lasted less than a day. Shipping updates were not accurate. The microphone picks up background noise. I would recommend it for everyday use. The instructions skipped an important step.,en,1.00000,da,1.00000,en,en,en,en
+en-very_long-050,en,very_long,224,Shipping updates were not accurate. The material is easy to clean. The product is smaller than the photos suggest. The battery lasted less than a day. The seller answered within an hour. Installation required no extra tools.,en,1.00000,tl,1.00000,en,en,en,en
+ar-very_long-016,ar,very_long,231,تم التركيب دون الحاجة إلى أدوات. أصبحت البطارية تشحن بسرعة أكبر. كانت إجراءات الإرجاع معقدة ومزعجة. انخفض الأداء بعد أسبوع من الاستخدام. يعمل بشكل جيد مع حاسوبي القديم. وصل الصندوق متضررا بشكل واضح. ظهر العطل نفسه في الجهاز البديل.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-036,ar,very_short,16,الميكروفون ضعيف.,ar,0.92223,fa,0.84473,ar,ar,ar,ar
+fr-medium-026,fr,medium,88,La batterie est vide avant la fin de la journée. Le service client a résolu le problème.,fr,0.96543,it,0.96092,fr,fr,fr,fr
+fr-very_long-001,fr,very_long,239,Il fonctionne avec mon ancien ordinateur. La surface est facile à nettoyer. L’appareil s’est bloqué pendant la configuration. Le son est excellent pour ce prix. La notice oublie une étape importante. j’ai donc demandé de l’aide au vendeur.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-very_long-030,ar,very_long,227,جودة الصوت ممتازة مقارنة بالسعر. وصلني لون مختلف عن الذي طلبته. يعمل بشكل جيد مع حاسوبي القديم. حافظ التغليف على المنتج من التلف. تم خصم المبلغ مرتين عن طريق الخطأ. كانت تحديثات الشحن غير دقيقة. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-011,ar,very_short,10,شراء سريع.,ar,0.96435,fa,0.92960,ar,ar,ar,ar
+en-very_short-044,en,very_short,20,Package was missing.,en,0.33089,tl,0.24317,und,en,en,en
+en-very_short-040,en,very_short,16,Wrong item sent.,en,0.09992,tl,0.02757,und,und,und,und
+en-long-044,en,long,197,The replacement unit had the same issue. I was charged twice by mistake. The battery charges much faster now. I would recommend it for everyday use. The product feels comfortable for long sessions.,en,1.00000,fr,1.00000,en,en,en,en
+en-very_short-018,en,very_short,21,Really disappointing.,en,0.75909,tl,0.62509,en,en,en,en
+es-very_long-021,es,very_long,233,Lo recomendaría para el uso diario. Funciona bien con mi ordenador antiguo. El micrófono capta demasiado ruido. Resulta cómodo durante varias horas. La instalación no necesitó herramientas. aunque todavía no sé si lo voy a conservar.,es,1.00000,pt,1.00000,es,es,es,es
+fr-very_long-036,fr,very_long,208,Le suivi de livraison était incorrect. Le carton était écrasé à la livraison. Je le recommande pour un usage quotidien. Le produit de remplacement avait le même défaut. Le colis est arrivé plus tôt que prévu.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+en-short-008,en,short,33,"So far, so good. Nothing special.",en,0.29571,tl,0.22464,und,en,en,en
+en-medium-028,en,medium,89,Pairing it with my phone was surprisingly easy. The materials feel thinner than expected.,en,0.95355,tl,0.93127,en,en,en,en
+es-long-018,es,long,123,La pantalla se ve bien incluso con sol. El tamaño es menor de lo que parecía. La batería se agotó antes de terminar el día.,es,0.99276,ca,0.98960,es,es,es,es
+fr-very_long-013,fr,very_long,247,Le service client a résolu le problème. L’appareil s’est bloqué pendant la configuration. Il fonctionne avec mon ancien ordinateur. La surface est facile à nettoyer. Le microphone capte trop de bruit. J’ai dû contacter le service client deux fois.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+en-short-015,en,short,36,Hard to connect. Screen looks sharp.,en,0.48622,nn,0.41880,und,en,en,en
+ar-very_long-008,ar,very_long,238,يلتقط الميكروفون الكثير من الضوضاء. توقف الجهاز أثناء الإعداد الأول. تفتقد التعليمات خطوة مهمة للتركيب. جودة الصوت ممتازة مقارنة بالسعر. كان ربط الجهاز بالهاتف سهلا للغاية. تم خصم المبلغ مرتين عن طريق الخطأ. وصلني لون مختلف عن الذي طلبته.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-long-040,fr,long,111,J’ai été facturé deux fois par erreur. La surface est facile à nettoyer. Le carton était écrasé à la livraison.,fr,0.99932,eo,0.99916,fr,fr,fr,fr
+en-very_short-036,en,very_short,13,Smooth setup.,en,0.28230,st,0.17141,und,en,en,en
+en-very_long-018,en,very_long,233,The buttons are difficult to press. It works well with my older laptop. The product feels comfortable for long sessions. Performance dropped after a week. The battery charges much faster now. and I noticed the difference immediately.,en,1.00000,da,1.00000,en,en,en,en
+en-medium-029,en,medium,73,Installation required no extra tools. Shipping updates were not accurate.,en,0.93633,tl,0.91884,en,en,en,en
+fr-medium-009,fr,medium,77,Le suivi de livraison était incorrect. L’installation ne demande aucun outil.,fr,0.99829,en,0.99710,fr,fr,fr,fr
+es-medium-005,es,medium,77,El cable de carga dejó de funcionar. Conectarlo al teléfono fue muy sencillo.,es,0.99277,ca,0.98827,es,es,es,es
+fr-medium-040,fr,medium,70,J’ai reçu la mauvaise couleur. Le service client a résolu le problème.,fr,0.99664,ca,0.99614,fr,fr,fr,fr
+fr-short-020,fr,short,32,Son très clair. Rien de spécial.,fr,0.83723,ca,0.80622,fr,fr,fr,fr
+fr-medium-048,fr,medium,86,Les matériaux semblent plus fragiles que prévu. L’écran reste lisible en plein soleil.,fr,0.99540,tn,0.99379,fr,fr,fr,fr
+en-long-004,en,long,109,The refund process was confusing. The battery charges much faster now. I would recommend it for everyday use.,en,0.98265,tl,0.97430,en,en,en,en
+en-medium-002,en,medium,83,It stopped responding during setup. The product is smaller than the photos suggest.,en,0.93677,nl,0.91977,en,en,en,en
+ar-very_short-003,ar,very_short,12,خدمة ممتازة.,ar,0.91197,ur,0.82460,ar,ar,ar,ar
+ar-long-043,ar,long,168,حجم المنتج أصغر مما توحي به الصور. ساعدني الدعم في حل المشكلة. اضطررت للتواصل مع خدمة العملاء مرتين. يلتقط الميكروفون الكثير من الضوضاء. الشاشة واضحة حتى تحت ضوء الشمس.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-long-042,en,long,194,Audio quality is excellent for the price. It works well with my older laptop. The seller answered within an hour. The package arrived earlier than promised. Installation required no extra tools.,en,1.00000,da,1.00000,en,en,en,en
+es-medium-038,es,medium,82,El vendedor respondió en menos de una hora. La caja llegó completamente aplastada.,es,0.84382,pt,0.71256,es,es,es,es
+es-very_long-017,es,very_long,282,La batería se agotó antes de terminar el día. Funciona bien con mi ordenador antiguo. Ahora la batería carga mucho más rápido. Se bloqueó durante la instalación. La instalación no necesitó herramientas. La superficie se limpia fácilmente. El vendedor respondió en menos de una hora.,es,1.00000,pt,1.00000,es,es,es,es
+en-very_short-005,en,very_short,17,Not worth buying.,en,0.38734,zu,0.26004,und,en,en,en
+es-very_long-015,es,very_long,254,La caja llegó completamente aplastada. El embalaje protegió bien el producto. El paquete llegó antes de la fecha prevista. El tamaño es menor de lo que parecía. La entrega se retrasó varios días. pero la instalación inicial llevó más tiempo del previsto.,es,1.00000,ro,1.00000,es,es,es,es
+ar-long-011,ar,long,129,تفتقد التعليمات خطوة مهمة للتركيب. توقف الجهاز أثناء الإعداد الأول. كانت تحديثات الشحن غير دقيقة. يعمل بشكل جيد مع حاسوبي القديم.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-008,ar,very_short,13,الشاشة تالفة.,ar,0.99859,ur,0.99753,ar,ar,ar,ar
+fr-medium-001,fr,medium,87,Le produit paraît plus petit que sur les photos. J’ai été facturé deux fois par erreur.,fr,0.99053,ca,0.98790,fr,fr,fr,fr
+es-very_long-048,es,very_long,205,El producto de sustitución tenía el mismo problema. El tamaño es menor de lo que parecía. La atención al cliente resolvió el problema. Se bloqueó durante la instalación. Lo recomendaría para el uso diario.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_long-041,ar,very_long,225,نفدت البطارية قبل نهاية اليوم. اضطررت للتواصل مع خدمة العملاء مرتين. ساعدني الدعم في حل المشكلة. يلتقط الميكروفون الكثير من الضوضاء. من الصعب الضغط على الأزرار. رغم أن الوصف كان يعد بشيء مختلف. وتحسن الوضع بعد تحديث البرنامج.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-024,es,medium,73,El tamaño es menor de lo que parecía. Cuesta bastante pulsar los botones.,es,0.98442,ca,0.97596,es,es,es,es
+fr-medium-002,fr,medium,95,Le produit de remplacement avait le même défaut. La livraison a pris plusieurs jours de retard.,fr,0.99989,en,0.99984,fr,fr,fr,fr
+fr-medium-010,fr,medium,82,Le vendeur a répondu en moins d’une heure. Le service client a résolu le problème.,fr,0.99213,ca,0.99014,fr,fr,fr,fr
+es-very_short-027,es,very_short,18,Se calienta mucho.,es,0.22368,pt,0.17081,und,es,es,es
+es-very_short-002,es,very_short,21,La batería dura poco.,es,0.45620,tl,0.37697,und,es,es,es
+es-short-022,es,short,34,Llegó temprano. Parece de calidad.,es,0.85173,pt,0.74809,es,es,es,es
+fr-long-043,fr,long,136,Les matériaux semblent plus fragiles que prévu. Le carton était écrasé à la livraison. L’appareil s’est bloqué pendant la configuration.,fr,0.99995,cy,0.99994,fr,fr,fr,fr
+en-short-028,en,short,35,The screen cracked. Sound is clear.,en,0.55204,tl,0.49892,und,en,en,en
+en-very_short-038,en,very_short,20,Terrible microphone.,en,0.24720,fr,0.02254,und,und,und,und
+es-very_short-028,es,very_short,13,Muy elegante.,es,0.23258,eo,0.16245,und,es,es,es
+fr-long-018,fr,long,122,L’installation ne demande aucun outil. La batterie est vide avant la fin de la journée. Le microphone capte trop de bruit.,fr,0.97457,en,0.96615,fr,fr,fr,fr
+es-long-014,es,long,131,Funciona bien con mi ordenador antiguo. El rendimiento empeoró después de una semana. La batería se agotó antes de terminar el día.,es,0.99859,pt,0.99761,es,es,es,es
+fr-very_long-009,fr,very_long,296,J’ai dû contacter le service client deux fois. Le produit paraît plus petit que sur les photos. Les boutons sont difficiles à utiliser. Le carton était écrasé à la livraison. Le câble de recharge ne fonctionne plus. J’ai reçu la mauvaise couleur. L’appareil s’est bloqué pendant la configuration.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+fr-very_short-022,fr,very_short,18,Ne tient pas bien.,fr,0.17260,es,0.06662,und,und,und,fr
+ar-medium-020,ar,medium,64,ظهر العطل نفسه في الجهاز البديل. يعمل بشكل جيد مع حاسوبي القديم.,ar,0.99627,fa,0.99255,ar,ar,ar,ar
+es-short-041,es,short,40,La batería dura poco. Entrega muy lenta.,es,0.65541,pt,0.59188,es,es,es,es
+ar-short-023,ar,short,28,لا توجد تعليمات. ملمسه فاخر.,ar,0.86370,fa,0.73353,ar,ar,ar,ar
+ar-long-038,ar,long,133,كانت تحديثات الشحن غير دقيقة. ظهر العطل نفسه في الجهاز البديل. انخفض الأداء بعد أسبوع من الاستخدام. ولاحظت الفرق منذ الاستخدام الأول.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+es-long-020,es,long,116,Cuesta bastante pulsar los botones. El sonido es excelente para este precio. Funciona bien con mi ordenador antiguo.,es,0.97631,pt,0.95829,es,es,es,es
+ar-medium-010,ar,medium,90,أنصح به للاستخدام اليومي. جودة الصوت ممتازة مقارنة بالسعر. رد البائع على رسالتي خلال ساعة.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+en-very_short-022,en,very_short,20,Super helpful staff.,en,0.62834,tl,0.52612,en,en,en,en
+fr-short-044,fr,short,30,Achat rapide. Boutons bloqués.,fr,0.56162,ca,0.50841,und,fr,fr,fr
+es-medium-022,es,medium,74,La caja llegó completamente aplastada. Lo recomendaría para el uso diario.,es,0.92480,pt,0.87282,es,es,es,es
+es-very_short-034,es,very_short,21,Instalación sencilla.,es,0.99338,ca,0.98952,es,es,es,es
+ar-long-010,ar,long,167,توقف الجهاز أثناء الإعداد الأول. تم خصم المبلغ مرتين عن طريق الخطأ. كانت إجراءات الإرجاع معقدة ومزعجة. ظهر العطل نفسه في الجهاز البديل. الشاشة واضحة حتى تحت ضوء الشمس.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-042,ar,very_short,11,قطعة ناقصة.,ar,0.99267,ur,0.98642,ar,ar,ar,ar
+es-short-033,es,short,27,No encaja bien. No conecta.,es,0.69145,ca,0.63875,es,es,es,es
+en-very_short-002,en,very_short,19,Very slow delivery.,en,0.43720,tl,0.36626,und,en,en,en
+en-long-023,en,long,141,The package arrived earlier than promised. The material is easy to clean. The charging cable stopped working. I had to contact support twice.,en,0.99390,tl,0.99092,en,en,en,en
+en-very_long-046,en,very_long,241,The battery charges much faster now. I would recommend it for everyday use. It works well with my older laptop. It stopped responding during setup. Pairing it with my phone was surprisingly easy. and the experience improved after the update.,en,1.00000,da,1.00000,en,en,en,en
+ar-long-014,ar,long,130,أصبحت البطارية تشحن بسرعة أكبر. ظهر العطل نفسه في الجهاز البديل. أنصح به للاستخدام اليومي. لكنني لم أقرر بعد ما إذا كنت سأحتفظ به.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+es-very_long-030,es,very_long,203,La atención al cliente resolvió el problema. El paquete llegó antes de la fecha prevista. La caja llegó completamente aplastada. El cable de carga dejó de funcionar. El proceso de devolución fue confuso.,es,1.00000,ca,1.00000,es,es,es,es
+es-short-008,es,short,32,Entrega muy lenta. Buen soporte.,es,0.45621,pt,0.36876,und,es,es,es
+es-long-008,es,long,165,La atención al cliente resolvió el problema. La caja llegó completamente aplastada. El paquete llegó antes de la fecha prevista. Resulta cómodo durante varias horas.,es,1.00000,pt,1.00000,es,es,es,es
+ar-short-035,ar,short,26,البطارية ضعيفة. منتج مفيد.,ar,0.99909,fa,0.99818,ar,ar,ar,ar
+en-medium-011,en,medium,69,It stopped responding during setup. Performance dropped after a week.,en,0.86541,da,0.82370,en,en,en,en
+ar-medium-016,ar,medium,88,يمكن تنظيف السطح بسهولة. وصلت الشحنة قبل الموعد المحدد. يبقى الجهاز مريحا حتى بعد ساعات.,ar,0.99993,fa,0.99986,ar,ar,ar,ar
+fr-very_long-030,fr,very_long,246,La notice oublie une étape importante. Le service client a résolu le problème. La procédure de retour était compliquée. Le colis est arrivé plus tôt que prévu. L’installation ne demande aucun outil. et je reste globalement satisfait de cet achat.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+fr-long-038,fr,long,180,La batterie est vide avant la fin de la journée. Le colis est arrivé plus tôt que prévu. La connexion avec mon téléphone était facile. La batterie se recharge maintenant plus vite.,fr,1.00000,st,1.00000,fr,fr,fr,fr
+fr-long-042,fr,long,140,La batterie est vide avant la fin de la journée. Le vendeur a répondu en moins d’une heure. Le produit de remplacement avait le même défaut.,fr,0.99983,it,0.99978,fr,fr,fr,fr
+en-medium-027,en,medium,73,The materials feel thinner than expected. I had to contact support twice.,en,0.89724,tl,0.86628,en,en,en,en
+en-very_short-027,en,very_short,16,Cheap materials.,en,0.21453,ca,0.11716,und,und,en,en
+en-very_long-016,en,very_long,260,The microphone picks up background noise. The packaging protected everything inside. The material is easy to clean. It stopped responding during setup. I would recommend it for everyday use. Delivery took several extra days. The buttons are difficult to press.,en,1.00000,tl,1.00000,en,en,en,en
+es-short-039,es,short,32,Reembolso tardío. Buena calidad.,es,0.56157,pt,0.25560,und,es,es,es
+fr-medium-046,fr,medium,87,Le produit de remplacement avait le même défaut. L’installation ne demande aucun outil.,fr,0.99929,en,0.99898,fr,fr,fr,fr
+fr-short-039,fr,short,38,Performances excellentes. Achat utile.,fr,0.37595,en,0.19467,und,fr,fr,fr
+es-long-044,es,long,113,La superficie se limpia fácilmente. El vendedor respondió en menos de una hora. Me enviaron otro color por error.,es,0.96022,pt,0.92412,es,es,es,es
+en-very_long-024,en,very_long,246,The battery charges much faster now. The box was crushed when it arrived. Performance dropped after a week. I received a different color. I was charged twice by mistake. The refund process was confusing. The package arrived earlier than promised.,en,1.00000,da,1.00000,en,en,en,en
+es-long-045,es,long,177,El cable de carga dejó de funcionar. Las notificaciones de envío eran incorrectas. Tuve que escribir al servicio técnico dos veces. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+es-very_short-012,es,very_short,12,Buen precio.,es,0.30660,pt,0.18995,und,es,es,es
+es-long-034,es,long,127,Resulta cómodo durante varias horas. El rendimiento empeoró después de una semana. El paquete llegó antes de la fecha prevista.,es,0.99474,pt,0.98969,es,es,es,es
+ar-very_long-010,ar,very_long,226,جودة الصوت ممتازة مقارنة بالسعر. توقف سلك الشحن عن العمل بعد أيام. يمكن تنظيف السطح بسهولة. يبقى الجهاز مريحا حتى بعد ساعات. توقف الجهاز أثناء الإعداد الأول. كان ربط الجهاز بالهاتف سهلا للغاية. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-short-006,es,short,29,Se apaga solo. Imagen nítida.,es,0.28660,pt,0.04609,und,und,und,und
+en-short-033,en,short,39,Refund took ages. Better than expected.,en,0.58064,tl,0.52162,en,en,en,en
+fr-very_long-023,fr,very_long,268,J’ai reçu la mauvaise couleur. Le carton était écrasé à la livraison. Le câble de recharge ne fonctionne plus. Les boutons sont difficiles à utiliser. L’installation ne demande aucun outil. L’emballage a bien protégé le produit. Le service client a résolu le problème.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+es-long-047,es,long,120,El tamaño es menor de lo que parecía. Tuve que escribir al servicio técnico dos veces. Me enviaron otro color por error.,es,0.99883,pt,0.99799,es,es,es,es
+ar-very_short-006,ar,very_short,11,وصل مكسورا.,ar,0.89303,fa,0.78726,ar,ar,ar,ar
+ar-very_short-017,ar,very_short,11,تصميم جميل.,ar,0.64824,fa,0.29652,ar,ar,ar,ar
+fr-short-033,fr,short,36,Il s’éteint seul. Facile à utiliser.,fr,0.84424,it,0.82338,fr,fr,fr,fr
+ar-very_long-034,ar,very_long,227,ظهر العطل نفسه في الجهاز البديل. حجم المنتج أصغر مما توحي به الصور. انخفض الأداء بعد أسبوع من الاستخدام. وصل الصندوق متضررا بشكل واضح. ساعدني الدعم في حل المشكلة. لذلك طلبت المساعدة من البائع. وبشكل عام أنا راض عن عملية الشراء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_long-046,ar,very_long,225,اضطررت للتواصل مع خدمة العملاء مرتين. جودة الصوت ممتازة مقارنة بالسعر. نفدت البطارية قبل نهاية اليوم. يمكن تنظيف السطح بسهولة. أصبحت البطارية تشحن بسرعة أكبر. كانت إجراءات الإرجاع معقدة ومزعجة. يعمل بشكل جيد مع حاسوبي القديم.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-medium-037,en,medium,67,The material is easy to clean. The box was crushed when it arrived.,en,0.60549,tl,0.55729,en,en,en,en
+es-long-007,es,long,113,La instalación no necesitó herramientas. La caja llegó completamente aplastada. Me enviaron otro color por error.,es,0.99951,pt,0.99929,es,es,es,es
+ar-medium-046,ar,medium,68,تفتقد التعليمات خطوة مهمة للتركيب. توقف سلك الشحن عن العمل بعد أيام.,ar,0.99922,fa,0.99844,ar,ar,ar,ar
+es-very_short-005,es,very_short,18,Muy fácil de usar.,es,0.43439,pt,0.32178,und,es,es,es
+es-very_short-016,es,very_short,16,Carga muy lenta.,es,0.21059,id,0.16291,und,es,es,es
+ar-short-042,ar,short,27,الحجم غير مناسب. منتج مفيد.,ar,0.83837,fa,0.68063,ar,ar,ar,ar
+ar-long-006,ar,long,168,تم خصم المبلغ مرتين عن طريق الخطأ. كانت إجراءات الإرجاع معقدة ومزعجة. توقف الجهاز أثناء الإعداد الأول. تأخر التسليم عدة أيام إضافية. يلتقط الميكروفون الكثير من الضوضاء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-029,es,very_long,290,Conectarlo al teléfono fue muy sencillo. Resulta cómodo durante varias horas. La instalación no necesitó herramientas. Cuesta bastante pulsar los botones. El producto de sustitución tenía el mismo problema. La atención al cliente resolvió el problema. El embalaje protegió bien el producto.,es,1.00000,ca,1.00000,es,es,es,es
+fr-very_short-016,fr,very_short,20,Recharge trop lente.,fr,0.16413,es,0.05480,und,und,und,fr
+es-long-023,es,long,115,La instalación no necesitó herramientas. El embalaje protegió bien el producto. El micrófono capta demasiado ruido.,es,0.99989,pt,0.99983,es,es,es,es
+ar-medium-031,ar,medium,92,كانت تحديثات الشحن غير دقيقة. كانت إجراءات الإرجاع معقدة ومزعجة. من الصعب الضغط على الأزرار.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-044,es,very_long,206,La entrega se retrasó varios días. El embalaje protegió bien el producto. La batería se agotó antes de terminar el día. El sonido es excelente para este precio. Las notificaciones de envío eran incorrectas.,es,1.00000,pt,1.00000,es,es,es,es
+ar-medium-011,ar,medium,94,رد البائع على رسالتي خلال ساعة. وصل الصندوق متضررا بشكل واضح. تم التركيب دون الحاجة إلى أدوات.,ar,0.99992,fa,0.99984,ar,ar,ar,ar
+es-very_long-024,es,very_long,230,Conectarlo al teléfono fue muy sencillo. El proceso de devolución fue confuso. Me cobraron dos veces por error. La atención al cliente resolvió el problema. El tamaño es menor de lo que parecía. La superficie se limpia fácilmente.,es,1.00000,ca,1.00000,es,es,es,es
+es-long-009,es,long,153,Se bloqueó durante la instalación. Conectarlo al teléfono fue muy sencillo. Me cobraron dos veces por error. Las instrucciones omiten un paso importante.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_long-036,ar,very_long,203,رد البائع على رسالتي خلال ساعة. وصلني لون مختلف عن الذي طلبته. من الصعب الضغط على الأزرار. اضطررت للتواصل مع خدمة العملاء مرتين. الخامات أضعف مما توقعت عند الشراء. لكنني لم أقرر بعد ما إذا كنت سأحتفظ به.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-very_short-036,fr,very_short,20,Microphone médiocre.,fr,0.63642,yo,0.51844,fr,fr,fr,fr
+en-very_short-039,en,very_short,18,Excellent support.,fr,0.25059,en,0.01073,und,und,und,und
+es-long-028,es,long,192,Lo recomendaría para el uso diario. La caja llegó completamente aplastada. El micrófono capta demasiado ruido. El paquete llegó antes de la fecha prevista. El cable de carga dejó de funcionar.,es,1.00000,pt,1.00000,es,es,es,es
+fr-short-019,fr,short,33,Joli design. Recharge trop lente.,fr,0.16573,en,0.03970,und,und,und,und
+fr-very_long-042,fr,very_long,286,J’ai reçu la mauvaise couleur. Le son est excellent pour ce prix. Il reste confortable même après plusieurs heures. Il fonctionne avec mon ancien ordinateur. Le suivi de livraison était incorrect. La procédure de retour était compliquée. La batterie est vide avant la fin de la journée.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+es-very_long-032,es,very_long,226,Cuesta bastante pulsar los botones. Conectarlo al teléfono fue muy sencillo. Me cobraron dos veces por error. La pantalla se ve bien incluso con sol. Me enviaron otro color por error. lo que dificulta utilizarlo en el trabajo.,es,1.00000,ca,1.00000,es,es,es,es
+es-short-049,es,short,28,Se apaga solo. Buen soporte.,es,0.20122,pt,0.11937,und,und,es,es
+en-very_short-029,en,very_short,13,It overheats.,en,0.17533,nl,0.10627,und,und,en,en
+ar-very_short-026,ar,very_short,13,استبدال سريع.,ar,0.74197,fa,0.48549,ar,ar,ar,ar
+fr-long-026,fr,long,116,J’ai dû contacter le service client deux fois. J’ai reçu la mauvaise couleur. L’emballage a bien protégé le produit.,fr,0.99834,en,0.99740,fr,fr,fr,fr
+ar-short-028,ar,short,30,لا توجد تعليمات. استبدال سريع.,ar,0.84245,fa,0.68556,ar,ar,ar,ar
+es-long-001,es,long,163,El tamaño es menor de lo que parecía. El rendimiento empeoró después de una semana. Cuesta bastante pulsar los botones. El vendedor respondió en menos de una hora.,es,1.00000,ro,1.00000,es,es,es,es
+fr-medium-003,fr,medium,92,J’ai dû contacter le service client deux fois. La batterie se recharge maintenant plus vite.,fr,0.88474,en,0.80687,fr,fr,fr,fr
+ar-long-018,ar,long,129,نفدت البطارية قبل نهاية اليوم. جودة الصوت ممتازة مقارنة بالسعر. توقف الجهاز أثناء الإعداد الأول. تم التركيب دون الحاجة إلى أدوات.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-long-001,en,long,146,The microphone picks up background noise. The box was crushed when it arrived. I was charged twice by mistake. The buttons are difficult to press.,en,0.99270,tl,0.98918,en,en,en,en
+en-short-020,en,short,28,Noisy fan. Fast replacement.,en,0.27233,fr,0.13718,und,en,en,en
+en-long-047,en,long,195,I was charged twice by mistake. The screen is bright enough outdoors. It stopped responding during setup. Pairing it with my phone was surprisingly easy. The materials feel thinner than expected.,en,1.00000,tl,1.00000,en,en,en,en
+ar-long-037,ar,long,125,تم خصم المبلغ مرتين عن طريق الخطأ. جودة الصوت ممتازة مقارنة بالسعر. رد البائع على رسالتي خلال ساعة. أنصح به للاستخدام اليومي.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+fr-short-027,fr,short,38,Tout est correct. Recharge trop lente.,fr,0.39129,en,0.21362,und,fr,fr,fr
+es-short-050,es,short,28,Muy cómodo. Pantalla dañada.,es,1.00000,af,1.00000,es,es,es,es
+en-very_short-014,en,very_short,14,Too expensive.,en,0.42743,tl,0.34383,und,en,en,en
+fr-medium-031,fr,medium,74,Le colis est arrivé plus tôt que prévu. Le microphone capte trop de bruit.,fr,0.94152,yo,0.93332,fr,fr,fr,fr
+fr-short-026,fr,short,31,Ça vaut le coup. Ne marche pas.,fr,0.25160,en,0.18670,und,fr,fr,fr
+fr-short-015,fr,short,42,Emballage médiocre. Description trompeuse.,fr,0.81020,en,0.75137,fr,fr,fr,fr
+es-short-031,es,short,34,Servicio excelente. Todo correcto.,es,0.76088,pt,0.67909,es,es,es,es
+en-long-041,en,long,176,Shipping updates were not accurate. The battery lasted less than a day. I had to contact support twice. The charging cable stopped working. Customer support resolved the issue.,en,1.00000,tl,1.00000,en,en,en,en
+en-very_short-024,en,very_short,9,Poor fit.,nl,0.10539,en,0.02493,und,und,und,und
+ar-very_short-012,ar,very_short,10,سعر مناسب.,ar,0.71799,fa,0.53300,ar,ar,ar,ar
+es-very_short-049,es,very_short,13,Vale la pena.,ts,0.06978,eu,0.01661,und,und,und,und
+ar-long-015,ar,long,138,كانت إجراءات الإرجاع معقدة ومزعجة. يبقى الجهاز مريحا حتى بعد ساعات. يلتقط الميكروفون الكثير من الضوضاء. تم خصم المبلغ مرتين عن طريق الخطأ.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-long-049,ar,long,162,وصل الصندوق متضررا بشكل واضح. اضطررت للتواصل مع خدمة العملاء مرتين. يبقى الجهاز مريحا حتى بعد ساعات. نفدت البطارية قبل نهاية اليوم. وصلني لون مختلف عن الذي طلبته.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-short-015,ar,short,31,وصل مكسورا. تأخر استرداد المال.,ar,0.91536,fa,0.83109,ar,ar,ar,ar
+en-very_short-041,en,very_short,12,Very sturdy.,en,0.18775,sw,0.02696,und,und,und,und
+fr-very_long-014,fr,very_long,215,La procédure de retour était compliquée. L’installation ne demande aucun outil. La batterie est vide avant la fin de la journée. La livraison a pris plusieurs jours de retard. Le service client a résolu le problème.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+fr-medium-017,fr,medium,77,L’écran reste lisible en plein soleil. J’ai été facturé deux fois par erreur.,fr,0.98369,nl,0.98165,fr,fr,fr,fr
+fr-medium-034,fr,medium,76,La connexion avec mon téléphone était facile. J’ai reçu la mauvaise couleur.,fr,0.99749,st,0.99646,fr,fr,fr,fr
+es-very_long-039,es,very_long,284,La instalación no necesitó herramientas. Se bloqueó durante la instalación. Lo recomendaría para el uso diario. El paquete llegó antes de la fecha prevista. El embalaje protegió bien el producto. Los materiales parecen demasiado frágiles. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_long-042,ar,very_long,227,وصلت الشحنة قبل الموعد المحدد. جودة الصوت ممتازة مقارنة بالسعر. نفدت البطارية قبل نهاية اليوم. حافظ التغليف على المنتج من التلف. أصبحت البطارية تشحن بسرعة أكبر. رغم أن الوصف كان يعد بشيء مختلف. وهذا يجعل استخدامه في العمل صعبا.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-018,es,medium,79,La caja llegó completamente aplastada. Conectarlo al teléfono fue muy sencillo.,es,0.99500,ca,0.99275,es,es,es,es
+es-short-026,es,short,32,Embalaje terrible. Buen soporte.,es,0.43329,fr,0.34956,und,es,es,es
+en-long-018,en,long,121,The package arrived earlier than promised. Installation required no extra tools. The replacement unit had the same issue.,en,0.99264,fr,0.98932,en,en,en,en
+en-very_long-041,en,very_long,264,The refund process was confusing. Delivery took several extra days. The materials feel thinner than expected. Installation required no extra tools. It works well with my older laptop. The screen is bright enough outdoors. The package arrived earlier than promised.,en,1.00000,tl,1.00000,en,en,en,en
+en-short-016,en,short,32,Quick checkout. Hard to connect.,en,0.47238,nn,0.40023,und,en,en,en
+es-short-029,es,short,34,No funciona bien. Pantalla dañada.,es,0.61708,ca,0.40985,es,es,es,es
+fr-very_short-029,fr,very_short,21,Connexion impossible.,ca,0.47728,fr,0.04358,und,und,und,und
+ar-very_short-013,ar,very_short,10,سعر مرتفع.,ar,0.94293,fa,0.88899,ar,ar,ar,ar
+fr-medium-049,fr,medium,86,Le colis est arrivé plus tôt que prévu. La livraison a pris plusieurs jours de retard.,fr,0.99947,en,0.99940,fr,fr,fr,fr
+ar-long-032,ar,long,128,وصلني لون مختلف عن الذي طلبته. كان ربط الجهاز بالهاتف سهلا للغاية. تأخر التسليم عدة أيام إضافية. يعمل بشكل جيد مع حاسوبي القديم.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+fr-short-032,fr,short,39,Livraison très lente. Équipe serviable.,fr,0.96113,ca,0.95476,fr,fr,fr,fr
+en-very_short-050,en,very_short,21,Better than expected.,en,0.64272,tl,0.56772,en,en,en,en
+en-medium-039,en,medium,69,The material is easy to clean. I would recommend it for everyday use.,en,0.87764,tl,0.83795,en,en,en,en
+ar-medium-008,ar,medium,66,رد البائع على رسالتي خلال ساعة. كانت إجراءات الإرجاع معقدة ومزعجة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-short-003,ar,short,27,الشحن بطيء. الوصف غير دقيق.,ar,0.96001,fa,0.92077,ar,ar,ar,ar
+fr-long-005,fr,long,126,Le carton était écrasé à la livraison. Le produit paraît plus petit que sur les photos. J’ai été facturé deux fois par erreur.,fr,0.99944,yo,0.99932,fr,fr,fr,fr
+ar-very_long-026,ar,very_long,227,يبقى الجهاز مريحا حتى بعد ساعات. رد البائع على رسالتي خلال ساعة. يمكن تنظيف السطح بسهولة. الشاشة واضحة حتى تحت ضوء الشمس. تم خصم المبلغ مرتين عن طريق الخطأ. الخامات أضعف مما توقعت عند الشراء. كان ربط الجهاز بالهاتف سهلا للغاية.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-very_short-042,fr,very_short,16,Pièce manquante.,fr,0.89804,it,0.81400,fr,fr,fr,fr
+ar-very_long-048,ar,very_long,227,حافظ التغليف على المنتج من التلف. وصل الصندوق متضررا بشكل واضح. الخامات أضعف مما توقعت عند الشراء. يعمل بشكل جيد مع حاسوبي القديم. تفتقد التعليمات خطوة مهمة للتركيب. تأخر التسليم عدة أيام إضافية. رد البائع على رسالتي خلال ساعة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-long-017,ar,long,131,نفدت البطارية قبل نهاية اليوم. انخفض الأداء بعد أسبوع من الاستخدام. الشاشة واضحة حتى تحت ضوء الشمس. أصبحت البطارية تشحن بسرعة أكبر.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-047,es,medium,84,Tuve que escribir al servicio técnico dos veces. El micrófono capta demasiado ruido.,es,0.99171,pt,0.98365,es,es,es,es
+es-very_long-013,es,very_long,281,El producto de sustitución tenía el mismo problema. El cable de carga dejó de funcionar. Me cobraron dos veces por error. El embalaje protegió bien el producto. Ahora la batería carga mucho más rápido. Las notificaciones de envío eran incorrectas. Me enviaron otro color por error.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_short-044,ar,very_short,16,الدليل غير واضح.,ar,0.87126,fa,0.74293,ar,ar,ar,ar
+ar-very_short-014,ar,very_short,11,الصوت واضح.,ar,0.86998,ur,0.74313,ar,ar,ar,ar
+es-very_long-020,es,very_long,208,Resulta cómodo durante varias horas. El producto de sustitución tenía el mismo problema. La entrega se retrasó varios días. La caja llegó completamente aplastada. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+fr-medium-037,fr,medium,80,Le son est excellent pour ce prix. La connexion avec mon téléphone était facile.,fr,0.99144,st,0.98806,fr,fr,fr,fr
+ar-very_short-043,ar,very_short,11,أداء ممتاز.,ar,0.92343,ur,0.86301,ar,ar,ar,ar
+ar-very_short-033,ar,very_short,14,المروحة مزعجة.,ar,0.99976,fa,0.99954,ar,ar,ar,ar
+ar-medium-047,ar,medium,60,وصلني لون مختلف عن الذي طلبته. كانت تحديثات الشحن غير دقيقة.,ar,0.99248,fa,0.98500,ar,ar,ar,ar
+en-short-022,en,short,35,"The buttons stick. So far, so good.",en,0.15634,de,0.08491,und,und,und,en
+ar-long-023,ar,long,130,الشاشة واضحة حتى تحت ضوء الشمس. تم خصم المبلغ مرتين عن طريق الخطأ. حافظ التغليف على المنتج من التلف. لذلك طلبت المساعدة من البائع.,ar,0.99994,fa,0.99990,ar,ar,ar,ar
+ar-very_short-004,ar,very_short,13,لا يعمل جيدا.,ar,0.88012,fa,0.76156,ar,ar,ar,ar
+en-short-041,en,short,42,Package was missing. Really disappointing.,en,0.84941,tl,0.76498,en,en,en,en
+fr-long-035,fr,long,119,Le colis est arrivé plus tôt que prévu. J’ai reçu la mauvaise couleur. Le produit paraît plus petit que sur les photos.,fr,0.99956,yo,0.99949,fr,fr,fr,fr
+fr-medium-027,fr,medium,84,Je le recommande pour un usage quotidien. Le vendeur a répondu en moins d’une heure.,fr,0.99127,nl,0.98963,fr,fr,fr,fr
+ar-short-008,ar,short,28,التوصيل متأخر. الشاشة تالفة.,ar,0.99769,fa,0.99542,ar,ar,ar,ar
+fr-medium-033,fr,medium,86,Les matériaux semblent plus fragiles que prévu. La notice oublie une étape importante.,fr,0.99631,pt,0.99477,fr,fr,fr,fr
+es-long-015,es,long,191,Conectarlo al teléfono fue muy sencillo. La caja llegó completamente aplastada. El embalaje protegió bien el producto. La superficie se limpia fácilmente. El cable de carga dejó de funcionar.,es,1.00000,ca,1.00000,es,es,es,es
+fr-short-035,fr,short,30,Mieux que prévu. Achat rapide.,fr,0.88132,pt,0.86330,fr,fr,fr,fr
+ar-long-048,ar,long,172,تم التركيب دون الحاجة إلى أدوات. توقف سلك الشحن عن العمل بعد أيام. اضطررت للتواصل مع خدمة العملاء مرتين. ظهر العطل نفسه في الجهاز البديل. كانت إجراءات الإرجاع معقدة ومزعجة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-medium-004,fr,medium,90,La batterie est vide avant la fin de la journée. Je le recommande pour un usage quotidien.,fr,0.93257,it,0.91787,fr,fr,fr,fr
+ar-medium-045,ar,medium,92,من الصعب الضغط على الأزرار. تفتقد التعليمات خطوة مهمة للتركيب. كانت تحديثات الشحن غير دقيقة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-very_short-028,fr,very_short,13,Très élégant.,fr,0.91733,yo,0.88843,fr,fr,fr,fr
+ar-medium-023,ar,medium,93,ساعدني الدعم في حل المشكلة. نفدت البطارية قبل نهاية اليوم. تم خصم المبلغ مرتين عن طريق الخطأ.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+en-long-035,en,long,104,The screen is bright enough outdoors. The material is easy to clean. The buttons are difficult to press.,en,0.96550,tl,0.95301,en,en,en,en
+es-medium-049,es,medium,76,El embalaje protegió bien el producto. El proceso de devolución fue confuso.,es,0.91385,ca,0.86805,es,es,es,es
+en-medium-013,en,medium,80,The battery charges much faster now. The instructions skipped an important step.,en,0.91148,tl,0.88407,en,en,en,en
+en-long-028,en,long,114,The seller answered within an hour. The packaging protected everything inside. It works well with my older laptop.,en,0.96986,tl,0.95009,en,en,en,en
+en-medium-018,en,medium,71,The refund process was confusing. Installation required no extra tools.,en,0.90254,tl,0.88249,en,en,en,en
+en-medium-044,en,medium,69,The charging cable stopped working. The refund process was confusing.,en,0.90246,tl,0.87959,en,en,en,en
+ar-very_long-044,ar,very_long,205,أصبحت البطارية تشحن بسرعة أكبر. اضطررت للتواصل مع خدمة العملاء مرتين. انخفض الأداء بعد أسبوع من الاستخدام. كان ربط الجهاز بالهاتف سهلا للغاية. رد البائع على رسالتي خلال ساعة. وصلت الشحنة قبل الموعد المحدد.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-medium-006,fr,medium,69,Le carton était écrasé à la livraison. J’ai reçu la mauvaise couleur.,fr,0.99856,cy,0.99834,fr,fr,fr,fr
+fr-medium-025,fr,medium,75,Le microphone capte trop de bruit. La procédure de retour était compliquée.,fr,0.99664,en,0.99535,fr,fr,fr,fr
+fr-very_short-020,fr,very_short,17,Équipe serviable.,fr,0.67811,ca,0.57771,fr,fr,fr,fr
+ar-long-008,ar,long,165,جودة الصوت ممتازة مقارنة بالسعر. تفتقد التعليمات خطوة مهمة للتركيب. الخامات أضعف مما توقعت عند الشراء. وصلني لون مختلف عن الذي طلبته. يعمل بشكل جيد مع حاسوبي القديم.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-035,es,very_long,269,Lo recomendaría para el uso diario. El proceso de devolución fue confuso. El rendimiento empeoró después de una semana. Me cobraron dos veces por error. Se bloqueó durante la instalación. La batería se agotó antes de terminar el día. La superficie se limpia fácilmente.,es,1.00000,ca,1.00000,es,es,es,es
+ar-short-022,ar,short,34,رد سريع من الدعم. الحجم غير مناسب.,ar,0.95573,fa,0.91331,ar,ar,ar,ar
+es-long-013,es,long,111,Cuesta bastante pulsar los botones. El embalaje protegió bien el producto. El cable de carga dejó de funcionar.,es,0.95765,ca,0.91782,es,es,es,es
+ar-long-034,ar,long,117,رد البائع على رسالتي خلال ساعة. أنصح به للاستخدام اليومي. وصل الصندوق متضررا بشكل واضح. لذلك طلبت المساعدة من البائع.,ar,0.99994,fa,0.99988,ar,ar,ar,ar
+ar-very_long-012,ar,very_long,202,كان ربط الجهاز بالهاتف سهلا للغاية. الخامات أضعف مما توقعت عند الشراء. تم التركيب دون الحاجة إلى أدوات. تفتقد التعليمات خطوة مهمة للتركيب. نفدت البطارية قبل نهاية اليوم. ظهر العطل نفسه في الجهاز البديل.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_long-049,ar,very_long,204,كانت إجراءات الإرجاع معقدة ومزعجة. كان ربط الجهاز بالهاتف سهلا للغاية. اضطررت للتواصل مع خدمة العملاء مرتين. وصل الصندوق متضررا بشكل واضح. أصبحت البطارية تشحن بسرعة أكبر. توقف سلك الشحن عن العمل بعد أيام.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-long-024,fr,long,123,La notice oublie une étape importante. Le suivi de livraison était incorrect. La batterie se recharge maintenant plus vite.,fr,0.99174,en,0.98425,fr,fr,fr,fr
+ar-short-030,ar,short,26,وصل منتج مختلف. منتج مفيد.,ar,0.78729,fa,0.58258,ar,ar,ar,ar
+es-short-013,es,short,41,Parece de calidad. Rendimiento increíble.,es,0.99068,pt,0.98545,es,es,es,es
+en-short-023,en,short,36,Screen looks sharp. Hard to connect.,en,0.48622,nn,0.41880,und,en,en,en
+ar-short-020,ar,short,34,سهل الاستخدام. تأخر استرداد المال.,ar,0.95551,fa,0.91104,ar,ar,ar,ar
+es-very_short-022,es,very_short,15,No encaja bien.,es,0.25967,eo,0.16555,und,es,es,es
+fr-very_short-035,fr,very_short,12,Image nette.,nb,0.13632,fr,0.00389,und,und,und,und
+fr-very_long-049,fr,very_long,299,Il reste confortable même après plusieurs heures. Les boutons sont difficiles à utiliser. La surface est facile à nettoyer. La connexion avec mon téléphone était facile. Le produit paraît plus petit que sur les photos. Le son est excellent pour ce prix. La batterie se recharge maintenant plus vite.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+ar-long-001,ar,long,164,وصلني لون مختلف عن الذي طلبته. تم التركيب دون الحاجة إلى أدوات. حجم المنتج أصغر مما توحي به الصور. وصلت الشحنة قبل الموعد المحدد. الخامات أضعف مما توقعت عند الشراء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-031,es,very_long,280,Las instrucciones omiten un paso importante. La entrega se retrasó varios días. La atención al cliente resolvió el problema. El paquete llegó antes de la fecha prevista. Me enviaron otro color por error. Conectarlo al teléfono fue muy sencillo. Cuesta bastante pulsar los botones.,es,1.00000,ca,1.00000,es,es,es,es
+fr-long-019,fr,long,114,Le microphone capte trop de bruit. Le câble de recharge ne fonctionne plus. La notice oublie une étape importante.,fr,0.99804,eo,0.99742,fr,fr,fr,fr
+en-very_short-015,en,very_short,15,Sound is clear.,en,0.14830,es,0.10701,und,und,en,en
+es-very_long-040,es,very_long,250,Los materiales parecen demasiado frágiles. Las instrucciones omiten un paso importante. Conectarlo al teléfono fue muy sencillo. El cable de carga dejó de funcionar. El sonido es excelente para este precio. El vendedor respondió en menos de una hora.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_short-030,en,very_short,16,Looks beautiful.,en,0.46613,tl,0.38223,und,en,en,en
+fr-long-039,fr,long,126,Le vendeur a répondu en moins d’une heure. La surface est facile à nettoyer. Il reste confortable même après plusieurs heures.,fr,0.99935,ca,0.99922,fr,fr,fr,fr
+en-long-037,en,long,155,The buttons are difficult to press. Shipping updates were not accurate. Pairing it with my phone was surprisingly easy. The charging cable stopped working.,en,1.00000,tl,1.00000,en,en,en,en
+es-very_long-046,es,very_long,241,El embalaje protegió bien el producto. Me cobraron dos veces por error. La atención al cliente resolvió el problema. La pantalla se ve bien incluso con sol. Conectarlo al teléfono fue muy sencillo. aunque todavía no sé si lo voy a conservar.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_short-008,en,very_short,18,Excellent quality.,en,0.36536,fr,0.27954,und,en,en,en
+es-very_short-014,es,very_short,13,Sonido claro.,es,0.45299,eo,0.39595,und,es,es,es
+es-medium-041,es,medium,79,Los materiales parecen demasiado frágiles. El cable de carga dejó de funcionar.,es,0.97491,pt,0.95499,es,es,es,es
+ar-very_long-033,ar,very_long,224,نفدت البطارية قبل نهاية اليوم. كانت إجراءات الإرجاع معقدة ومزعجة. يمكن تنظيف السطح بسهولة. كان ربط الجهاز بالهاتف سهلا للغاية. اضطررت للتواصل مع خدمة العملاء مرتين. وصل الصندوق متضررا بشكل واضح. كانت تحديثات الشحن غير دقيقة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_short-042,es,very_short,18,Faltaba una pieza.,es,0.38481,eu,0.14269,und,es,es,es
+es-very_short-035,es,very_short,14,Imagen nítida.,pt,0.41385,es,0.01884,und,und,und,und
+es-medium-026,es,medium,76,Lo recomendaría para el uso diario. La instalación no necesitó herramientas.,es,0.99884,pt,0.99839,es,es,es,es
+en-medium-015,en,medium,77,It works well with my older laptop. The materials feel thinner than expected.,en,0.79197,tl,0.75505,en,en,en,en
+en-very_long-002,en,very_long,275,The buttons are difficult to press. It stopped responding during setup. The product is smaller than the photos suggest. The battery lasted less than a day. The package arrived earlier than promised. Performance dropped after a week. The packaging protected everything inside.,en,1.00000,tl,1.00000,en,en,en,en
+en-very_long-017,en,very_long,286,The product feels comfortable for long sessions. It stopped responding during setup. The packaging protected everything inside. I was charged twice by mistake. The product is smaller than the photos suggest. Shipping updates were not accurate. The package arrived earlier than promised.,en,1.00000,tl,1.00000,en,en,en,en
+ar-very_short-047,ar,very_short,12,لا شيء مميز.,ar,0.89791,fa,0.79712,ar,ar,ar,ar
+en-very_long-032,en,very_long,260,The box was crushed when it arrived. I had to contact support twice. The screen is bright enough outdoors. The charging cable stopped working. The battery lasted less than a day. I would recommend it for everyday use. The package arrived earlier than promised.,en,1.00000,da,1.00000,en,en,en,en
+es-long-042,es,long,157,Lo recomendaría para el uso diario. Conectarlo al teléfono fue muy sencillo. La batería se agotó antes de terminar el día. Se bloqueó durante la instalación.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_short-035,en,very_short,10,Noisy fan.,cy,0.12018,yo,0.04354,und,und,und,und
+ar-long-045,ar,long,156,أنصح به للاستخدام اليومي. الخامات أضعف مما توقعت عند الشراء. اضطررت للتواصل مع خدمة العملاء مرتين. تم التركيب دون الحاجة إلى أدوات. يمكن تنظيف السطح بسهولة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-005,en,short,37,Terrible packaging. Fast replacement.,en,0.62155,tl,0.50850,en,en,en,en
+ar-medium-036,ar,medium,63,يعمل بشكل جيد مع حاسوبي القديم. رد البائع على رسالتي خلال ساعة.,ar,0.99910,fa,0.99819,ar,ar,ar,ar
+fr-very_long-019,fr,very_long,215,Le microphone capte trop de bruit. Le vendeur a répondu en moins d’une heure. Il reste confortable même après plusieurs heures. J’ai dû contacter le service client deux fois. La procédure de retour était compliquée.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+en-very_short-028,en,very_short,17,Fast replacement.,en,0.28452,fr,0.09445,und,und,und,en
+ar-very_short-023,ar,very_short,10,منتج مفيد.,ar,0.82175,fa,0.64440,ar,ar,ar,ar
+fr-short-013,fr,short,32,Notice confuse. Boutons bloqués.,fr,0.71369,en,0.62737,fr,fr,fr,fr
+ar-long-016,ar,long,101,تفتقد التعليمات خطوة مهمة للتركيب. أصبحت البطارية تشحن بسرعة أكبر. تم خصم المبلغ مرتين عن طريق الخطأ.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+fr-very_long-033,fr,very_long,259,Il reste confortable même après plusieurs heures. Le produit paraît plus petit que sur les photos. Le service client a résolu le problème. Le suivi de livraison était incorrect. Les matériaux semblent plus fragiles que prévu. La surface est facile à nettoyer.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+ar-medium-012,ar,medium,82,تأخر التسليم عدة أيام إضافية. من الصعب الضغط على الأزرار. يمكن تنظيف السطح بسهولة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-short-010,fr,short,41,Échange rapide. Performances excellentes.,fr,0.53566,en,0.39079,und,fr,fr,fr
+es-very_long-034,es,very_long,283,La batería se agotó antes de terminar el día. El proceso de devolución fue confuso. Me enviaron otro color por error. Lo recomendaría para el uso diario. Las instrucciones omiten un paso importante. El micrófono capta demasiado ruido. Tuve que escribir al servicio técnico dos veces.,es,1.00000,pt,1.00000,es,es,es,es
+en-very_short-033,en,very_short,22,Product arrived early.,en,0.65737,tl,0.61772,en,en,en,en
+en-very_short-009,en,very_short,19,The screen cracked.,en,0.43074,tl,0.37437,und,en,en,en
+fr-medium-016,fr,medium,87,La batterie se recharge maintenant plus vite. Je le recommande pour un usage quotidien.,fr,0.95528,en,0.93338,fr,fr,fr,fr
+fr-very_long-044,fr,very_long,205,Le microphone capte trop de bruit. Le vendeur a répondu en moins d’une heure. La batterie est vide avant la fin de la journée. L’installation ne demande aucun outil. Les boutons sont difficiles à utiliser.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-short-007,ar,short,29,الدليل غير واضح. لا شيء مميز.,ar,0.91188,fa,0.82404,ar,ar,ar,ar
+en-very_short-010,en,very_short,17,Very comfortable.,en,0.37879,tl,0.29482,und,en,en,en
+fr-long-011,fr,long,200,Le vendeur a répondu en moins d’une heure. La batterie est vide avant la fin de la journée. J’ai été facturé deux fois par erreur. J’ai reçu la mauvaise couleur. L’emballage a bien protégé le produit.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+fr-short-017,fr,short,26,Arrivé cassé. Écran abîmé.,fr,0.99269,yo,0.98802,fr,fr,fr,fr
+es-medium-001,es,medium,75,Funciona bien con mi ordenador antiguo. Lo recomendaría para el uso diario.,es,0.91948,pt,0.86045,es,es,es,es
+es-short-045,es,short,33,La batería dura poco. Hace ruido.,es,0.77720,pt,0.71775,es,es,es,es
+fr-long-010,fr,long,155,Le carton était écrasé à la livraison. Les matériaux semblent plus fragiles que prévu. Le son est excellent pour ce prix. La surface est facile à nettoyer.,fr,1.00000,st,1.00000,fr,fr,fr,fr
+es-long-011,es,long,196,Me cobraron dos veces por error. El paquete llegó antes de la fecha prevista. La caja llegó completamente aplastada. La entrega se retrasó varios días. Las instrucciones omiten un paso importante.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_long-005,ar,very_long,201,الشاشة واضحة حتى تحت ضوء الشمس. يعمل بشكل جيد مع حاسوبي القديم. يبقى الجهاز مريحا حتى بعد ساعات. انخفض الأداء بعد أسبوع من الاستخدام. رد البائع على رسالتي خلال ساعة. كان ربط الجهاز بالهاتف سهلا للغاية.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-medium-008,en,medium,83,Pairing it with my phone was surprisingly easy. Shipping updates were not accurate.,en,0.97145,tl,0.95565,en,en,en,en
+en-long-024,en,long,152,The instructions skipped an important step. Delivery took several extra days. Shipping updates were not accurate. I would recommend it for everyday use.,en,1.00000,nl,1.00000,en,en,en,en
+fr-very_long-018,fr,very_long,218,Le produit paraît plus petit que sur les photos. La batterie est vide avant la fin de la journée. Le vendeur a répondu en moins d’une heure. Les performances ont baissé après une semaine. J’ai reçu la mauvaise couleur.,fr,1.00000,ca,1.00000,fr,fr,fr,fr
+es-medium-037,es,medium,77,Ahora la batería carga mucho más rápido. Resulta cómodo durante varias horas.,es,0.94287,pt,0.88888,es,es,es,es
+es-medium-019,es,medium,76,El sonido es excelente para este precio. La superficie se limpia fácilmente.,es,0.87559,pt,0.76934,es,es,es,es
+es-short-025,es,short,36,Cambio rápido. Instalación sencilla.,es,0.98719,pt,0.98116,es,es,es,es
+en-very_long-008,en,very_long,231,Pairing it with my phone was surprisingly easy. The package arrived earlier than promised. The box was crushed when it arrived. The seller answered within an hour. I had to contact support twice. Shipping updates were not accurate.,en,1.00000,da,1.00000,en,en,en,en
+fr-medium-045,fr,medium,69,J’ai reçu la mauvaise couleur. La notice oublie une étape importante.,fr,0.98587,en,0.98190,fr,fr,fr,fr
+ar-very_long-023,ar,very_long,222,ساعدني الدعم في حل المشكلة. حافظ التغليف على المنتج من التلف. يلتقط الميكروفون الكثير من الضوضاء. انخفض الأداء بعد أسبوع من الاستخدام. أنصح به للاستخدام اليومي. كانت تحديثات الشحن غير دقيقة. وتحسن الوضع بعد تحديث البرنامج.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-medium-036,en,medium,84,Shipping updates were not accurate. The product feels comfortable for long sessions.,en,0.93093,tl,0.90335,en,en,en,en
+es-long-050,es,long,122,El rendimiento empeoró después de una semana. El sonido es excelente para este precio. El micrófono capta demasiado ruido.,es,0.99972,pt,0.99944,es,es,es,es
+es-medium-028,es,medium,77,Me cobraron dos veces por error. Las instrucciones omiten un paso importante.,es,0.94794,ca,0.91659,es,es,es,es
+en-long-015,en,long,186,It stopped responding during setup. The instructions skipped an important step. The refund process was confusing. I would recommend it for everyday use. Performance dropped after a week.,en,1.00000,tl,1.00000,en,en,en,en
+ar-very_short-034,ar,very_short,11,تركيب بسيط.,ar,0.87112,fa,0.74224,ar,ar,ar,ar
+ar-long-007,ar,long,126,جودة الصوت ممتازة مقارنة بالسعر. توقف الجهاز أثناء الإعداد الأول. ساعدني الدعم في حل المشكلة. رغم أن الوصف كان يعد بشيء مختلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_long-031,en,very_long,233,The replacement unit had the same issue. It stopped responding during setup. The product is smaller than the photos suggest. The seller answered within an hour. The battery lasted less than a day. The box was crushed when it arrived.,en,1.00000,da,1.00000,en,en,en,en
+en-medium-003,en,medium,79,Installation required no extra tools. Audio quality is excellent for the price.,en,0.89955,fr,0.88082,en,en,en,en
+en-very_long-020,en,very_long,218,It stopped responding during setup. Shipping updates were not accurate. The materials feel thinner than expected. It works well with my older laptop. Customer support resolved the issue. I was charged twice by mistake.,en,1.00000,tl,1.00000,en,en,en,en
+fr-very_short-026,fr,very_short,15,Échange rapide.,fr,0.68945,es,0.61957,fr,fr,fr,fr
+ar-very_short-029,ar,very_short,16,لا يتصل بالشبكة.,ar,0.99760,fa,0.99522,ar,ar,ar,ar
+fr-medium-032,fr,medium,85,J’ai dû contacter le service client deux fois. L’installation ne demande aucun outil.,fr,0.97429,en,0.95698,fr,fr,fr,fr
+ar-short-047,ar,short,28,الدليل غير واضح. يسخن كثيرا.,ar,0.88368,fa,0.76739,ar,ar,ar,ar
+ar-very_short-025,ar,very_short,13,الخامة رديئة.,ar,0.99829,fa,0.99660,ar,ar,ar,ar
+es-very_long-018,es,very_long,202,Resulta cómodo durante varias horas. El embalaje protegió bien el producto. Los materiales parecen demasiado frágiles. La caja llegó completamente aplastada. El paquete llegó antes de la fecha prevista.,es,1.00000,pt,1.00000,es,es,es,es
+es-short-014,es,short,32,Compra útil. Servicio excelente.,es,0.56128,pt,0.34363,und,es,es,es
+fr-long-032,fr,long,133,Il reste confortable même après plusieurs heures. Le son est excellent pour ce prix. Le produit paraît plus petit que sur les photos.,fr,0.99904,ca,0.99853,fr,fr,fr,fr
+ar-short-017,ar,short,26,الوصف غير دقيق. منتج مفيد.,ar,0.84484,fa,0.69049,ar,ar,ar,ar
+fr-short-034,fr,short,41,Échange rapide. Bon rapport qualité-prix.,fr,0.78110,en,0.74970,fr,fr,fr,fr
+es-very_short-003,es,very_short,19,Servicio excelente.,es,0.45282,ro,0.31095,und,es,es,es
+en-medium-021,en,medium,61,I was charged twice by mistake. I received a different color.,en,0.86699,yo,0.82802,en,en,en,en
+fr-medium-012,fr,medium,64,La surface est facile à nettoyer. J’ai reçu la mauvaise couleur.,fr,0.98863,en,0.98711,fr,fr,fr,fr
+en-medium-041,en,medium,66,Shipping updates were not accurate. The material is easy to clean.,en,0.72921,tl,0.65306,en,en,en,en
+es-medium-023,es,medium,84,El embalaje protegió bien el producto. La batería se agotó antes de terminar el día.,es,0.93046,ca,0.89968,es,es,es,es
+ar-medium-003,ar,medium,64,جودة الصوت ممتازة مقارنة بالسعر. الشاشة واضحة حتى تحت ضوء الشمس.,ar,0.99918,ur,0.99852,ar,ar,ar,ar
+es-short-037,es,short,35,Muy fácil de usar. Material barato.,es,0.51367,pt,0.34756,und,es,es,es
+ar-long-047,ar,long,122,من الصعب الضغط على الأزرار. تم التركيب دون الحاجة إلى أدوات. وصلني لون مختلف عن الذي طلبته. وصلت الشحنة قبل الموعد المحدد.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-medium-032,en,medium,70,The replacement unit had the same issue. I received a different color.,en,0.95870,tl,0.94812,en,en,en,en
+es-very_short-037,es,very_short,13,Buen soporte.,es,0.17646,fr,0.10459,und,und,es,es
+es-very_short-026,es,very_short,14,Cambio rápido.,es,0.77193,pt,0.59441,es,es,es,es
+en-short-007,en,short,31,"Feels premium. So far, so good.",en,0.13150,nl,0.07968,und,und,und,en
+fr-short-018,fr,short,30,Très confortable. Très solide.,fr,0.96069,it,0.93688,fr,fr,fr,fr
+en-long-039,en,long,146,The buttons are difficult to press. It stopped responding during setup. It works well with my older laptop. I would recommend it for everyday use.,en,0.99335,tl,0.98924,en,en,en,en
+fr-very_short-005,fr,very_short,18,Facile à utiliser.,fr,0.47951,it,0.38383,und,fr,fr,fr
+ar-very_long-032,ar,very_long,206,الخامات أضعف مما توقعت عند الشراء. رد البائع على رسالتي خلال ساعة. ظهر العطل نفسه في الجهاز البديل. الشاشة واضحة حتى تحت ضوء الشمس. كانت إجراءات الإرجاع معقدة ومزعجة. لذلك سأختار طرازا آخر في المرة القادمة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-short-043,es,short,29,Nada especial. Una decepción.,es,0.75402,ca,0.63055,es,es,es,es
+fr-very_long-026,fr,very_long,211,Le produit de remplacement avait le même défaut. Le son est excellent pour ce prix. J’ai dû contacter le service client deux fois. L’emballage a bien protégé le produit. Il fonctionne avec mon ancien ordinateur.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+fr-long-012,fr,long,129,Le produit paraît plus petit que sur les photos. Le colis est arrivé plus tôt que prévu. Le câble de recharge ne fonctionne plus.,fr,0.99935,yo,0.99915,fr,fr,fr,fr
+fr-very_short-006,fr,very_short,13,Arrivé cassé.,fr,0.97005,hu,0.95886,fr,fr,fr,fr
+es-long-030,es,long,150,El tamaño es menor de lo que parecía. La superficie se limpia fácilmente. Los materiales parecen demasiado frágiles. Me enviaron otro color por error.,es,1.00000,pt,1.00000,es,es,es,es
+ar-medium-043,ar,medium,93,توقف سلك الشحن عن العمل بعد أيام. ساعدني الدعم في حل المشكلة. رد البائع على رسالتي خلال ساعة.,ar,0.99997,fa,0.99994,ar,ar,ar,ar
+es-very_long-026,es,very_long,257,Lo recomendaría para el uso diario. El rendimiento empeoró después de una semana. La pantalla se ve bien incluso con sol. La instalación no necesitó herramientas. La superficie se limpia fácilmente. pero la instalación inicial llevó más tiempo del previsto.,es,1.00000,pt,1.00000,es,es,es,es
+ar-medium-041,ar,medium,96,وصل الصندوق متضررا بشكل واضح. أصبحت البطارية تشحن بسرعة أكبر. تفتقد التعليمات خطوة مهمة للتركيب.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+es-long-029,es,long,121,La batería se agotó antes de terminar el día. El micrófono capta demasiado ruido. La pantalla se ve bien incluso con sol.,es,0.99657,pt,0.99386,es,es,es,es
+ar-long-035,ar,long,127,الشاشة واضحة حتى تحت ضوء الشمس. الخامات أضعف مما توقعت عند الشراء. وصلت الشحنة قبل الموعد المحدد. لذلك طلبت المساعدة من البائع.,ar,0.99999,ur,0.99999,ar,ar,ar,ar
+en-long-029,en,long,115,The replacement unit had the same issue. I would recommend it for everyday use. Shipping updates were not accurate.,en,0.99062,tl,0.98421,en,en,en,en
+fr-short-047,fr,short,30,Support réactif. Arrivé cassé.,fr,0.99825,ga,0.99768,fr,fr,fr,fr
+ar-very_long-024,ar,very_long,228,يلتقط الميكروفون الكثير من الضوضاء. رد البائع على رسالتي خلال ساعة. من الصعب الضغط على الأزرار. ظهر العطل نفسه في الجهاز البديل. تفتقد التعليمات خطوة مهمة للتركيب. نفدت البطارية قبل نهاية اليوم. ولاحظت الفرق منذ الاستخدام الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-017,es,medium,71,La entrega se retrasó varios días. El cable de carga dejó de funcionar.,es,0.91357,ca,0.87520,es,es,es,es
+es-very_long-047,es,very_long,205,Lo recomendaría para el uso diario. El vendedor respondió en menos de una hora. Ahora la batería carga mucho más rápido. La caja llegó completamente aplastada. El rendimiento empeoró después de una semana.,es,1.00000,pt,1.00000,es,es,es,es
+fr-very_short-044,fr,very_short,15,Notice confuse.,en,0.44112,fr,0.31786,und,en,en,en
+es-very_short-020,es,very_short,16,Atención amable.,es,0.84869,ca,0.71953,es,es,es,es
+fr-short-004,fr,short,46,Bon rapport qualité-prix. Microphone médiocre.,fr,0.86428,en,0.82411,fr,fr,fr,fr
+fr-short-008,fr,short,32,Notice confuse. Mieux que prévu.,fr,0.83638,en,0.79629,fr,fr,fr,fr
+es-short-042,es,short,40,Pedido equivocado. La batería dura poco.,es,0.80988,pt,0.65382,es,es,es,es
+es-very_short-013,es,very_short,15,Demasiado caro.,es,0.61618,pt,0.48661,es,es,es,es
+ar-short-002,ar,short,28,المروحة مزعجة. الأزرار صعبة.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+en-long-005,en,long,146,The screen is bright enough outdoors. The seller answered within an hour. The replacement unit had the same issue. I was charged twice by mistake.,en,0.99807,tl,0.99679,en,en,en,en
+fr-very_short-027,fr,very_short,16,Il chauffe trop.,fr,0.15813,nl,0.03337,und,und,und,und
+es-long-033,es,long,183,La caja llegó completamente aplastada. El cable de carga dejó de funcionar. Se bloqueó durante la instalación. El proceso de devolución fue confuso. La entrega se retrasó varios días.,es,1.00000,ca,1.00000,es,es,es,es
+es-short-047,es,short,37,Sin instrucciones. Faltaba una pieza.,es,0.83877,ca,0.76009,es,es,es,es
+es-long-012,es,long,112,El cable de carga dejó de funcionar. El micrófono capta demasiado ruido. La pantalla se ve bien incluso con sol.,es,0.99610,pt,0.99318,es,es,es,es
+en-short-013,en,short,37,Super helpful staff. Works perfectly.,en,0.85275,tl,0.78696,en,en,en,en
+en-long-033,en,long,112,The box was crushed when it arrived. The materials feel thinner than expected. Performance dropped after a week.,en,0.97458,tl,0.96604,en,en,en,en
+ar-long-044,ar,long,129,يبقى الجهاز مريحا حتى بعد ساعات. من الصعب الضغط على الأزرار. حافظ التغليف على المنتج من التلف. تفتقد التعليمات خطوة مهمة للتركيب.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-long-033,ar,long,159,يمكن تنظيف السطح بسهولة. رد البائع على رسالتي خلال ساعة. ظهر العطل نفسه في الجهاز البديل. الخامات أضعف مما توقعت عند الشراء. حجم المنتج أصغر مما توحي به الصور.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-022,ar,very_short,16,الحجم غير مناسب.,ar,0.76700,fa,0.56048,ar,ar,ar,ar
+en-long-013,en,long,115,Installation required no extra tools. The charging cable stopped working. The materials feel thinner than expected.,en,0.98005,tl,0.97233,en,en,en,en
+en-very_long-006,en,very_long,241,The package arrived earlier than promised. The replacement unit had the same issue. The product is smaller than the photos suggest. Customer support resolved the issue. I would recommend it for everyday use. The refund process was confusing.,en,1.00000,da,1.00000,en,en,en,en
+fr-very_long-048,fr,very_long,252,Les matériaux semblent plus fragiles que prévu. Le produit de remplacement avait le même défaut. L’écran reste lisible en plein soleil. Le son est excellent pour ce prix. Le suivi de livraison était incorrect. Le vendeur a répondu en moins d’une heure.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+ar-very_short-024,ar,very_short,16,لن أشتريه مجددا.,ar,0.94375,fa,0.88755,ar,ar,ar,ar
+fr-very_long-022,fr,very_long,257,L’installation ne demande aucun outil. Il reste confortable même après plusieurs heures. Il fonctionne avec mon ancien ordinateur. Les boutons sont difficiles à utiliser. Les matériaux semblent plus fragiles que prévu. La notice oublie une étape importante.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+en-medium-033,en,medium,81,Delivery took several extra days. Pairing it with my phone was surprisingly easy.,en,0.94915,tl,0.92191,en,en,en,en
+fr-very_long-002,fr,very_long,206,L’emballage a bien protégé le produit. La notice oublie une étape importante. L’installation ne demande aucun outil. Le service client a résolu le problème. Il reste confortable même après plusieurs heures.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-short-050,ar,short,32,الدليل غير واضح. البطارية ضعيفة.,ar,0.99956,fa,0.99911,ar,ar,ar,ar
+ar-short-016,ar,short,26,التطبيق يتعطل. ملمسه فاخر.,ar,0.98795,fa,0.97654,ar,ar,ar,ar
+es-medium-044,es,medium,85,Funciona bien con mi ordenador antiguo. La batería se agotó antes de terminar el día.,es,0.94231,pt,0.90640,es,es,es,es
+ar-very_short-021,ar,very_short,14,التطبيق يتعطل.,ar,0.99762,fa,0.99533,ar,ar,ar,ar
+fr-long-041,fr,long,134,Les performances ont baissé après une semaine. Le produit de remplacement avait le même défaut. Le carton était écrasé à la livraison.,fr,0.99998,en,0.99997,fr,fr,fr,fr
+ar-very_long-022,ar,very_long,232,انخفض الأداء بعد أسبوع من الاستخدام. يعمل بشكل جيد مع حاسوبي القديم. جودة الصوت ممتازة مقارنة بالسعر. ظهر العطل نفسه في الجهاز البديل. كانت تحديثات الشحن غير دقيقة. يلتقط الميكروفون الكثير من الضوضاء. وتحسن الوضع بعد تحديث البرنامج.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-015,es,medium,82,Las instrucciones omiten un paso importante. El tamaño es menor de lo que parecía.,es,0.99301,ca,0.98869,es,es,es,es
+fr-very_long-034,fr,very_long,207,Le câble de recharge ne fonctionne plus. L’écran reste lisible en plein soleil. Le suivi de livraison était incorrect. Il fonctionne avec mon ancien ordinateur. La livraison a pris plusieurs jours de retard.,fr,1.00000,cy,1.00000,fr,fr,fr,fr
+es-long-039,es,long,163,El vendedor respondió en menos de una hora. El cable de carga dejó de funcionar. El paquete llegó antes de la fecha prevista. El proceso de devolución fue confuso.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_long-044,en,very_long,238,The replacement unit had the same issue. The instructions skipped an important step. I was charged twice by mistake. Installation required no extra tools. Pairing it with my phone was surprisingly easy. The charging cable stopped working.,en,1.00000,fr,1.00000,en,en,en,en
+en-long-036,en,long,122,The product feels comfortable for long sessions. The battery charges much faster now. Customer support resolved the issue.,en,0.98747,tl,0.97829,en,en,en,en
+es-very_long-006,es,very_long,240,Tuve que escribir al servicio técnico dos veces. Funciona bien con mi ordenador antiguo. La entrega se retrasó varios días. La caja llegó completamente aplastada. Ahora la batería carga mucho más rápido. Resulta cómodo durante varias horas.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_long-028,ar,very_long,217,تأخر التسليم عدة أيام إضافية. يعمل بشكل جيد مع حاسوبي القديم. نفدت البطارية قبل نهاية اليوم. توقف الجهاز أثناء الإعداد الأول. يمكن تنظيف السطح بسهولة. تفتقد التعليمات خطوة مهمة للتركيب. رد البائع على رسالتي خلال ساعة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_long-033,en,very_long,275,Pairing it with my phone was surprisingly easy. The replacement unit had the same issue. I had to contact support twice. The materials feel thinner than expected. The packaging protected everything inside. Shipping updates were not accurate. Performance dropped after a week.,en,1.00000,tl,1.00000,en,en,en,en
+en-very_long-012,en,very_long,225,Pairing it with my phone was surprisingly easy. The refund process was confusing. I would recommend it for everyday use. Shipping updates were not accurate. I was charged twice by mistake. The battery charges much faster now.,en,1.00000,da,1.00000,en,en,en,en
+ar-very_short-019,ar,very_short,11,ينطفئ فجأة.,ar,0.99882,ur,0.99791,ar,ar,ar,ar
+fr-long-025,fr,long,174,Les matériaux semblent plus fragiles que prévu. Le suivi de livraison était incorrect. Le produit de remplacement avait le même défaut. L’écran reste lisible en plein soleil.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+en-very_short-023,en,very_short,16,The app freezes.,en,0.23105,sw,0.16416,und,en,en,en
+fr-short-021,fr,short,30,Joli design. Arrivé en avance.,fr,0.57305,da,0.52636,fr,fr,fr,fr
+es-very_short-006,es,very_short,11,Llegó roto.,es,0.44452,pl,0.24269,und,es,es,es
+es-very_long-043,es,very_long,236,La instalación no necesitó herramientas. El cable de carga dejó de funcionar. Me enviaron otro color por error. El producto de sustitución tenía el mismo problema. Me cobraron dos veces por error. Funciona bien con mi ordenador antiguo.,es,1.00000,ca,1.00000,es,es,es,es
+fr-long-034,fr,long,190,Le suivi de livraison était incorrect. Le colis est arrivé plus tôt que prévu. J’ai été facturé deux fois par erreur. J’ai reçu la mauvaise couleur. Je le recommande pour un usage quotidien.,fr,1.00000,yo,1.00000,fr,fr,fr,fr
+es-short-019,es,short,29,Reembolso tardío. No conecta.,es,0.48976,pt,0.20656,und,es,es,es
+fr-very_short-034,fr,very_short,20,Installation facile.,fr,0.57906,en,0.48045,fr,fr,fr,fr
+en-medium-042,en,medium,81,The product is smaller than the photos suggest. Performance dropped after a week.,en,0.86114,da,0.81901,en,en,en,en
+es-very_short-008,es,very_short,16,Pantalla dañada.,es,0.99898,eu,0.99797,es,es,es,es
+en-long-012,en,long,114,I would recommend it for everyday use. I had to contact support twice. The instructions skipped an important step.,en,0.98657,tl,0.97949,en,en,en,en
+ar-very_long-013,ar,very_long,228,جودة الصوت ممتازة مقارنة بالسعر. الشاشة واضحة حتى تحت ضوء الشمس. كانت إجراءات الإرجاع معقدة ومزعجة. وصلني لون مختلف عن الذي طلبته. توقف سلك الشحن عن العمل بعد أيام. حافظ التغليف على المنتج من التلف. لذلك طلبت المساعدة من البائع.,ar,1.00000,ur,1.00000,ar,ar,ar,ar
+fr-medium-028,fr,medium,83,La batterie est vide avant la fin de la journée. Le son est excellent pour ce prix.,fr,0.79181,it,0.76023,fr,fr,fr,fr
+es-long-025,es,long,154,El paquete llegó antes de la fecha prevista. Resulta cómodo durante varias horas. La superficie se limpia fácilmente. El cable de carga dejó de funcionar.,es,1.00000,pt,1.00000,es,es,es,es
+en-very_long-022,en,very_long,230,Audio quality is excellent for the price. It works well with my older laptop. The battery charges much faster now. The charging cable stopped working. Performance dropped after a week. and the experience improved after the update.,en,1.00000,da,1.00000,en,en,en,en
+fr-very_short-013,fr,very_short,10,Trop cher.,de,0.05885,fr,0.00219,und,und,und,und
+ar-medium-022,ar,medium,98,انخفض الأداء بعد أسبوع من الاستخدام. الشاشة واضحة حتى تحت ضوء الشمس. وصل الصندوق متضررا بشكل واضح.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+en-medium-045,en,medium,83,The charging cable stopped working. Pairing it with my phone was surprisingly easy.,en,0.95774,tl,0.94358,en,en,en,en
+es-medium-003,es,medium,80,Los materiales parecen demasiado frágiles. El tamaño es menor de lo que parecía.,es,0.99200,pt,0.98657,es,es,es,es
+es-short-048,es,short,35,Atención amable. Embalaje terrible.,es,0.93220,ca,0.89045,es,es,es,es
+fr-very_short-039,fr,very_short,12,Très solide.,fr,0.91894,yo,0.87808,fr,fr,fr,fr
+fr-medium-014,fr,medium,95,La batterie se recharge maintenant plus vite. Il reste confortable même après plusieurs heures.,fr,0.99652,en,0.99501,fr,fr,fr,fr
+es-medium-010,es,medium,86,La batería se agotó antes de terminar el día. La instalación no necesitó herramientas.,es,0.99889,pt,0.99859,es,es,es,es
+en-short-001,en,short,40,The screen cracked. Package was missing.,en,0.61257,tl,0.54252,en,en,en,en
+en-long-034,en,long,171,The product feels comfortable for long sessions. The product is smaller than the photos suggest. The replacement unit had the same issue. Delivery took several extra days.,en,1.00000,nl,1.00000,en,en,en,en
+es-very_long-050,es,very_long,241,Me cobraron dos veces por error. Ahora la batería carga mucho más rápido. Las notificaciones de envío eran incorrectas. El embalaje protegió bien el producto. El tamaño es menor de lo que parecía. así que elegiría otro modelo la próxima vez.,es,1.00000,pt,1.00000,es,es,es,es
+es-very_long-038,es,very_long,201,La entrega se retrasó varios días. La caja llegó completamente aplastada. Ahora la batería carga mucho más rápido. La instalación no necesitó herramientas. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+es-short-034,es,short,34,Llegó temprano. Se calienta mucho.,es,0.65713,pl,0.61919,es,es,es,es
+en-long-031,en,long,112,Installation required no extra tools. The packaging protected everything inside. I was charged twice by mistake.,en,0.98687,tl,0.97710,en,en,en,en
+fr-very_short-043,fr,very_short,25,Performances excellentes.,fr,0.33462,en,0.13850,und,fr,fr,fr
+fr-medium-044,fr,medium,78,L’écran reste lisible en plein soleil. Le service client a résolu le problème.,fr,0.99066,en,0.98795,fr,fr,fr,fr
+es-very_long-012,es,very_long,235,Se bloqueó durante la instalación. Las notificaciones de envío eran incorrectas. La instalación no necesitó herramientas. Me cobraron dos veces por error. El proceso de devolución fue confuso. Los materiales parecen demasiado frágiles.,es,1.00000,pt,1.00000,es,es,es,es
+ar-medium-025,ar,medium,62,من الصعب الضغط على الأزرار. الخامات أضعف مما توقعت عند الشراء.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+es-long-040,es,long,178,El tamaño es menor de lo que parecía. Tuve que escribir al servicio técnico dos veces. Funciona bien con mi ordenador antiguo. El producto de sustitución tenía el mismo problema.,es,1.00000,ro,1.00000,es,es,es,es
+es-medium-039,es,medium,91,Las notificaciones de envío eran incorrectas. El rendimiento empeoró después de una semana.,es,0.99931,ca,0.99898,es,es,es,es
+en-very_long-040,en,very_long,223,The battery lasted less than a day. The refund process was confusing. The charging cable stopped working. It works well with my older laptop. I would recommend it for everyday use. The packaging protected everything inside.,en,1.00000,da,1.00000,en,en,en,en
+fr-long-003,fr,long,130,Je le recommande pour un usage quotidien. Le suivi de livraison était incorrect. L’appareil s’est bloqué pendant la configuration.,fr,0.99964,en,0.99939,fr,fr,fr,fr
+ar-very_long-031,ar,very_long,245,يعمل بشكل جيد مع حاسوبي القديم. يلتقط الميكروفون الكثير من الضوضاء. اضطررت للتواصل مع خدمة العملاء مرتين. أنصح به للاستخدام اليومي. تفتقد التعليمات خطوة مهمة للتركيب. رد البائع على رسالتي خلال ساعة. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_short-013,en,very_short,11,Good value.,en,0.18728,fr,0.13063,und,en,en,en
+es-long-048,es,long,122,Conectarlo al teléfono fue muy sencillo. El paquete llegó antes de la fecha prevista. El cable de carga dejó de funcionar.,es,0.99611,ca,0.99389,es,es,es,es
+en-medium-049,en,medium,77,The instructions skipped an important step. The refund process was confusing.,en,0.91363,tl,0.88818,en,en,en,en
+fr-short-011,fr,short,27,Écran abîmé. Bonne qualité.,fr,0.97041,ca,0.96228,fr,fr,fr,fr
+en-very_short-016,en,very_short,17,A complete waste.,en,0.16197,ro,0.09613,und,und,und,en
+ar-short-019,ar,short,26,شراء سريع. لا يستحق السعر.,ar,0.99820,fa,0.99705,ar,ar,ar,ar
+fr-short-009,fr,short,30,Échange rapide. Ne marche pas.,fr,0.43537,en,0.35553,und,fr,fr,fr
+fr-very_short-049,fr,very_short,16,Ça vaut le coup.,fr,0.21910,st,0.16797,und,fr,fr,fr
+es-very_short-045,es,very_short,17,Reembolso tardío.,es,0.40315,pt,0.07246,und,und,und,es
+es-very_short-025,es,very_short,16,Material barato.,eo,0.15421,it,0.04038,und,und,und,und
+fr-very_long-003,fr,very_long,246,La batterie est vide avant la fin de la journée. Le suivi de livraison était incorrect. La notice oublie une étape importante. La procédure de retour était compliquée. Le service client a résolu le problème. J’ai été facturé deux fois par erreur.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+es-short-030,es,short,38,Mejor de lo esperado. Bastante fiable.,es,0.69069,ca,0.60166,es,es,es,es
+es-very_short-010,es,very_short,18,Embalaje terrible.,es,0.29179,ts,0.06545,und,und,und,es
+ar-very_short-046,ar,very_short,11,كل شيء جيد.,ar,0.93645,fa,0.87313,ar,ar,ar,ar
+fr-medium-047,fr,medium,87,L’emballage a bien protégé le produit. Le produit de remplacement avait le même défaut.,fr,0.99870,en,0.99824,fr,fr,fr,fr
+es-very_long-023,es,very_long,299,Ahora la batería carga mucho más rápido. El proceso de devolución fue confuso. La caja llegó completamente aplastada. La atención al cliente resolvió el problema. El rendimiento empeoró después de una semana. La batería se agotó antes de terminar el día. Las instrucciones omiten un paso importante.,es,1.00000,ca,1.00000,es,es,es,es
+fr-very_short-045,fr,very_short,19,Remboursement lent.,fr,0.70132,en,0.63462,fr,fr,fr,fr
+en-long-009,en,long,116,I had to contact support twice. The packaging protected everything inside. The microphone picks up background noise.,en,0.98410,tl,0.96997,en,en,en,en
+en-medium-025,en,medium,73,The buttons are difficult to press. Installation required no extra tools.,en,0.87329,fr,0.81012,en,en,en,en
+en-short-017,en,short,33,Terrible packaging. Smooth setup.,en,0.50542,tl,0.34493,und,en,en,en
+es-medium-021,es,medium,74,Lo recomendaría para el uso diario. La caja llegó completamente aplastada.,es,0.92480,pt,0.87282,es,es,es,es
+es-long-046,es,long,117,El proceso de devolución fue confuso. Funciona bien con mi ordenador antiguo. La pantalla se ve bien incluso con sol.,es,0.98252,ca,0.96816,es,es,es,es
+ar-medium-029,ar,medium,67,يعمل بشكل جيد مع حاسوبي القديم. يلتقط الميكروفون الكثير من الضوضاء.,ar,0.99941,fa,0.99882,ar,ar,ar,ar
+fr-long-028,fr,long,116,Le vendeur a répondu en moins d’une heure. Les boutons sont difficiles à utiliser. La surface est facile à nettoyer.,fr,0.99847,eo,0.99809,fr,fr,fr,fr
+en-short-044,en,short,34,Never again. Really disappointing.,en,0.89885,tl,0.83932,en,en,en,en
+es-very_long-001,es,very_long,217,El producto de sustitución tenía el mismo problema. La pantalla se ve bien incluso con sol. Ahora la batería carga mucho más rápido. El vendedor respondió en menos de una hora. La instalación no necesitó herramientas.,es,1.00000,ca,1.00000,es,es,es,es
+fr-short-041,fr,short,36,Son très clair. Ventilateur bruyant.,fr,0.86006,yo,0.83305,fr,fr,fr,fr
+en-very_long-004,en,very_long,211,It works well with my older laptop. The seller answered within an hour. The material is easy to clean. Customer support resolved the issue. I was charged twice by mistake. which made it difficult to use at work.,en,1.00000,nb,1.00000,en,en,en,en
+es-medium-043,es,medium,89,El vendedor respondió en menos de una hora. La batería se agotó antes de terminar el día.,es,0.91851,pt,0.86009,es,es,es,es
+fr-long-014,fr,long,127,Il reste confortable même après plusieurs heures. L’emballage a bien protégé le produit. Le carton était écrasé à la livraison.,fr,0.99992,en,0.99988,fr,fr,fr,fr
+fr-very_short-032,fr,very_short,16,Boutons bloqués.,fr,0.86823,ca,0.79809,fr,fr,fr,fr
+en-short-038,en,short,31,Very comfortable. It overheats.,en,0.52008,tl,0.43575,und,en,en,en
+en-short-042,en,short,35,Battery dies fast. Wrong item sent.,en,0.25857,af,0.15321,und,en,en,en
+es-very_short-004,es,very_short,17,No funciona bien.,es,0.35349,pt,0.12450,und,es,es,es
+fr-medium-020,fr,medium,95,Le produit paraît plus petit que sur les photos. La livraison a pris plusieurs jours de retard.,fr,0.99889,en,0.99864,fr,fr,fr,fr
+fr-medium-022,fr,medium,79,Le carton était écrasé à la livraison. Le câble de recharge ne fonctionne plus.,fr,0.99725,eo,0.99675,fr,fr,fr,fr
+en-medium-010,en,medium,74,The battery charges much faster now. The screen is bright enough outdoors.,en,0.96026,tl,0.95028,en,en,en,en
+es-medium-046,es,medium,87,La caja llegó completamente aplastada. Tuve que escribir al servicio técnico dos veces.,es,0.95756,pt,0.92166,es,es,es,es
+fr-medium-041,fr,medium,98,La batterie est vide avant la fin de la journée. L’appareil s’est bloqué pendant la configuration.,fr,0.97152,it,0.96276,fr,fr,fr,fr
+es-very_short-024,es,very_short,10,Nunca más.,es,0.57545,pt,0.37534,es,es,es,es
+ar-long-028,ar,long,127,انخفض الأداء بعد أسبوع من الاستخدام. توقف الجهاز أثناء الإعداد الأول. ساعدني الدعم في حل المشكلة. لذلك طلبت المساعدة من البائع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-short-036,ar,short,26,المروحة مزعجة. أداء ممتاز.,ar,0.99958,fa,0.99928,ar,ar,ar,ar
+en-short-036,en,short,29,Nice design. Nothing special.,en,0.47021,tl,0.39042,und,en,en,en
+ar-short-004,ar,short,26,ملمسه فاخر. المروحة مزعجة.,ar,0.99899,fa,0.99804,ar,ar,ar,ar
+en-very_long-019,en,very_long,213,The battery charges much faster now. I had to contact support twice. The seller answered within an hour. The replacement unit had the same issue. The material is easy to clean. Customer support resolved the issue.,en,1.00000,tl,1.00000,en,en,en,en
+en-very_long-036,en,very_long,255,I received a different color. The package arrived earlier than promised. It stopped responding during setup. I would recommend it for everyday use. It works well with my older laptop. Delivery took several extra days. The screen is bright enough outdoors.,en,1.00000,tl,1.00000,en,en,en,en
+fr-short-023,fr,short,39,Description trompeuse. Ça vaut le coup.,fr,0.70459,en,0.63757,fr,fr,fr,fr
+en-short-043,en,short,38,Package was missing. Charging is slow.,en,0.56636,nl,0.49636,und,en,en,en
+fr-very_short-019,fr,very_short,17,Il s’éteint seul.,fr,0.48404,cy,0.43450,und,fr,fr,fr
+fr-short-001,fr,short,33,Il chauffe trop. Pièce manquante.,fr,0.71312,it,0.66403,fr,fr,fr,fr
+ar-very_short-048,ar,very_short,16,أفضل من المتوقع.,ar,0.98732,fa,0.97799,ar,ar,ar,ar
+es-very_long-010,es,very_long,296,La caja llegó completamente aplastada. Ahora la batería carga mucho más rápido. Las notificaciones de envío eran incorrectas. La entrega se retrasó varios días. Las instrucciones omiten un paso importante. El rendimiento empeoró después de una semana. La atención al cliente resolvió el problema.,es,1.00000,pt,1.00000,es,es,es,es
+en-very_long-026,en,very_long,232,The packaging protected everything inside. The refund process was confusing. The microphone picks up background noise. The battery lasted less than a day. Performance dropped after a week. but I am still deciding whether to keep it.,en,1.00000,tl,1.00000,en,en,en,en
+es-very_short-029,es,very_short,11,No conecta.,es,0.32681,ro,0.11042,und,und,es,es
+en-long-030,en,long,197,The packaging protected everything inside. The screen is bright enough outdoors. Shipping updates were not accurate. The product feels comfortable for long sessions. I had to contact support twice.,en,1.00000,tl,1.00000,en,en,en,en
+en-long-046,en,long,104,I had to contact support twice. I was charged twice by mistake. The replacement unit had the same issue.,en,0.95632,tl,0.94119,en,en,en,en
+fr-very_long-008,fr,very_long,322,La procédure de retour était compliquée. La connexion avec mon téléphone était facile. Le vendeur a répondu en moins d’une heure. La livraison a pris plusieurs jours de retard. La batterie est vide avant la fin de la journée. Le produit paraît plus petit que sur les photos. Les matériaux semblent plus fragiles que prévu.,fr,1.00000,cy,1.00000,fr,fr,fr,fr
+ar-short-029,ar,short,26,الشحن بطيء. التوصيل متأخر.,ar,0.98946,fa,0.97902,ar,ar,ar,ar
+en-medium-006,en,medium,65,Delivery took several extra days. I was charged twice by mistake.,en,0.88701,tl,0.85758,en,en,en,en
+ar-long-042,ar,long,166,يعمل بشكل جيد مع حاسوبي القديم. تم خصم المبلغ مرتين عن طريق الخطأ. تأخر التسليم عدة أيام إضافية. الشاشة واضحة حتى تحت ضوء الشمس. اضطررت للتواصل مع خدمة العملاء مرتين.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-medium-018,fr,medium,79,La procédure de retour était compliquée. L’installation ne demande aucun outil.,fr,0.99974,en,0.99962,fr,fr,fr,fr
+en-very_short-007,en,very_short,16,Arrived damaged.,en,0.70278,sn,0.66225,en,en,en,en
+en-long-049,en,long,110,The battery lasted less than a day. The box was crushed when it arrived. Installation required no extra tools.,en,0.98410,tl,0.97756,en,en,en,en
+fr-very_short-040,fr,very_short,22,Description trompeuse.,fr,0.58527,en,0.48505,fr,fr,fr,fr
+es-very_short-044,es,very_short,15,Manual confuso.,es,0.18453,pt,0.00677,und,und,und,und
+en-very_long-001,en,very_long,232,The material is easy to clean. The package arrived earlier than promised. Delivery took several extra days. The refund process was confusing. The product is smaller than the photos suggest. The packaging protected everything inside.,en,1.00000,tl,1.00000,en,en,en,en
+es-very_short-043,es,very_short,22,Rendimiento increíble.,es,0.99341,ca,0.98935,es,es,es,es
+fr-medium-042,fr,medium,71,La procédure de retour était compliquée. J’ai reçu la mauvaise couleur.,fr,0.99973,nl,0.99966,fr,fr,fr,fr
+ar-medium-044,ar,medium,98,الخامات أضعف مما توقعت عند الشراء. رد البائع على رسالتي خلال ساعة. الشاشة واضحة حتى تحت ضوء الشمس.,ar,0.99993,fa,0.99989,ar,ar,ar,ar
+ar-very_long-027,ar,very_long,205,الخامات أضعف مما توقعت عند الشراء. حجم المنتج أصغر مما توحي به الصور. توقف الجهاز أثناء الإعداد الأول. كان ربط الجهاز بالهاتف سهلا للغاية. يعمل بشكل جيد مع حاسوبي القديم. تفتقد التعليمات خطوة مهمة للتركيب.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-long-026,es,long,200,Me enviaron otro color por error. La batería se agotó antes de terminar el día. El cable de carga dejó de funcionar. Tuve que escribir al servicio técnico dos veces. La entrega se retrasó varios días.,es,1.00000,pt,1.00000,es,es,es,es
+en-short-009,en,short,35,Looks beautiful. Excellent support.,en,0.64830,tl,0.58511,en,en,en,en
+ar-medium-048,ar,medium,68,تم خصم المبلغ مرتين عن طريق الخطأ. حافظ التغليف على المنتج من التلف.,ar,0.99935,fa,0.99874,ar,ar,ar,ar
+fr-short-005,fr,short,37,Connexion impossible. Notice confuse.,fr,0.48635,ca,0.22152,und,fr,fr,fr
+fr-very_long-029,fr,very_long,240,Le câble de recharge ne fonctionne plus. La livraison a pris plusieurs jours de retard. Le suivi de livraison était incorrect. Le service client a résolu le problème. Le son est excellent pour ce prix. J’ai été facturé deux fois par erreur.,fr,1.00000,cy,1.00000,fr,fr,fr,fr
+fr-very_short-003,fr,very_short,18,Service excellent.,fr,0.28485,en,0.04022,und,und,und,und
+en-medium-012,en,medium,78,The charging cable stopped working. The packaging protected everything inside.,en,0.96961,tl,0.94889,en,en,en,en
+en-very_long-045,en,very_long,215,The seller answered within an hour. The battery lasted less than a day. I was charged twice by mistake. Audio quality is excellent for the price. It stopped responding during setup. Performance dropped after a week.,en,1.00000,tl,1.00000,en,en,en,en
+fr-long-036,fr,long,163,Les performances ont baissé après une semaine. L’emballage a bien protégé le produit. Le suivi de livraison était incorrect. J’ai été facturé deux fois par erreur.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+es-very_short-041,es,very_short,18,Parece de calidad.,es,0.52019,pt,0.07616,und,und,und,es
+fr-very_long-025,fr,very_long,299,J’ai dû contacter le service client deux fois. Le service client a résolu le problème. La procédure de retour était compliquée. La surface est facile à nettoyer. Le suivi de livraison était incorrect. L’appareil s’est bloqué pendant la configuration. Le produit de remplacement avait le même défaut.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-short-038,ar,short,30,لن أشتريه مجددا. الدعم متعاون.,ar,0.98660,fa,0.97326,ar,ar,ar,ar
+es-long-016,es,long,162,La instalación no necesitó herramientas. El cable de carga dejó de funcionar. El paquete llegó antes de la fecha prevista. La pantalla se ve bien incluso con sol.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_short-020,ar,very_short,13,الدعم متعاون.,ar,0.91380,ur,0.85972,ar,ar,ar,ar
+en-medium-009,en,medium,77,The seller answered within an hour. The materials feel thinner than expected.,en,0.90699,tl,0.88904,en,en,en,en
+ar-long-005,ar,long,124,تأخر التسليم عدة أيام إضافية. الخامات أضعف مما توقعت عند الشراء. ساعدني الدعم في حل المشكلة. رد البائع على رسالتي خلال ساعة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-long-015,fr,long,178,Il reste confortable même après plusieurs heures. Le produit de remplacement avait le même défaut. Les boutons sont difficiles à utiliser. Le colis est arrivé plus tôt que prévu.,fr,1.00000,ca,1.00000,fr,fr,fr,fr
+en-very_short-011,en,very_short,19,Terrible packaging.,en,0.36984,tl,0.21627,und,en,en,en
+es-very_long-011,es,very_long,214,Las instrucciones omiten un paso importante. La batería se agotó antes de terminar el día. El paquete llegó antes de la fecha prevista. La entrega se retrasó varios días. El vendedor respondió en menos de una hora.,es,1.00000,pt,1.00000,es,es,es,es
+fr-long-021,fr,long,174,Le son est excellent pour ce prix. Le vendeur a répondu en moins d’une heure. Les matériaux semblent plus fragiles que prévu. La batterie est vide avant la fin de la journée.,fr,1.00000,tn,1.00000,fr,fr,fr,fr
+fr-very_short-037,fr,very_short,16,Support réactif.,fr,0.92003,ga,0.86534,fr,fr,fr,fr
+ar-very_short-028,ar,very_short,10,شكله أنيق.,ar,0.90410,fa,0.80832,ar,ar,ar,ar
+ar-long-026,ar,long,131,ساعدني الدعم في حل المشكلة. تفتقد التعليمات خطوة مهمة للتركيب. كان ربط الجهاز بالهاتف سهلا للغاية. رغم أن الوصف كان يعد بشيء مختلف.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+fr-medium-030,fr,medium,78,Le service client a résolu le problème. L’écran reste lisible en plein soleil.,fr,0.99066,en,0.98795,fr,fr,fr,fr
+en-medium-019,en,medium,73,The materials feel thinner than expected. I was charged twice by mistake.,en,0.87199,tl,0.84391,en,en,en,en
+en-short-026,en,short,34,Fast replacement. Wrong item sent.,en,0.34366,fr,0.22956,und,en,en,en
+en-very_long-034,en,very_long,256,The buttons are difficult to press. I was charged twice by mistake. The materials feel thinner than expected. The box was crushed when it arrived. The microphone picks up background noise. Performance dropped after a week. Delivery took several extra days.,en,1.00000,da,1.00000,en,en,en,en
+ar-long-039,ar,long,127,أنصح به للاستخدام اليومي. تفتقد التعليمات خطوة مهمة للتركيب. يبقى الجهاز مريحا حتى بعد ساعات. حافظ التغليف على المنتج من التلف.,ar,0.99999,fa,0.99997,ar,ar,ar,ar
+en-short-030,en,short,45,Very slow delivery. Instructions are unclear.,en,0.86055,tl,0.82164,en,en,en,en
+fr-long-047,fr,long,137,J’ai dû contacter le service client deux fois. Le produit de remplacement avait le même défaut. Je le recommande pour un usage quotidien.,fr,0.99965,en,0.99940,fr,fr,fr,fr
+fr-short-024,fr,short,41,Service excellent. Description trompeuse.,fr,0.71684,en,0.55621,fr,fr,fr,fr
+ar-medium-037,ar,medium,68,توقف سلك الشحن عن العمل بعد أيام. الخامات أضعف مما توقعت عند الشراء.,ar,0.99821,fa,0.99657,ar,ar,ar,ar
+es-long-035,es,long,163,Los materiales parecen demasiado frágiles. Conectarlo al teléfono fue muy sencillo. El sonido es excelente para este precio. El embalaje protegió bien el producto.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_long-007,ar,very_long,241,حافظ التغليف على المنتج من التلف. أنصح به للاستخدام اليومي. اضطررت للتواصل مع خدمة العملاء مرتين. انخفض الأداء بعد أسبوع من الاستخدام. وصل الصندوق متضررا بشكل واضح. لذلك طلبت المساعدة من البائع. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-short-013,ar,short,33,الميكروفون ضعيف. لا يتصل بالشبكة.,ar,0.99146,fa,0.98295,ar,ar,ar,ar
+es-short-016,es,short,30,Todo correcto. Muy resistente.,es,0.63449,pt,0.57094,es,es,es,es
+fr-very_short-008,fr,very_short,12,Écran abîmé.,fr,0.94183,yo,0.91652,fr,fr,fr,fr
+ar-long-050,ar,long,101,توقف الجهاز أثناء الإعداد الأول. حافظ التغليف على المنتج من التلف. تم خصم المبلغ مرتين عن طريق الخطأ.,ar,0.99997,fa,0.99994,ar,ar,ar,ar
+fr-long-044,fr,long,108,J’ai été facturé deux fois par erreur. J’ai reçu la mauvaise couleur. Le carton était écrasé à la livraison.,fr,0.99972,yo,0.99967,fr,fr,fr,fr
+ar-medium-032,ar,medium,64,الخامات أضعف مما توقعت عند الشراء. وصل الصندوق متضررا بشكل واضح.,ar,0.99953,fa,0.99909,ar,ar,ar,ar
+es-long-017,es,long,194,La instalación no necesitó herramientas. El tamaño es menor de lo que parecía. La atención al cliente resolvió el problema. Me enviaron otro color por error. El cable de carga dejó de funcionar.,es,1.00000,ca,1.00000,es,es,es,es
+fr-very_long-006,fr,very_long,257,L’installation ne demande aucun outil. J’ai dû contacter le service client deux fois. L’emballage a bien protégé le produit. Le vendeur a répondu en moins d’une heure. L’appareil s’est bloqué pendant la configuration. Le colis est arrivé plus tôt que prévu.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+ar-very_long-035,ar,very_long,230,اضطررت للتواصل مع خدمة العملاء مرتين. حافظ التغليف على المنتج من التلف. الخامات أضعف مما توقعت عند الشراء. نفدت البطارية قبل نهاية اليوم. تفتقد التعليمات خطوة مهمة للتركيب. أنصح به للاستخدام اليومي. أصبحت البطارية تشحن بسرعة أكبر.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_long-035,en,very_long,262,The materials feel thinner than expected. The instructions skipped an important step. The refund process was confusing. Installation required no extra tools. It stopped responding during setup. The battery charges much faster now. I had to contact support twice.,en,1.00000,nl,1.00000,en,en,en,en
+ar-long-025,ar,long,158,كانت تحديثات الشحن غير دقيقة. اضطررت للتواصل مع خدمة العملاء مرتين. كانت إجراءات الإرجاع معقدة ومزعجة. نفدت البطارية قبل نهاية اليوم. يمكن تنظيف السطح بسهولة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-long-003,ar,long,127,اضطررت للتواصل مع خدمة العملاء مرتين. ظهر العطل نفسه في الجهاز البديل. يعمل بشكل جيد مع حاسوبي القديم. يمكن تنظيف السطح بسهولة.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+fr-very_short-001,fr,very_short,21,Livraison très lente.,fr,0.92541,eo,0.91693,fr,fr,fr,fr
+ar-very_short-005,ar,very_short,14,سهل الاستخدام.,ar,0.90592,fa,0.81191,ar,ar,ar,ar
+en-very_short-032,en,very_short,16,Really reliable.,en,0.88337,tl,0.81626,en,en,en,en
+fr-very_long-021,fr,very_long,215,L’emballage a bien protégé le produit. La connexion avec mon téléphone était facile. La batterie se recharge maintenant plus vite. Il reste confortable même après plusieurs heures. Le son est excellent pour ce prix.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+en-short-004,en,short,29,Wrong item sent. Very sturdy.,en,0.24509,tl,0.15588,und,en,en,en
+fr-very_long-037,fr,very_long,294,Le microphone capte trop de bruit. Le suivi de livraison était incorrect. Le produit paraît plus petit que sur les photos. Je le recommande pour un usage quotidien. Il reste confortable même après plusieurs heures. J’ai été facturé deux fois par erreur. Le câble de recharge ne fonctionne plus.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+ar-short-048,ar,short,28,تجربة مخيبة. البطارية ضعيفة.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+es-short-044,es,short,38,Servicio excelente. No vale su precio.,es,0.53560,pt,0.40330,und,es,es,es
+en-medium-035,en,medium,82,The refund process was confusing. The product feels comfortable for long sessions.,en,0.87415,tl,0.83659,en,en,en,en
+es-long-038,es,long,169,La instalación no necesitó herramientas. El producto de sustitución tenía el mismo problema. Funciona bien con mi ordenador antiguo. Resulta cómodo durante varias horas.,es,1.00000,pt,1.00000,es,es,es,es
+en-long-043,en,long,185,The replacement unit had the same issue. The refund process was confusing. The package arrived earlier than promised. Shipping updates were not accurate. I had to contact support twice.,en,1.00000,da,1.00000,en,en,en,en
+ar-very_short-016,ar,very_short,11,الشحن بطيء.,ar,0.99031,fa,0.98118,ar,ar,ar,ar
+es-medium-048,es,medium,80,El sonido es excelente para este precio. Funciona bien con mi ordenador antiguo.,es,0.86885,pt,0.76054,es,es,es,es
+en-short-010,en,short,34,Battery dies fast. Quick checkout.,en,0.38098,tl,0.30225,und,en,en,en
+en-short-019,en,short,38,Really reliable. Really disappointing.,en,0.84369,tl,0.72463,en,en,en,en
+ar-medium-007,ar,medium,63,من الصعب الضغط على الأزرار. يلتقط الميكروفون الكثير من الضوضاء.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+ar-medium-050,ar,medium,94,أنصح به للاستخدام اليومي. كان ربط الجهاز بالهاتف سهلا للغاية. ظهر العطل نفسه في الجهاز البديل.,ar,0.99928,fa,0.99856,ar,ar,ar,ar
+ar-very_long-038,ar,very_long,231,أصبحت البطارية تشحن بسرعة أكبر. يبقى الجهاز مريحا حتى بعد ساعات. تم خصم المبلغ مرتين عن طريق الخطأ. وصل الصندوق متضررا بشكل واضح. يلتقط الميكروفون الكثير من الضوضاء. نفدت البطارية قبل نهاية اليوم. كانت إجراءات الإرجاع معقدة ومزعجة.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-038,ar,very_short,15,وصل منتج مختلف.,ar,0.71264,fa,0.55325,ar,ar,ar,ar
+es-very_long-004,es,very_long,231,Lo recomendaría para el uso diario. Resulta cómodo durante varias horas. Me cobraron dos veces por error. Ahora la batería carga mucho más rápido. La caja llegó completamente aplastada. El rendimiento empeoró después de una semana.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_long-047,ar,very_long,219,وصل الصندوق متضررا بشكل واضح. يمكن تنظيف السطح بسهولة. انخفض الأداء بعد أسبوع من الاستخدام. نفدت البطارية قبل نهاية اليوم. وصلت الشحنة قبل الموعد المحدد. ظهر العطل نفسه في الجهاز البديل. توقف الجهاز أثناء الإعداد الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-short-050,fr,short,30,Très solide. Tout est correct.,fr,0.72254,ca,0.61357,fr,fr,fr,fr
+fr-medium-050,fr,medium,88,Les performances ont baissé après une semaine. Il fonctionne avec mon ancien ordinateur.,fr,0.99948,en,0.99933,fr,fr,fr,fr
+fr-very_short-025,fr,very_short,19,Matériaux fragiles.,fr,0.94239,yo,0.92085,fr,fr,fr,fr
+es-long-032,es,long,193,Conectarlo al teléfono fue muy sencillo. Me enviaron otro color por error. Funciona bien con mi ordenador antiguo. Los materiales parecen demasiado frágiles. Lo recomendaría para el uso diario.,es,1.00000,pt,1.00000,es,es,es,es
+en-short-014,en,short,34,Really reliable. Not worth buying.,en,0.86528,tl,0.79786,en,en,en,en
+ar-very_short-027,ar,very_short,11,يسخن كثيرا.,ar,0.79723,fa,0.59448,ar,ar,ar,ar
+ar-long-004,ar,long,129,تأخر التسليم عدة أيام إضافية. حافظ التغليف على المنتج من التلف. رد البائع على رسالتي خلال ساعة. ولاحظت الفرق منذ الاستخدام الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-039,en,short,31,Noisy fan. Amazing performance.,en,0.38292,tl,0.28593,und,en,en,en
+fr-long-050,fr,long,113,Les boutons sont difficiles à utiliser. L’écran reste lisible en plein soleil. Le son est excellent pour ce prix.,fr,0.99759,en,0.99643,fr,fr,fr,fr
+fr-very_short-047,fr,very_short,16,Rien de spécial.,fr,0.44024,pt,0.31818,und,fr,fr,fr
+es-long-006,es,long,118,Los materiales parecen demasiado frágiles. Conectarlo al teléfono fue muy sencillo. La entrega se retrasó varios días.,es,0.99963,pt,0.99932,es,es,es,es
+ar-very_long-050,ar,very_long,244,انخفض الأداء بعد أسبوع من الاستخدام. توقف الجهاز أثناء الإعداد الأول. كانت إجراءات الإرجاع معقدة ومزعجة. تم خصم المبلغ مرتين عن طريق الخطأ. حجم المنتج أصغر مما توحي به الصور. تفتقد التعليمات خطوة مهمة للتركيب. الخامات أضعف مما توقعت عند الشراء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-medium-001,en,medium,69,It works well with my older laptop. The refund process was confusing.,en,0.68764,da,0.63522,en,en,en,en
+ar-medium-026,ar,medium,100,كانت إجراءات الإرجاع معقدة ومزعجة. وصلني لون مختلف عن الذي طلبته. الخامات أضعف مما توقعت عند الشراء.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+es-medium-027,es,medium,88,Tuve que escribir al servicio técnico dos veces. Funciona bien con mi ordenador antiguo.,es,0.96714,pt,0.93867,es,es,es,es
+fr-long-017,fr,long,126,J’ai été facturé deux fois par erreur. Le produit paraît plus petit que sur les photos. L’installation ne demande aucun outil.,fr,0.99898,ca,0.99863,fr,fr,fr,fr
+ar-short-039,ar,short,30,لا يتصل بالشبكة. الصورة واضحة.,ar,0.99990,ur,0.99985,ar,ar,ar,ar
+ar-very_short-018,ar,very_short,16,لا توجد تعليمات.,ar,0.79857,fa,0.60530,ar,ar,ar,ar
+es-medium-007,es,medium,86,Las notificaciones de envío eran incorrectas. Ahora la batería carga mucho más rápido.,es,0.99545,pt,0.99224,es,es,es,es
+en-medium-022,en,medium,62,The material is easy to clean. I had to contact support twice.,en,0.64018,tl,0.56924,en,en,en,en
+ar-medium-030,ar,medium,90,كانت تحديثات الشحن غير دقيقة. تم التركيب دون الحاجة إلى أدوات. ساعدني الدعم في حل المشكلة.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+es-short-012,es,short,27,Botones duros. Compra útil.,es,0.30271,ca,0.13278,und,es,es,es
+en-long-045,en,long,145,The seller answered within an hour. I had to contact support twice. The replacement unit had the same issue. Customer support resolved the issue.,en,0.99609,tl,0.99302,en,en,en,en
+fr-very_long-017,fr,very_long,292,Le câble de recharge ne fonctionne plus. La notice oublie une étape importante. La connexion avec mon téléphone était facile. Je le recommande pour un usage quotidien. L’appareil s’est bloqué pendant la configuration. Les boutons sont difficiles à utiliser. Le microphone capte trop de bruit.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+fr-long-031,fr,long,197,Le microphone capte trop de bruit. Le son est excellent pour ce prix. Le colis est arrivé plus tôt que prévu. Le suivi de livraison était incorrect. La batterie est vide avant la fin de la journée.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+ar-short-026,ar,short,27,لا يعمل جيدا. الدعم متعاون.,ar,0.97920,fa,0.95974,ar,ar,ar,ar
+fr-short-030,fr,short,35,Matériaux fragiles. Notice confuse.,fr,0.91850,pt,0.89232,fr,fr,fr,fr
+en-medium-030,en,medium,73,I had to contact support twice. The materials feel thinner than expected.,en,0.89724,tl,0.86628,en,en,en,en
+es-very_long-025,es,very_long,206,La instalación no necesitó herramientas. Ahora la batería carga mucho más rápido. El sonido es excelente para este precio. El tamaño es menor de lo que parecía. La batería se agotó antes de terminar el día.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_short-037,ar,very_short,17,رد سريع من الدعم.,ar,0.96584,fa,0.93352,ar,ar,ar,ar
+ar-medium-001,ar,medium,66,توقف سلك الشحن عن العمل بعد أيام. يبقى الجهاز مريحا حتى بعد ساعات.,ar,0.99254,fa,0.98509,ar,ar,ar,ar
+fr-medium-019,fr,medium,96,La livraison a pris plusieurs jours de retard. Il reste confortable même après plusieurs heures.,fr,0.99768,en,0.99711,fr,fr,fr,fr
+es-very_long-008,es,very_long,249,Resulta cómodo durante varias horas. El proceso de devolución fue confuso. El embalaje protegió bien el producto. El paquete llegó antes de la fecha prevista. El rendimiento empeoró después de una semana. La atención al cliente resolvió el problema.,es,1.00000,tl,1.00000,es,es,es,es
+en-very_short-001,en,very_short,14,Great battery.,en,0.49517,tl,0.41488,und,en,en,en
+fr-long-027,fr,long,173,La batterie est vide avant la fin de la journée. L’installation ne demande aucun outil. La livraison a pris plusieurs jours de retard. Le carton était écrasé à la livraison.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+en-medium-048,en,medium,72,It stopped responding during setup. The box was crushed when it arrived.,en,0.93372,tl,0.91477,en,en,en,en
+ar-short-031,ar,short,30,أفضل من المتوقع. يستحق الشراء.,ar,0.99389,fa,0.99032,ar,ar,ar,ar
+ar-short-024,ar,short,28,وصل مكسورا. الحجم غير مناسب.,ar,0.89823,fa,0.79800,ar,ar,ar,ar
+fr-very_short-017,fr,very_short,12,Joli design.,en,0.06942,fr,0.01113,und,und,und,und
+ar-very_long-037,ar,very_long,208,تأخر التسليم عدة أيام إضافية. ظهر العطل نفسه في الجهاز البديل. يلتقط الميكروفون الكثير من الضوضاء. انخفض الأداء بعد أسبوع من الاستخدام. جودة الصوت ممتازة مقارنة بالسعر. لكنني لم أقرر بعد ما إذا كنت سأحتفظ به.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-medium-040,ar,medium,83,من الصعب الضغط على الأزرار. أنصح به للاستخدام اليومي. وصل الصندوق متضررا بشكل واضح.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+ar-very_short-039,ar,very_short,9,متين جدا.,ar,0.60770,fa,0.22925,ar,ar,ar,ar
+fr-long-002,fr,long,109,Les boutons sont difficiles à utiliser. J’ai reçu la mauvaise couleur. J’ai été facturé deux fois par erreur.,fr,0.99961,nl,0.99952,fr,fr,fr,fr
+fr-long-016,fr,long,161,Le colis est arrivé plus tôt que prévu. La connexion avec mon téléphone était facile. Le microphone capte trop de bruit. Le câble de recharge ne fonctionne plus.,fr,1.00000,st,1.00000,fr,fr,fr,fr
+en-very_long-049,en,very_long,274,Pairing it with my phone was surprisingly easy. The box was crushed when it arrived. Shipping updates were not accurate. The instructions skipped an important step. The buttons are difficult to press. I had to contact support twice. The microphone picks up background noise.,en,1.00000,fr,1.00000,en,en,en,en
+en-very_short-049,en,very_short,16,Nothing special.,en,0.28694,tl,0.19445,und,en,en,en
+es-very_long-019,es,very_long,205,Las notificaciones de envío eran incorrectas. Funciona bien con mi ordenador antiguo. El tamaño es menor de lo que parecía. La instalación no necesitó herramientas. Conectarlo al teléfono fue muy sencillo.,es,1.00000,pt,1.00000,es,es,es,es
+es-very_long-049,es,very_long,265,La entrega se retrasó varios días. El micrófono capta demasiado ruido. El embalaje protegió bien el producto. Me enviaron otro color por error. La instalación no necesitó herramientas. El proceso de devolución fue confuso. Los materiales parecen demasiado frágiles.,es,1.00000,eo,1.00000,es,es,es,es
+es-very_short-018,es,very_short,18,Sin instrucciones.,es,0.70067,ca,0.50175,es,es,es,es
+fr-very_short-018,fr,very_short,14,Aucune notice.,fr,0.68264,en,0.62316,fr,fr,fr,fr
+es-very_long-037,es,very_long,291,El micrófono capta demasiado ruido. Conectarlo al teléfono fue muy sencillo. El paquete llegó antes de la fecha prevista. Los materiales parecen demasiado frágiles. El producto de sustitución tenía el mismo problema. La superficie se limpia fácilmente. El embalaje protegió bien el producto.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_short-047,en,very_short,17,Refund took ages.,en,0.11264,de,0.05745,und,und,und,en
+fr-long-037,fr,long,195,J’ai dû contacter le service client deux fois. La surface est facile à nettoyer. L’emballage a bien protégé le produit. Le microphone capte trop de bruit. Le câble de recharge ne fonctionne plus.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+fr-very_short-002,fr,very_short,21,Batterie trop faible.,fr,0.44941,de,0.34634,und,fr,fr,fr
+fr-very_short-041,fr,very_short,17,Finition soignée.,fr,0.99264,yo,0.98912,fr,fr,fr,fr
+fr-medium-035,fr,medium,80,L’écran reste lisible en plein soleil. Il fonctionne avec mon ancien ordinateur.,fr,0.99498,en,0.99367,fr,fr,fr,fr
+es-short-009,es,short,26,Muy cómodo. Se apaga solo.,es,0.51044,tl,0.40404,und,es,es,es
+ar-medium-028,ar,medium,96,يبقى الجهاز مريحا حتى بعد ساعات. الشاشة واضحة حتى تحت ضوء الشمس. رد البائع على رسالتي خلال ساعة.,ar,0.99982,fa,0.99964,ar,ar,ar,ar
+fr-very_short-010,fr,very_short,19,Emballage médiocre.,fr,0.61709,pt,0.48147,fr,fr,fr,fr
+fr-medium-015,fr,medium,97,Le produit de remplacement avait le même défaut. La batterie est vide avant la fin de la journée.,fr,0.99643,it,0.99540,fr,fr,fr,fr
+ar-very_short-049,ar,very_short,13,يستحق الشراء.,ar,0.97950,ur,0.96643,ar,ar,ar,ar
+fr-very_short-030,fr,very_short,14,Plutôt fiable.,fr,0.99271,sk,0.98720,fr,fr,fr,fr
+en-medium-038,en,medium,71,The replacement unit had the same issue. The material is easy to clean.,en,0.74028,tl,0.67976,en,en,en,en
+es-very_long-022,es,very_long,244,Funciona bien con mi ordenador antiguo. El rendimiento empeoró después de una semana. El cable de carga dejó de funcionar. Conectarlo al teléfono fue muy sencillo. Cuesta bastante pulsar los botones. así que elegiría otro modelo la próxima vez.,es,1.00000,pt,1.00000,es,es,es,es
+fr-short-025,fr,short,33,Rien de spécial. Mieux que prévu.,fr,0.91070,pt,0.88048,fr,fr,fr,fr
+fr-short-012,fr,short,31,Joli design. Facile à utiliser.,fr,0.33600,it,0.23020,und,fr,fr,fr
+fr-very_long-047,fr,very_long,247,Le câble de recharge ne fonctionne plus. La livraison a pris plusieurs jours de retard. Les performances ont baissé après une semaine. Le son est excellent pour ce prix. La notice oublie une étape importante. L’emballage a bien protégé le produit.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+en-long-008,en,long,120,Customer support resolved the issue. Pairing it with my phone was surprisingly easy. It works well with my older laptop.,en,0.98359,tl,0.97367,en,en,en,en
+es-very_long-041,es,very_long,237,La superficie se limpia fácilmente. Me cobraron dos veces por error. Ahora la batería carga mucho más rápido. Funciona bien con mi ordenador antiguo. Los materiales parecen demasiado frágiles. El paquete llegó antes de la fecha prevista.,es,1.00000,pt,1.00000,es,es,es,es
+es-medium-033,es,medium,81,Resulta cómodo durante varias horas. Las instrucciones omiten un paso importante.,es,0.96406,pt,0.93934,es,es,es,es
+ar-long-002,ar,long,134,حافظ التغليف على المنتج من التلف. الخامات أضعف مما توقعت عند الشراء. تم التركيب دون الحاجة إلى أدوات. يبقى الجهاز مريحا حتى بعد ساعات.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+ar-very_short-050,ar,very_short,15,لا يستحق السعر.,ar,0.98595,ur,0.97498,ar,ar,ar,ar
+en-long-010,en,long,160,The instructions skipped an important step. I received a different color. Installation required no extra tools. The product feels comfortable for long sessions.,en,1.00000,fr,1.00000,en,en,en,en
+fr-very_short-021,fr,very_short,21,L’application plante.,fr,0.41964,en,0.17350,und,fr,fr,fr
+en-medium-023,en,medium,77,The materials feel thinner than expected. Shipping updates were not accurate.,en,0.92073,tl,0.88991,en,en,en,en
+en-short-050,en,short,39,Fast replacement. Bad customer service.,en,0.49534,tl,0.41485,und,en,en,en
+fr-short-040,fr,short,33,Il chauffe trop. Boutons bloqués.,fr,0.64774,nl,0.59264,fr,fr,fr,fr
+es-very_short-036,es,very_short,15,Micrófono malo.,es,0.90087,pt,0.86981,es,es,es,es
+fr-medium-021,fr,medium,88,Je le recommande pour un usage quotidien. Les performances ont baissé après une semaine.,fr,0.99650,en,0.99525,fr,fr,fr,fr
+ar-very_long-015,ar,very_long,240,يبقى الجهاز مريحا حتى بعد ساعات. حافظ التغليف على المنتج من التلف. أصبحت البطارية تشحن بسرعة أكبر. توقف سلك الشحن عن العمل بعد أيام. انخفض الأداء بعد أسبوع من الاستخدام. يلتقط الميكروفون الكثير من الضوضاء. حجم المنتج أصغر مما توحي به الصور.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-short-045,fr,short,44,Service excellent. Performances excellentes.,fr,0.35311,en,0.09389,und,und,und,fr
+ar-medium-004,ar,medium,65,ظهر العطل نفسه في الجهاز البديل. جودة الصوت ممتازة مقارنة بالسعر.,ar,0.99985,fa,0.99970,ar,ar,ar,ar
+es-very_long-009,es,very_long,235,Me cobraron dos veces por error. La batería se agotó antes de terminar el día. La instalación no necesitó herramientas. El cable de carga dejó de funcionar. El vendedor respondió en menos de una hora. La entrega se retrasó varios días.,es,1.00000,pt,1.00000,es,es,es,es
+ar-very_long-040,ar,very_long,225,تم خصم المبلغ مرتين عن طريق الخطأ. وصلت الشحنة قبل الموعد المحدد. توقف الجهاز أثناء الإعداد الأول. ساعدني الدعم في حل المشكلة. الخامات أضعف مما توقعت عند الشراء. أنصح به للاستخدام اليومي. اضطررت للتواصل مع خدمة العملاء مرتين.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-short-028,es,short,28,Atención amable. Hace ruido.,es,0.86274,ca,0.81120,es,es,es,es
+en-medium-026,en,medium,89,The materials feel thinner than expected. The product is smaller than the photos suggest.,en,0.88910,nl,0.86664,en,en,en,en
+ar-short-041,ar,short,30,وصل منتج مختلف. سهل الاستخدام.,ar,0.91119,fa,0.82342,ar,ar,ar,ar
+es-long-022,es,long,121,El vendedor respondió en menos de una hora. Resulta cómodo durante varias horas. El sonido es excelente para este precio.,es,0.89966,pt,0.79986,es,es,es,es
+en-very_short-020,en,very_short,16,No instructions.,fr,0.42066,en,0.12720,und,fr,fr,fr
+ar-medium-039,ar,medium,100,اضطررت للتواصل مع خدمة العملاء مرتين. ظهر العطل نفسه في الجهاز البديل. تأخر التسليم عدة أيام إضافية.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-long-031,es,long,151,El embalaje protegió bien el producto. Funciona bien con mi ordenador antiguo. Lo recomendaría para el uso diario. Resulta cómodo durante varias horas.,es,1.00000,pt,1.00000,es,es,es,es
+en-very_long-030,en,very_long,277,Pairing it with my phone was surprisingly easy. I was charged twice by mistake. The product feels comfortable for long sessions. The charging cable stopped working. The package arrived earlier than promised. I would recommend it for everyday use. The material is easy to clean.,en,1.00000,tl,1.00000,en,en,en,en
+en-short-002,en,short,36,Very comfortable. Excellent support.,en,0.52253,fr,0.43164,und,en,en,en
+fr-long-033,fr,long,177,La livraison a pris plusieurs jours de retard. L’appareil s’est bloqué pendant la configuration. La notice oublie une étape importante. Il fonctionne avec mon ancien ordinateur.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+en-long-021,en,long,122,I would recommend it for everyday use. The product is smaller than the photos suggest. It stopped responding during setup.,en,0.98957,tl,0.98401,en,en,en,en
+en-very_long-021,en,very_long,262,The packaging protected everything inside. The seller answered within an hour. The refund process was confusing. I was charged twice by mistake. The package arrived earlier than promised. Installation required no extra tools. Customer support resolved the issue.,en,1.00000,tl,1.00000,en,en,en,en
+fr-very_long-016,fr,very_long,264,La connexion avec mon téléphone était facile. J’ai été facturé deux fois par erreur. La notice oublie une étape importante. Le produit paraît plus petit que sur les photos. La batterie est vide avant la fin de la journée. Le vendeur a répondu en moins d’une heure.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+fr-very_long-040,fr,very_long,297,J’ai dû contacter le service client deux fois. La notice oublie une étape importante. Le produit paraît plus petit que sur les photos. L’emballage a bien protégé le produit. La batterie se recharge maintenant plus vite. L’installation ne demande aucun outil. J’ai été facturé deux fois par erreur.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+fr-short-016,fr,short,42,Recharge trop lente. Connexion impossible.,fr,0.65534,ca,0.53573,fr,fr,fr,fr
+en-long-026,en,long,122,The package arrived earlier than promised. Shipping updates were not accurate. The instructions skipped an important step.,en,0.99681,tl,0.99499,en,en,en,en
+en-long-014,en,long,179,The packaging protected everything inside. Customer support resolved the issue. Delivery took several extra days. Performance dropped after a week. I was charged twice by mistake.,en,1.00000,tl,1.00000,en,en,en,en
+en-short-003,en,short,33,Arrived damaged. Cheap materials.,en,0.75458,da,0.73164,en,en,en,en
+fr-very_long-020,fr,very_long,201,Le vendeur a répondu en moins d’une heure. Le microphone capte trop de bruit. Le son est excellent pour ce prix. Les performances ont baissé après une semaine. Il fonctionne avec mon ancien ordinateur.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+fr-long-001,fr,long,167,L’emballage a bien protégé le produit. J’ai été facturé deux fois par erreur. Le service client a résolu le problème. Il reste confortable même après plusieurs heures.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+en-very_long-025,en,very_long,231,The materials feel thinner than expected. The seller answered within an hour. The product feels comfortable for long sessions. The charging cable stopped working. The material is easy to clean. The screen is bright enough outdoors.,en,1.00000,tl,1.00000,en,en,en,en
+fr-long-020,fr,long,179,Le produit de remplacement avait le même défaut. J’ai dû contacter le service client deux fois. La batterie est vide avant la fin de la journée. Le microphone capte trop de bruit.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-very_long-014,ar,very_long,216,رد البائع على رسالتي خلال ساعة. الشاشة واضحة حتى تحت ضوء الشمس. كانت تحديثات الشحن غير دقيقة. توقف الجهاز أثناء الإعداد الأول. أصبحت البطارية تشحن بسرعة أكبر. وهذا أمر مزعج في منتج جديد. لذلك طلبت المساعدة من البائع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-long-046,fr,long,130,Le service client a résolu le problème. Le câble de recharge ne fonctionne plus. L’appareil s’est bloqué pendant la configuration.,fr,0.99982,tl,0.99976,fr,fr,fr,fr
+ar-long-030,ar,long,149,يمكن تنظيف السطح بسهولة. ظهر العطل نفسه في الجهاز البديل. وصل الصندوق متضررا بشكل واضح. كانت تحديثات الشحن غير دقيقة. الشاشة واضحة حتى تحت ضوء الشمس.,ar,0.99998,fa,0.99997,ar,ar,ar,ar
+ar-very_short-015,ar,very_short,12,تجربة مخيبة.,ar,0.99809,ur,0.99648,ar,ar,ar,ar
+es-very_short-009,es,very_short,11,Muy cómodo.,es,0.95269,pt,0.91635,es,es,es,es
+ar-medium-042,ar,medium,67,حجم المنتج أصغر مما توحي به الصور. توقف الجهاز أثناء الإعداد الأول.,ar,0.99988,fa,0.99978,ar,ar,ar,ar
+fr-very_long-050,fr,very_long,248,L’appareil s’est bloqué pendant la configuration. Le colis est arrivé plus tôt que prévu. Le vendeur a répondu en moins d’une heure. Il fonctionne avec mon ancien ordinateur. Le son est excellent pour ce prix. L’écran reste lisible en plein soleil.,fr,1.00000,st,1.00000,fr,fr,fr,fr
+ar-very_long-045,ar,very_long,211,يمكن تنظيف السطح بسهولة. ظهر العطل نفسه في الجهاز البديل. نفدت البطارية قبل نهاية اليوم. تم خصم المبلغ مرتين عن طريق الخطأ. تأخر التسليم عدة أيام إضافية. ساعدني الدعم في حل المشكلة. لذلك طلبت المساعدة من البائع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-018,en,short,37,A useful purchase. Excellent quality.,en,0.75189,tl,0.71281,en,en,en,en
+fr-short-046,fr,short,30,Équipe serviable. Écran abîmé.,fr,0.94157,ca,0.91212,fr,fr,fr,fr
+en-very_long-038,en,very_long,268,Delivery took several extra days. The buttons are difficult to press. Audio quality is excellent for the price. Customer support resolved the issue. I received a different color. The microphone picks up background noise. The product is smaller than the photos suggest.,en,1.00000,it,1.00000,en,en,en,en
+es-very_long-045,es,very_long,203,Cuesta bastante pulsar los botones. La pantalla se ve bien incluso con sol. El cable de carga dejó de funcionar. Las notificaciones de envío eran incorrectas. La atención al cliente resolvió el problema.,es,1.00000,ca,1.00000,es,es,es,es
+fr-long-022,fr,long,128,L’installation ne demande aucun outil. La procédure de retour était compliquée. Le produit paraît plus petit que sur les photos.,fr,0.99997,en,0.99996,fr,fr,fr,fr
+en-short-040,en,short,36,Charging is slow. The buttons stick.,en,0.41903,de,0.32206,und,en,en,en
+ar-very_long-017,ar,very_long,234,حجم المنتج أصغر مما توحي به الصور. انخفض الأداء بعد أسبوع من الاستخدام. حافظ التغليف على المنتج من التلف. كان ربط الجهاز بالهاتف سهلا للغاية. وصلني لون مختلف عن الذي طلبته. وهذا أمر مزعج في منتج جديد. ولاحظت الفرق منذ الاستخدام الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-033,es,very_long,246,El vendedor respondió en menos de una hora. Me enviaron otro color por error. Conectarlo al teléfono fue muy sencillo. El sonido es excelente para este precio. Ahora la batería carga mucho más rápido. Las notificaciones de envío eran incorrectas.,es,1.00000,pt,1.00000,es,es,es,es
+ar-short-001,ar,short,27,لا شيء مميز. التطبيق يتعطل.,ar,0.99413,fa,0.98837,ar,ar,ar,ar
+es-very_short-050,es,very_short,18,No vale su precio.,es,0.14043,pt,0.05153,und,und,und,es
+fr-very_short-038,fr,very_short,21,Mauvais article reçu.,fr,0.89024,ca,0.87171,fr,fr,fr,fr
+ar-very_long-018,ar,very_long,227,حافظ التغليف على المنتج من التلف. يعمل بشكل جيد مع حاسوبي القديم. ظهر العطل نفسه في الجهاز البديل. وصلني لون مختلف عن الذي طلبته. الخامات أضعف مما توقعت عند الشراء. نفدت البطارية قبل نهاية اليوم. وتحسن الوضع بعد تحديث البرنامج.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_short-042,en,very_short,18,Not as advertised.,en,0.37171,eo,0.32164,und,en,en,en
+ar-medium-049,ar,medium,94,تفتقد التعليمات خطوة مهمة للتركيب. الخامات أضعف مما توقعت عند الشراء. يمكن تنظيف السطح بسهولة.,ar,0.99998,fa,0.99996,ar,ar,ar,ar
+en-medium-014,en,medium,97,I received a different color. The seller answered within an hour. I was charged twice by mistake.,en,0.97681,yo,0.96988,en,en,en,en
+ar-short-032,ar,short,31,أفضل من المتوقع. سهل الاستخدام.,ar,0.98735,fa,0.97484,ar,ar,ar,ar
+fr-long-008,fr,long,174,La batterie est vide avant la fin de la journée. Les performances ont baissé après une semaine. La notice oublie une étape importante. Les boutons sont difficiles à utiliser.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+fr-medium-024,fr,medium,94,La batterie se recharge maintenant plus vite. Le produit paraît plus petit que sur les photos.,fr,0.94425,en,0.93061,fr,fr,fr,fr
+en-very_long-029,en,very_long,274,The materials feel thinner than expected. The product feels comfortable for long sessions. The replacement unit had the same issue. The refund process was confusing. The box was crushed when it arrived. The screen is bright enough outdoors. Performance dropped after a week.,en,1.00000,tl,1.00000,en,en,en,en
+fr-long-007,fr,long,128,Les matériaux semblent plus fragiles que prévu. L’installation ne demande aucun outil. Je le recommande pour un usage quotidien.,fr,0.99986,yo,0.99983,fr,fr,fr,fr
+ar-very_short-032,ar,very_short,13,الأزرار صعبة.,ar,0.99990,fa,0.99980,ar,ar,ar,ar
+fr-very_long-032,fr,very_long,245,La batterie se recharge maintenant plus vite. Le carton était écrasé à la livraison. La notice oublie une étape importante. Le son est excellent pour ce prix. J’ai été facturé deux fois par erreur. Les matériaux semblent plus fragiles que prévu.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+es-short-007,es,short,33,Hace ruido. Mejor de lo esperado.,es,0.76383,pt,0.68345,es,es,es,es
+en-very_long-048,en,very_long,259,The battery charges much faster now. The screen is bright enough outdoors. It stopped responding during setup. I was charged twice by mistake. Customer support resolved the issue. I would recommend it for everyday use. The replacement unit had the same issue.,en,1.00000,tl,1.00000,en,en,en,en
+es-short-021,es,short,38,Servicio excelente. Faltaba una pieza.,es,0.76237,pt,0.72660,es,es,es,es
+ar-medium-024,ar,medium,87,ساعدني الدعم في حل المشكلة. وصل الصندوق متضررا بشكل واضح. تأخر التسليم عدة أيام إضافية.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-very_long-028,fr,very_long,311,Il reste confortable même après plusieurs heures. Le produit paraît plus petit que sur les photos. La batterie se recharge maintenant plus vite. La connexion avec mon téléphone était facile. J’ai reçu la mauvaise couleur. Les performances ont baissé après une semaine. Le vendeur a répondu en moins d’une heure.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+es-short-005,es,short,43,Descripción engañosa. La batería dura poco.,es,1.00000,af,1.00000,es,es,es,es
+en-medium-005,en,medium,65,I had to contact support twice. The refund process was confusing.,en,0.89555,tl,0.86710,en,en,en,en
+fr-very_long-010,fr,very_long,267,L’écran reste lisible en plein soleil. La batterie se recharge maintenant plus vite. Les boutons sont difficiles à utiliser. J’ai dû contacter le service client deux fois. L’appareil s’est bloqué pendant la configuration. La connexion avec mon téléphone était facile.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+fr-long-049,fr,long,200,La surface est facile à nettoyer. La connexion avec mon téléphone était facile. Le service client a résolu le problème. Je le recommande pour un usage quotidien. J’ai été facturé deux fois par erreur.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+ar-short-018,ar,short,26,سعر مناسب. الوصف غير دقيق.,ar,0.82196,fa,0.65033,ar,ar,ar,ar
+es-very_short-040,es,very_short,21,Descripción engañosa.,es,0.92621,ca,0.88261,es,es,es,es
+ar-long-036,ar,long,163,جودة الصوت ممتازة مقارنة بالسعر. أصبحت البطارية تشحن بسرعة أكبر. تم خصم المبلغ مرتين عن طريق الخطأ. حافظ التغليف على المنتج من التلف. وصل الصندوق متضررا بشكل واضح.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_long-037,en,very_long,212,Shipping updates were not accurate. The seller answered within an hour. I was charged twice by mistake. I had to contact support twice. It works well with my older laptop. The replacement unit had the same issue.,en,1.00000,nl,1.00000,en,en,en,en
+en-very_short-019,en,very_short,12,Nice design.,en,0.15623,cs,0.07061,und,und,und,en
+ar-long-020,ar,long,129,وصلني لون مختلف عن الذي طلبته. كان ربط الجهاز بالهاتف سهلا للغاية. كانت تحديثات الشحن غير دقيقة. توقف الجهاز أثناء الإعداد الأول.,ar,0.99997,fa,0.99994,ar,ar,ar,ar
+fr-long-029,fr,long,170,La batterie est vide avant la fin de la journée. Le câble de recharge ne fonctionne plus. Le microphone capte trop de bruit. La connexion avec mon téléphone était facile.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+fr-very_long-004,fr,very_long,293,La batterie est vide avant la fin de la journée. L’emballage a bien protégé le produit. Le son est excellent pour ce prix. La connexion avec mon téléphone était facile. J’ai dû contacter le service client deux fois. L’écran reste lisible en plein soleil. Le suivi de livraison était incorrect.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+es-long-005,es,long,188,Ahora la batería carga mucho más rápido. La entrega se retrasó varios días. Resulta cómodo durante varias horas. Se bloqueó durante la instalación. Conectarlo al teléfono fue muy sencillo.,es,1.00000,ca,1.00000,es,es,es,es
+en-very_long-009,en,very_long,234,The seller answered within an hour. The battery charges much faster now. The refund process was confusing. The materials feel thinner than expected. The product is smaller than the photos suggest. The screen is bright enough outdoors.,en,1.00000,nl,1.00000,en,en,en,en
+es-medium-042,es,medium,72,Funciona bien con mi ordenador antiguo. Me cobraron dos veces por error.,es,0.91287,pt,0.87109,es,es,es,es
+fr-medium-011,fr,medium,85,La livraison a pris plusieurs jours de retard. Le carton était écrasé à la livraison.,fr,0.99744,en,0.99681,fr,fr,fr,fr
+es-very_short-038,es,very_short,18,Pedido equivocado.,es,0.53910,pt,0.12976,und,es,es,es
+en-short-011,en,short,39,Terrible packaging. Very slow delivery.,en,0.61282,tl,0.47728,en,en,en,en
+es-short-024,es,short,38,Mejor de lo esperado. Pantalla dañada.,es,0.83374,ca,0.76912,es,es,es,es
+en-very_short-031,en,very_short,16,Hard to connect.,en,0.19685,nn,0.05226,und,und,und,en
+fr-long-045,fr,long,185,Il reste confortable même après plusieurs heures. Les matériaux semblent plus fragiles que prévu. Le produit paraît plus petit que sur les photos. La notice oublie une étape importante.,fr,1.00000,ca,1.00000,fr,fr,fr,fr
+ar-very_short-045,ar,very_short,19,تأخر استرداد المال.,ar,0.79174,fa,0.59111,ar,ar,ar,ar
+fr-very_long-038,fr,very_long,213,L’écran reste lisible en plein soleil. La batterie se recharge maintenant plus vite. La batterie est vide avant la fin de la journée. Les boutons sont difficiles à utiliser. Le service client a résolu le problème.,fr,1.00000,en,1.00000,fr,fr,fr,fr
+en-very_long-014,en,very_long,222,Customer support resolved the issue. Performance dropped after a week. Delivery took several extra days. It works well with my older laptop. It stopped responding during setup. and overall I am satisfied with the purchase.,en,1.00000,tl,1.00000,en,en,en,en
+ar-medium-013,ar,medium,92,جودة الصوت ممتازة مقارنة بالسعر. أصبحت البطارية تشحن بسرعة أكبر. من الصعب الضغط على الأزرار.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-very_short-045,en,very_short,20,Amazing performance.,en,0.38532,xh,0.28152,und,en,en,en
+ar-long-027,ar,long,159,كانت تحديثات الشحن غير دقيقة. نفدت البطارية قبل نهاية اليوم. توقف الجهاز أثناء الإعداد الأول. رد البائع على رسالتي خلال ساعة. حافظ التغليف على المنتج من التلف.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+en-short-045,en,short,36,Not as advertised. Refund took ages.,en,0.50812,nl,0.46926,und,en,en,en
+es-short-011,es,short,40,Reembolso tardío. Rendimiento increíble.,es,0.99095,pt,0.98615,es,es,es,es
+es-medium-020,es,medium,71,Resulta cómodo durante varias horas. Se bloqueó durante la instalación.,es,0.93372,pt,0.88860,es,es,es,es
+en-long-002,en,long,197,The instructions skipped an important step. Installation required no extra tools. I would recommend it for everyday use. The packaging protected everything inside. Performance dropped after a week.,en,1.00000,fr,1.00000,en,en,en,en
+en-short-048,en,short,37,Instructions are unclear. Good value.,en,0.72108,fr,0.65061,en,en,en,en
+es-short-017,es,short,32,Buen soporte. Sin instrucciones.,es,0.80617,ca,0.68342,es,es,es,es
+es-medium-012,es,medium,83,Las instrucciones omiten un paso importante. El embalaje protegió bien el producto.,es,0.92196,ca,0.85884,es,es,es,es
+fr-long-006,fr,long,124,La connexion avec mon téléphone était facile. Les boutons sont difficiles à utiliser. La notice oublie une étape importante.,fr,0.99959,en,0.99944,fr,fr,fr,fr
+ar-short-049,ar,short,29,تجربة مخيبة. لن أشتريه مجددا.,ar,0.99856,fa,0.99715,ar,ar,ar,ar
+es-very_short-032,es,very_short,14,Botones duros.,es,0.24882,ca,0.15220,und,es,es,es
+fr-very_long-012,fr,very_long,260,Le microphone capte trop de bruit. Le colis est arrivé plus tôt que prévu. Les performances ont baissé après une semaine. Le câble de recharge ne fonctionne plus. Le produit de remplacement avait le même défaut. La batterie est vide avant la fin de la journée.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+es-medium-014,es,medium,84,La atención al cliente resolvió el problema. Funciona bien con mi ordenador antiguo.,es,0.93659,pt,0.88919,es,es,es,es
+fr-very_short-023,fr,very_short,12,Achat utile.,tn,0.14395,ts,0.04548,und,und,und,und
+en-very_long-007,en,very_long,235,The charging cable stopped working. The packaging protected everything inside. Pairing it with my phone was surprisingly easy. The battery charges much faster now. It stopped responding during setup. so I contacted the seller for help.,en,1.00000,tl,1.00000,en,en,en,en
+en-very_long-010,en,very_long,222,Performance dropped after a week. Installation required no extra tools. The battery charges much faster now. Shipping updates were not accurate. The screen is bright enough outdoors. which made it difficult to use at work.,en,1.00000,tl,1.00000,en,en,en,en
+fr-long-004,fr,long,190,Il reste confortable même après plusieurs heures. Les matériaux semblent plus fragiles que prévu. La batterie se recharge maintenant plus vite. Les performances ont baissé après une semaine.,fr,1.00000,pt,1.00000,fr,fr,fr,fr
+es-very_short-047,es,very_short,14,Nada especial.,es,0.14130,pt,0.00145,und,und,und,und
+fr-short-006,fr,short,42,Recharge trop lente. L’application plante.,fr,0.52916,en,0.27753,und,fr,fr,fr
+fr-very_long-005,fr,very_long,250,La surface est facile à nettoyer. Les performances ont baissé après une semaine. L’appareil s’est bloqué pendant la configuration. Le service client a résolu le problème. J’ai été facturé deux fois par erreur. Le câble de recharge ne fonctionne plus.,fr,1.00000,eo,1.00000,fr,fr,fr,fr
+en-short-032,en,short,34,Works perfectly. Refund took ages.,en,0.54121,tl,0.48284,und,en,en,en
+es-medium-011,es,medium,74,La superficie se limpia fácilmente. El embalaje protegió bien el producto.,es,0.89629,ca,0.83366,es,es,es,es
+ar-short-044,ar,short,32,الميكروفون ضعيف. وصل منتج مختلف.,ar,0.92925,fa,0.85947,ar,ar,ar,ar
+ar-short-014,ar,short,28,ينطفئ فجأة. الدليل غير واضح.,ar,0.99353,fa,0.98773,ar,ar,ar,ar
+es-medium-006,es,medium,82,La caja llegó completamente aplastada. El vendedor respondió en menos de una hora.,es,0.84382,pt,0.71256,es,es,es,es
+ar-long-024,ar,long,156,وصلت الشحنة قبل الموعد المحدد. رد البائع على رسالتي خلال ساعة. تم التركيب دون الحاجة إلى أدوات. نفدت البطارية قبل نهاية اليوم. تأخر التسليم عدة أيام إضافية.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-031,es,medium,77,El tamaño es menor de lo que parecía. La pantalla se ve bien incluso con sol.,es,0.95610,ca,0.94258,es,es,es,es
+fr-medium-007,fr,medium,81,Le son est excellent pour ce prix. J’ai dû contacter le service client deux fois.,fr,0.91448,en,0.86674,fr,fr,fr,fr
+es-very_long-036,es,very_long,235,Resulta cómodo durante varias horas. Cuesta bastante pulsar los botones. El vendedor respondió en menos de una hora. Me cobraron dos veces por error. La pantalla se ve bien incluso con sol. y noté la diferencia desde el primer momento.,es,1.00000,pt,1.00000,es,es,es,es
+ar-long-012,ar,long,122,يمكن تنظيف السطح بسهولة. توقف الجهاز أثناء الإعداد الأول. ظهر العطل نفسه في الجهاز البديل. يعمل بشكل جيد مع حاسوبي القديم.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+es-very_long-016,es,very_long,245,Los materiales parecen demasiado frágiles. El cable de carga dejó de funcionar. El micrófono capta demasiado ruido. El proceso de devolución fue confuso. Me cobraron dos veces por error. pero la instalación inicial llevó más tiempo del previsto.,es,1.00000,ca,1.00000,es,es,es,es
+ar-long-040,ar,long,109,الخامات أضعف مما توقعت عند الشراء. انخفض الأداء بعد أسبوع من الاستخدام. اضطررت للتواصل مع خدمة العملاء مرتين.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-very_short-041,ar,very_short,11,ملمسه فاخر.,ar,0.85376,fa,0.72871,ar,ar,ar,ar
+en-short-006,en,short,36,No instructions. Terrible packaging.,en,0.55309,fr,0.39883,und,en,en,en
+fr-very_short-050,fr,very_short,16,Prix injustifié.,fr,0.58003,pt,0.43748,fr,fr,fr,fr
+fr-short-014,fr,short,34,Arrivé cassé. Microphone médiocre.,fr,0.94856,yo,0.91922,fr,fr,fr,fr
+es-long-019,es,long,196,Me enviaron otro color por error. La superficie se limpia fácilmente. Funciona bien con mi ordenador antiguo. Conectarlo al teléfono fue muy sencillo. La batería se agotó antes de terminar el día.,es,1.00000,ca,1.00000,es,es,es,es
+en-short-046,en,short,29,Easy to install. Very sturdy.,en,0.28582,cy,0.20386,und,en,en,en
+en-long-050,en,long,117,The packaging protected everything inside. The box was crushed when it arrived. Installation required no extra tools.,en,0.98773,tl,0.97784,en,en,en,en
+fr-very_short-004,fr,very_short,14,Ne marche pas.,fr,0.11521,it,0.03144,und,und,und,und
+es-short-004,es,short,36,La batería dura poco. Imagen nítida.,es,0.54170,pt,0.40083,und,es,es,es
+ar-very_short-007,ar,very_short,11,جودة رائعة.,ar,0.96776,ur,0.93569,ar,ar,ar,ar
+es-short-038,es,short,34,Micrófono malo. Pedido equivocado.,es,0.89428,pt,0.80350,es,es,es,es
+fr-short-043,fr,short,29,Achat rapide. Échange rapide.,fr,0.33471,en,0.26488,und,fr,fr,fr
+en-very_short-048,en,very_short,16,"So far, so good.",so,0.09596,en,0.02902,und,und,und,und
+ar-short-043,ar,short,31,سهل الاستخدام. لا يتصل بالشبكة.,ar,0.99303,fa,0.98606,ar,ar,ar,ar
+fr-short-029,fr,short,27,Image nette. Ne marche pas.,fr,0.21032,en,0.10642,und,und,fr,fr
+ar-medium-038,ar,medium,64,جودة الصوت ممتازة مقارنة بالسعر. رد البائع على رسالتي خلال ساعة.,ar,0.99988,ur,0.99982,ar,ar,ar,ar
+fr-very_short-024,fr,very_short,12,Plus jamais.,fr,0.40070,fi,0.32024,und,fr,fr,fr
+ar-short-037,ar,short,28,لن أشتريه مجددا. أداء ممتاز.,ar,0.98531,fa,0.97074,ar,ar,ar,ar
+fr-very_short-033,fr,very_short,20,Ventilateur bruyant.,fr,0.53853,yo,0.48267,und,fr,fr,fr
+fr-short-048,fr,short,34,Finition soignée. Boutons bloqués.,fr,0.99540,yo,0.99290,fr,fr,fr,fr
+es-long-036,es,long,142,Las notificaciones de envío eran incorrectas. El producto de sustitución tenía el mismo problema. La atención al cliente resolvió el problema.,es,0.99984,pt,0.99975,es,es,es,es
+fr-long-023,fr,long,132,Le service client a résolu le problème. Il reste confortable même après plusieurs heures. Le vendeur a répondu en moins d’une heure.,fr,0.99985,ca,0.99979,fr,fr,fr,fr
+ar-very_long-043,ar,very_long,228,وصل الصندوق متضررا بشكل واضح. يبقى الجهاز مريحا حتى بعد ساعات. كانت تحديثات الشحن غير دقيقة. تم خصم المبلغ مرتين عن طريق الخطأ. أنصح به للاستخدام اليومي. من الصعب الضغط على الأزرار. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_long-027,es,very_long,290,Ahora la batería carga mucho más rápido. El sonido es excelente para este precio. Conectarlo al teléfono fue muy sencillo. Los materiales parecen demasiado frágiles. Lo recomendaría para el uso diario. Funciona bien con mi ordenador antiguo. Tuve que escribir al servicio técnico dos veces.,es,1.00000,pt,1.00000,es,es,es,es
+es-medium-002,es,medium,79,El paquete llegó antes de la fecha prevista. La entrega se retrasó varios días.,es,0.90365,pt,0.83541,es,es,es,es
+ar-medium-015,ar,medium,73,اضطررت للتواصل مع خدمة العملاء مرتين. يلتقط الميكروفون الكثير من الضوضاء.,ar,0.99999,fa,0.99999,ar,ar,ar,ar
+en-long-006,en,long,154,Audio quality is excellent for the price. Performance dropped after a week. The package arrived earlier than promised. The battery lasted less than a day.,en,1.00000,da,1.00000,en,en,en,en
+ar-medium-018,ar,medium,94,ساعدني الدعم في حل المشكلة. نفدت البطارية قبل نهاية اليوم. كان ربط الجهاز بالهاتف سهلا للغاية.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+ar-very_long-025,ar,very_long,201,وصلت الشحنة قبل الموعد المحدد. نفدت البطارية قبل نهاية اليوم. الخامات أضعف مما توقعت عند الشراء. من الصعب الضغط على الأزرار. تأخر التسليم عدة أيام إضافية. لكن الإعداد الأول استغرق وقتا أطول من المتوقع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+fr-short-022,fr,short,26,Achat utile. Très élégant.,fr,0.91181,yo,0.83739,fr,fr,fr,fr
+es-medium-030,es,medium,77,Resulta cómodo durante varias horas. El sonido es excelente para este precio.,es,0.80943,pt,0.62743,es,es,es,es
+en-long-048,en,long,115,The battery lasted less than a day. The screen is bright enough outdoors. Audio quality is excellent for the price.,en,0.97893,tl,0.96877,en,en,en,en
+ar-very_short-010,ar,very_short,10,تغليف سيئ.,ar,0.93784,fa,0.87786,ar,ar,ar,ar
+en-long-040,en,long,172,I had to contact support twice. The buttons are difficult to press. I was charged twice by mistake. Customer support resolved the issue. Shipping updates were not accurate.,en,1.00000,nl,1.00000,en,en,en,en
+fr-very_long-035,fr,very_long,208,Le colis est arrivé plus tôt que prévu. La surface est facile à nettoyer. L’emballage a bien protégé le produit. La batterie est vide avant la fin de la journée. Les performances ont baissé après une semaine.,fr,1.00000,tl,1.00000,fr,fr,fr,fr
+ar-short-027,ar,short,30,الصورة واضحة. لا توجد تعليمات.,ar,0.99607,ur,0.99307,ar,ar,ar,ar
+ar-very_short-035,ar,very_short,13,الصورة واضحة.,ar,0.99423,ur,0.98848,ar,ar,ar,ar
+es-very_short-015,es,very_short,14,Una decepción.,es,0.78493,ca,0.69979,es,es,es,es
+en-very_long-028,en,very_long,216,The package arrived earlier than promised. I received a different color. It works well with my older laptop. The seller answered within an hour. The buttons are difficult to press. so I contacted the seller for help.,en,1.00000,da,1.00000,en,en,en,en
+es-medium-045,es,medium,93,Tuve que escribir al servicio técnico dos veces. El paquete llegó antes de la fecha prevista.,es,0.95613,pt,0.91720,es,es,es,es
+en-medium-031,en,medium,71,Shipping updates were not accurate. The charging cable stopped working.,en,0.94183,tl,0.92526,en,en,en,en
+ar-short-045,ar,short,27,جودة رائعة. وصل منتج مختلف.,ar,0.94208,ur,0.88807,ar,ar,ar,ar
+fr-short-002,fr,short,31,Facile à utiliser. Achat utile.,fr,0.56093,it,0.49921,und,fr,fr,fr
+es-very_long-042,es,very_long,249,La superficie se limpia fácilmente. La pantalla se ve bien incluso con sol. El vendedor respondió en menos de una hora. El micrófono capta demasiado ruido. La entrega se retrasó varios días. pero la instalación inicial llevó más tiempo del previsto.,es,1.00000,pt,1.00000,es,es,es,es
+es-long-021,es,long,198,La instalación no necesitó herramientas. Lo recomendaría para el uso diario. El vendedor respondió en menos de una hora. Ahora la batería carga mucho más rápido. El cable de carga dejó de funcionar.,es,1.00000,pt,1.00000,es,es,es,es
+en-medium-046,en,medium,76,The packaging protected everything inside. The refund process was confusing.,en,0.94803,tl,0.90980,en,en,en,en
+fr-short-003,fr,short,27,Plus jamais. Plutôt fiable.,fr,0.84943,nb,0.82460,fr,fr,fr,fr
+en-short-037,en,short,34,Never again. Bad customer service.,en,0.49343,tl,0.42465,und,en,en,en
+en-very_short-004,en,very_short,16,Works perfectly.,en,0.52495,tl,0.45738,und,en,en,en
+en-very_short-037,en,very_short,19,Screen looks sharp.,en,0.21267,nl,0.15558,und,en,en,en
+es-long-043,es,long,162,La entrega se retrasó varios días. La batería se agotó antes de terminar el día. Cuesta bastante pulsar los botones. Las notificaciones de envío eran incorrectas.,es,1.00000,pt,1.00000,es,es,es,es
+en-long-011,en,long,105,The screen is bright enough outdoors. Shipping updates were not accurate. I was charged twice by mistake.,en,0.99365,tl,0.99038,en,en,en,en
+en-short-031,en,short,39,Wrong item sent. Product arrived early.,en,0.58087,tl,0.50695,en,en,en,en
+es-short-018,es,short,28,Cambio rápido. Muy elegante.,es,0.68513,pt,0.57658,es,es,es,es
+en-long-022,en,long,193,It works well with my older laptop. Performance dropped after a week. The package arrived earlier than promised. I would recommend it for everyday use. The microphone picks up background noise.,en,1.00000,da,1.00000,en,en,en,en
+ar-short-011,ar,short,31,لا يستحق السعر. البطارية ضعيفة.,ar,0.99996,fa,0.99992,ar,ar,ar,ar
+fr-very_short-015,fr,very_short,17,Quelle déception.,fr,0.93478,it,0.89835,fr,fr,fr,fr
+en-long-020,en,long,192,Installation required no extra tools. The refund process was confusing. The product feels comfortable for long sessions. The battery lasted less than a day. Shipping updates were not accurate.,en,1.00000,tl,1.00000,en,en,en,en
+en-medium-020,en,medium,84,Customer support resolved the issue. Pairing it with my phone was surprisingly easy.,en,0.97823,tl,0.96436,en,en,en,en
+es-medium-032,es,medium,79,El embalaje protegió bien el producto. Ahora la batería carga mucho más rápido.,es,0.98055,ca,0.97314,es,es,es,es
+en-very_short-021,en,very_short,18,Battery dies fast.,en,0.21312,af,0.09616,und,und,und,en
+ar-long-013,ar,long,150,الشاشة واضحة حتى تحت ضوء الشمس. رد البائع على رسالتي خلال ساعة. أنصح به للاستخدام اليومي. ساعدني الدعم في حل المشكلة. يبقى الجهاز مريحا حتى بعد ساعات.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+ar-very_long-004,ar,very_long,223,كان ربط الجهاز بالهاتف سهلا للغاية. أصبحت البطارية تشحن بسرعة أكبر. وصلني لون مختلف عن الذي طلبته. تأخر التسليم عدة أيام إضافية. حجم المنتج أصغر مما توحي به الصور. يمكن تنظيف السطح بسهولة. الخامات أضعف مما توقعت عند الشراء.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-very_short-030,es,very_short,16,Bastante fiable.,es,0.31713,ca,0.17414,und,es,es,es
+fr-very_long-043,fr,very_long,256,La procédure de retour était compliquée. La notice oublie une étape importante. Le produit paraît plus petit que sur les photos. Le carton était écrasé à la livraison. Le colis est arrivé plus tôt que prévu. La batterie est vide avant la fin de la journée.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+es-short-001,es,short,34,Parece de calidad. Micrófono malo.,es,0.91818,pt,0.85117,es,es,es,es
+ar-medium-017,ar,medium,90,يمكن تنظيف السطح بسهولة. وصلني لون مختلف عن الذي طلبته. الخامات أضعف مما توقعت عند الشراء.,ar,0.99937,fa,0.99875,ar,ar,ar,ar
+ar-very_long-006,ar,very_long,218,كانت تحديثات الشحن غير دقيقة. ساعدني الدعم في حل المشكلة. انخفض الأداء بعد أسبوع من الاستخدام. أصبحت البطارية تشحن بسرعة أكبر. توقف سلك الشحن عن العمل بعد أيام. وهذا أمر مزعج في منتج جديد. لذلك طلبت المساعدة من البائع.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-medium-035,ar,medium,97,من الصعب الضغط على الأزرار. الخامات أضعف مما توقعت عند الشراء. تفتقد التعليمات خطوة مهمة للتركيب.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-long-027,es,long,168,El producto de sustitución tenía el mismo problema. Conectarlo al teléfono fue muy sencillo. Funciona bien con mi ordenador antiguo. Lo recomendaría para el uso diario.,es,1.00000,ca,1.00000,es,es,es,es
+en-long-032,en,long,151,The refund process was confusing. The instructions skipped an important step. Shipping updates were not accurate. Installation required no extra tools.,en,1.00000,nl,1.00000,en,en,en,en
+ar-short-040,ar,short,26,الحجم غير مناسب. مريح جدا.,ar,0.75734,fa,0.51797,ar,ar,ar,ar
+es-very_short-046,es,very_short,14,Todo correcto.,es,0.56252,ca,0.45814,und,es,es,es
+es-medium-040,es,medium,81,La superficie se limpia fácilmente. El rendimiento empeoró después de una semana.,es,0.99527,pt,0.99190,es,es,es,es
+en-medium-050,en,medium,69,I was charged twice by mistake. Installation required no extra tools.,en,0.87077,tl,0.84710,en,en,en,en
+fr-very_short-031,fr,very_short,17,Arrivé en avance.,fr,0.88225,cs,0.86917,fr,fr,fr,fr
+en-short-035,en,short,30,Not worth buying. Never again.,en,0.65343,tl,0.59314,en,en,en,en
+fr-very_short-046,fr,very_short,17,Tout est correct.,fr,0.37876,en,0.16632,und,fr,fr,fr
+ar-very_short-009,ar,very_short,9,مريح جدا.,ar,0.51213,fa,0.02678,und,und,und,und
+fr-short-037,fr,short,40,Bon rapport qualité-prix. Ne marche pas.,fr,0.67643,en,0.64004,fr,fr,fr,fr
+es-short-020,es,short,33,Instalación sencilla. Llegó roto.,es,0.98909,ca,0.98565,es,es,es,es
+en-medium-034,en,medium,79,The instructions skipped an important step. The buttons are difficult to press.,en,0.81267,fr,0.68307,en,en,en,en
+en-short-025,en,short,30,Hard to connect. It overheats.,en,0.42567,nn,0.32083,und,en,en,en
+fr-very_short-014,fr,very_short,15,Son très clair.,fr,0.48445,ca,0.42679,und,fr,fr,fr
+fr-very_long-007,fr,very_long,276,La notice oublie une étape importante. Le carton était écrasé à la livraison. La livraison a pris plusieurs jours de retard. Le microphone capte trop de bruit. Le câble de recharge ne fonctionne plus. La procédure de retour était compliquée. Le son est excellent pour ce prix.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+en-very_short-012,en,very_short,15,Quick checkout.,en,0.33331,tl,0.25545,und,en,en,en
+fr-short-042,fr,short,31,Équipe serviable. Arrivé cassé.,fr,0.98249,pt,0.97811,fr,fr,fr,fr
+ar-very_long-002,ar,very_long,221,كانت إجراءات الإرجاع معقدة ومزعجة. يمكن تنظيف السطح بسهولة. ساعدني الدعم في حل المشكلة. تفتقد التعليمات خطوة مهمة للتركيب. انخفض الأداء بعد أسبوع من الاستخدام. من الصعب الضغط على الأزرار. ولاحظت الفرق منذ الاستخدام الأول.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+ar-short-010,ar,short,29,الأزرار صعبة. وصل منتج مختلف.,ar,0.99713,fa,0.99441,ar,ar,ar,ar
+es-medium-050,es,medium,78,Funciona bien con mi ordenador antiguo. El embalaje protegió bien el producto.,es,0.91153,ca,0.84787,es,es,es,es
+en-medium-024,en,medium,76,It works well with my older laptop. The replacement unit had the same issue.,en,0.81424,tl,0.77793,en,en,en,en
+en-very_short-043,en,very_short,14,Feels premium.,en,0.12478,nl,0.05619,und,und,und,en
+ar-long-046,ar,long,118,توقف سلك الشحن عن العمل بعد أيام. وصلني لون مختلف عن الذي طلبته. أنصح به للاستخدام اليومي. ساعدني الدعم في حل المشكلة.,ar,0.99997,fa,0.99993,ar,ar,ar,ar
+en-medium-004,en,medium,77,Audio quality is excellent for the price. The buttons are difficult to press.,en,0.71126,fr,0.58161,en,en,en,en
+es-medium-009,es,medium,89,El producto de sustitución tenía el mismo problema. El tamaño es menor de lo que parecía.,es,0.99852,ca,0.99788,es,es,es,es
+ar-long-009,ar,long,101,توقف سلك الشحن عن العمل بعد أيام. الخامات أضعف مما توقعت عند الشراء. يبقى الجهاز مريحا حتى بعد ساعات.,ar,0.99950,fa,0.99900,ar,ar,ar,ar
+en-very_short-006,en,very_short,16,Easy to install.,en,0.12931,nb,0.05939,und,und,und,en
+es-short-032,es,short,27,Carga muy lenta. Nunca más.,es,0.60998,pt,0.52739,es,es,es,es
+fr-very_long-024,fr,very_long,260,Les boutons sont difficiles à utiliser. Il reste confortable même après plusieurs heures. Le vendeur a répondu en moins d’une heure. Le produit de remplacement avait le même défaut. Le colis est arrivé plus tôt que prévu. L’installation ne demande aucun outil.,fr,1.00000,ca,1.00000,fr,fr,fr,fr
+fr-medium-038,fr,medium,84,La batterie se recharge maintenant plus vite. L’emballage a bien protégé le produit.,fr,0.96706,en,0.94833,fr,fr,fr,fr
+es-medium-016,es,medium,80,Las notificaciones de envío eran incorrectas. Se bloqueó durante la instalación.,es,0.98988,ca,0.98185,es,es,es,es
+ar-long-029,ar,long,133,نفدت البطارية قبل نهاية اليوم. ظهر العطل نفسه في الجهاز البديل. وصل الصندوق متضررا بشكل واضح. لذلك سأختار طرازا آخر في المرة القادمة.,ar,1.00000,fa,0.99999,ar,ar,ar,ar
+es-very_short-011,es,very_short,14,Compra rápida.,pt,0.48116,es,0.05297,und,und,und,pt
+ar-short-005,ar,short,26,قطعة ناقصة. التطبيق يتعطل.,ar,0.99975,fa,0.99956,ar,ar,ar,ar
+en-long-016,en,long,198,The battery charges much faster now. Installation required no extra tools. I would recommend it for everyday use. The box was crushed when it arrived. The product is smaller than the photos suggest.,en,1.00000,da,1.00000,en,en,en,en
+en-very_short-003,en,very_short,21,Bad customer service.,en,0.24967,tl,0.18218,und,en,en,en
+en-very_long-039,en,very_long,204,The screen is bright enough outdoors. The packaging protected everything inside. It stopped responding during setup. I would recommend it for everyday use. The product feels comfortable for long sessions.,en,1.00000,tl,1.00000,en,en,en,en
+es-medium-036,es,medium,76,La caja llegó completamente aplastada. El proceso de devolución fue confuso.,es,0.95739,ca,0.93798,es,es,es,es
+es-very_long-014,es,very_long,236,Me enviaron otro color por error. Se bloqueó durante la instalación. El paquete llegó antes de la fecha prevista. La instalación no necesitó herramientas. Lo recomendaría para el uso diario. y noté la diferencia desde el primer momento.,es,1.00000,pt,1.00000,es,es,es,es
+es-short-002,es,short,35,Material barato. Muy fácil de usar.,es,0.51367,pt,0.34756,und,es,es,es
+fr-long-048,fr,long,129,Le carton était écrasé à la livraison. Il fonctionne avec mon ancien ordinateur. Le produit paraît plus petit que sur les photos.,fr,0.99989,en,0.99986,fr,fr,fr,fr
+en-medium-017,en,medium,83,The materials feel thinner than expected. Audio quality is excellent for the price.,en,0.86932,tl,0.83870,en,en,en,en
+es-very_long-002,es,very_long,243,Funciona bien con mi ordenador antiguo. Me cobraron dos veces por error. Tuve que escribir al servicio técnico dos veces. La caja llegó completamente aplastada. El tamaño es menor de lo que parecía. así que elegiría otro modelo la próxima vez.,es,1.00000,pt,1.00000,es,es,es,es
+es-very_short-023,es,very_short,12,Compra útil.,pt,0.29512,es,0.01340,und,und,und,und
+en-very_long-003,en,very_long,250,The product feels comfortable for long sessions. The seller answered within an hour. The product is smaller than the photos suggest. The package arrived earlier than promised. I would recommend it for everyday use. The charging cable stopped working.,en,1.00000,da,1.00000,en,en,en,en
+es-long-003,es,long,190,Me cobraron dos veces por error. El cable de carga dejó de funcionar. Conectarlo al teléfono fue muy sencillo. Resulta cómodo durante varias horas. Los materiales parecen demasiado frágiles.,es,1.00000,ca,1.00000,es,es,es,es
+es-very_short-001,es,very_short,18,Entrega muy lenta.,es,0.27836,ca,0.20981,und,es,es,es
+es-long-041,es,long,199,Ahora la batería carga mucho más rápido. Resulta cómodo durante varias horas. El embalaje protegió bien el producto. El paquete llegó antes de la fecha prevista. El tamaño es menor de lo que parecía.,es,1.00000,pt,1.00000,es,es,es,es
+ar-medium-006,ar,medium,87,وصل الصندوق متضررا بشكل واضح. يعمل بشكل جيد مع حاسوبي القديم. أنصح به للاستخدام اليومي.,ar,0.99918,fa,0.99836,ar,ar,ar,ar
+es-very_long-003,es,very_long,277,Conectarlo al teléfono fue muy sencillo. Lo recomendaría para el uso diario. La caja llegó completamente aplastada. Se bloqueó durante la instalación. Las instrucciones omiten un paso importante. La instalación no necesitó herramientas. Ahora la batería carga mucho más rápido.,es,1.00000,ca,1.00000,es,es,es,es
+ar-very_long-001,ar,very_long,226,يعمل بشكل جيد مع حاسوبي القديم. جودة الصوت ممتازة مقارنة بالسعر. وصل الصندوق متضررا بشكل واضح. من الصعب الضغط على الأزرار. كان ربط الجهاز بالهاتف سهلا للغاية. وهذا أمر مزعج في منتج جديد. لكنني لم أقرر بعد ما إذا كنت سأحتفظ به.,ar,1.00000,fa,1.00000,ar,ar,ar,ar
+es-medium-029,es,medium,74,Ahora la batería carga mucho más rápido. Me enviaron otro color por error.,es,0.97041,pt,0.95439,es,es,es,es
+ar-short-033,ar,short,28,لا يتصل بالشبكة. يسخن كثيرا.,ar,0.98950,fa,0.97902,ar,ar,ar,ar
+fr-very_long-045,fr,very_long,217,Le produit de remplacement avait le même défaut. J’ai été facturé deux fois par erreur. Le service client a résolu le problème. Le produit paraît plus petit que sur les photos. La procédure de retour était compliquée.,fr,1.00000,ca,1.00000,fr,fr,fr,fr
+fr-very_short-007,fr,very_short,14,Bonne qualité.,fr,0.83425,ga,0.80293,fr,fr,fr,fr
+fr-very_long-041,fr,very_long,285,La surface est facile à nettoyer. Le produit de remplacement avait le même défaut. La batterie se recharge maintenant plus vite. Le microphone capte trop de bruit. Le colis est arrivé plus tôt que prévu. L’installation ne demande aucun outil. Le vendeur a répondu en moins d’une heure.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+en-long-007,en,long,189,Installation required no extra tools. The product feels comfortable for long sessions. I received a different color. The box was crushed when it arrived. The charging cable stopped working.,en,1.00000,tl,1.00000,en,en,en,en
+fr-medium-023,fr,medium,75,La surface est facile à nettoyer. Il fonctionne avec mon ancien ordinateur.,fr,0.99635,en,0.99551,fr,fr,fr,fr
+es-long-024,es,long,122,Me cobraron dos veces por error. El vendedor respondió en menos de una hora. La batería se agotó antes de terminar el día.,es,0.98075,pt,0.96666,es,es,es,es
+fr-very_long-046,fr,very_long,209,Le son est excellent pour ce prix. Les matériaux semblent plus fragiles que prévu. Je le recommande pour un usage quotidien. Il fonctionne avec mon ancien ordinateur. Le vendeur a répondu en moins d’une heure.,fr,1.00000,nl,1.00000,fr,fr,fr,fr
+es-very_long-028,es,very_long,265,El tamaño es menor de lo que parecía. El cable de carga dejó de funcionar. El rendimiento empeoró después de una semana. Conectarlo al teléfono fue muy sencillo. Se bloqueó durante la instalación. Me cobraron dos veces por error. Lo recomendaría para el uso diario.,es,1.00000,ca,1.00000,es,es,es,es
+es-medium-013,es,medium,81,Las notificaciones de envío eran incorrectas. La superficie se limpia fácilmente.,es,0.98602,pt,0.97743,es,es,es,es
+es-short-010,es,short,33,No funciona bien. No encaja bien.,es,0.62492,ca,0.53446,es,es,es,es
+fr-short-031,fr,short,37,Tout est correct. Emballage médiocre.,fr,0.63927,en,0.53959,fr,fr,fr,fr
+en-very_short-025,en,very_short,18,A useful purchase.,en,0.55952,st,0.49017,und,en,en,en
+fr-short-007,fr,short,30,Tout est correct. Écran abîmé.,fr,1.00000,af,1.00000,fr,fr,fr,fr
+fr-medium-008,fr,medium,72,J’ai été facturé deux fois par erreur. La surface est facile à nettoyer.,fr,0.98150,nl,0.97908,fr,fr,fr,fr
+es-medium-034,es,medium,78,El rendimiento empeoró después de una semana. Me cobraron dos veces por error.,es,0.99574,ca,0.99417,es,es,es,es
+fr-long-013,fr,long,120,J’ai été facturé deux fois par erreur. J’ai dû contacter le service client deux fois. Le microphone capte trop de bruit.,fr,0.95573,en,0.93932,fr,fr,fr,fr
+ar-medium-005,ar,medium,99,تفتقد التعليمات خطوة مهمة للتركيب. يعمل بشكل جيد مع حاسوبي القديم. توقف الجهاز أثناء الإعداد الأول.,ar,0.99999,fa,0.99998,ar,ar,ar,ar
+en-very_long-027,en,very_long,235,I would recommend it for everyday use. The battery lasted less than a day. The replacement unit had the same issue. The materials feel thinner than expected. I was charged twice by mistake. and overall I am satisfied with the purchase.,en,1.00000,nl,1.00000,en,en,en,en
+ar-very_short-001,ar,very_short,15,البطارية ضعيفة.,ar,0.99993,fa,0.99986,ar,ar,ar,ar
+fr-very_long-039,fr,very_long,262,Le carton était écrasé à la livraison. L’écran reste lisible en plein soleil. Les performances ont baissé après une semaine. Il reste confortable même après plusieurs heures. La batterie est vide avant la fin de la journée. J’ai été facturé deux fois par erreur.,fr,1.00000,de,1.00000,fr,fr,fr,fr
+en-very_long-042,en,very_long,228,Performance dropped after a week. The material is easy to clean. The refund process was confusing. Installation required no extra tools. The package arrived earlier than promised. but the initial setup took longer than expected.,en,1.00000,da,1.00000,en,en,en,en

@@ -1,0 +1,101 @@
+id,language,text
+en-01,en,Battery is terrible.
+en-02,en,Great product!
+en-03,en,Delivery arrived late.
+en-04,en,The app keeps crashing.
+en-05,en,Customer support was helpful.
+en-06,en,Refund never arrived.
+en-07,en,Packaging was damaged.
+en-08,en,Love the design.
+en-09,en,Too expensive for the quality.
+en-10,en,My order was cancelled.
+en-11,en,Easy to use.
+en-12,en,Payment failed twice.
+en-13,en,Very slow shipping.
+en-14,en,Excellent sound quality.
+en-15,en,The screen stopped working.
+en-16,en,Not worth the price.
+en-17,en,Works perfectly so far.
+en-18,en,Terrible customer service.
+en-19,en,I received the wrong size.
+en-20,en,The instructions were unclear.
+fr-01,fr,La batterie se décharge trop vite.
+fr-02,fr,Excellent produit !
+fr-03,fr,Ma livraison est arrivée en retard.
+fr-04,fr,L’application plante souvent.
+fr-05,fr,Le service client était très aimable.
+fr-06,fr,Je n’ai toujours pas reçu mon remboursement.
+fr-07,fr,Le colis était abîmé.
+fr-08,fr,J’adore le design.
+fr-09,fr,Beaucoup trop cher pour cette qualité.
+fr-10,fr,Ma commande a été annulée.
+fr-11,fr,Très facile à utiliser.
+fr-12,fr,Le paiement a échoué deux fois.
+fr-13,fr,La livraison est vraiment lente.
+fr-14,fr,Le son est excellent.
+fr-15,fr,L’écran ne fonctionne plus.
+fr-16,fr,Cela ne vaut pas son prix.
+fr-17,fr,Tout fonctionne parfaitement.
+fr-18,fr,Service client décevant.
+fr-19,fr,J’ai reçu la mauvaise taille.
+fr-20,fr,Les instructions sont incompréhensibles.
+es-01,es,La batería dura muy poco.
+es-02,es,¡Excelente producto!
+es-03,es,Mi pedido llegó tarde.
+es-04,es,La aplicación se cierra sola.
+es-05,es,El soporte fue muy amable.
+es-06,es,Todavía no recibí el reembolso.
+es-07,es,El paquete llegó dañado.
+es-08,es,Me encanta el diseño.
+es-09,es,Demasiado caro para esta calidad.
+es-10,es,Cancelaron mi pedido.
+es-11,es,Muy fácil de usar.
+es-12,es,El pago falló dos veces.
+es-13,es,El envío es demasiado lento.
+es-14,es,La calidad del sonido es excelente.
+es-15,es,La pantalla dejó de funcionar.
+es-16,es,No vale lo que cuesta.
+es-17,es,Funciona perfectamente.
+es-18,es,El servicio al cliente es terrible.
+es-19,es,Recibí una talla equivocada.
+es-20,es,Las instrucciones son confusas.
+zh-01,zh,电池续航时间太短了。
+zh-02,zh,这个产品真的很好用。
+zh-03,zh,快递送得太慢了。
+zh-04,zh,这个应用经常闪退。
+zh-05,zh,客服态度非常友好。
+zh-06,zh,我还没有收到退款。
+zh-07,zh,包装到手时已经破损。
+zh-08,zh,我很喜欢这个设计。
+zh-09,zh,价格太贵了，不值得买。
+zh-10,zh,我的订单被取消了。
+zh-11,zh,操作简单，非常方便。
+zh-12,zh,付款失败了两次。
+zh-13,zh,物流速度实在太慢。
+zh-14,zh,音质非常清晰。
+zh-15,zh,屏幕突然不能用了。
+zh-16,zh,这个价格不太合理。
+zh-17,zh,目前使用起来很顺畅。
+zh-18,zh,售后服务让我很失望。
+zh-19,zh,收到的尺寸不正确。
+zh-20,zh,说明书写得不够清楚。
+ar-01,ar,عمر البطارية قصير جدا.
+ar-02,ar,المنتج ممتاز وسهل الاستخدام.
+ar-03,ar,وصل الطلب متأخرا.
+ar-04,ar,التطبيق يتوقف باستمرار.
+ar-05,ar,خدمة العملاء كانت رائعة.
+ar-06,ar,لم أستلم المبلغ المسترد بعد.
+ar-07,ar,وصلت العبوة تالفة.
+ar-08,ar,أعجبني التصميم كثيرا.
+ar-09,ar,السعر مرتفع مقابل الجودة.
+ar-10,ar,تم إلغاء طلبي دون سبب.
+ar-11,ar,استخدام المنتج سهل للغاية.
+ar-12,ar,فشلت عملية الدفع مرتين.
+ar-13,ar,الشحن بطيء جدا.
+ar-14,ar,جودة الصوت ممتازة.
+ar-15,ar,الشاشة توقفت عن العمل.
+ar-16,ar,لا يستحق هذا السعر.
+ar-17,ar,يعمل بشكل جيد حتى الآن.
+ar-18,ar,خدمة الدعم سيئة للغاية.
+ar-19,ar,وصلني المقاس الخطأ.
+ar-20,ar,التعليمات غير واضحة.

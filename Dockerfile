@@ -1,0 +1,20 @@
+FROM pgvector/pgvector:0.8.7-pg17-bookworm
+
+USER root
+
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
+       git \
+       ca-certificates \
+       build-essential \
+       postgresql-server-dev-17 \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN git clone --depth 1 --branch v1.5.1 \
+      https://github.com/timescale/pg_textsearch.git \
+      /tmp/pg_textsearch \
+    && make -C /tmp/pg_textsearch \
+       PG_CONFIG=/usr/lib/postgresql/17/bin/pg_config \
+    && make -C /tmp/pg_textsearch \
+       PG_CONFIG=/usr/lib/postgresql/17/bin/pg_config install \
+    && rm -rf /tmp/pg_textsearch

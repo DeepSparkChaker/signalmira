@@ -1,141 +1,85 @@
-# SignalMira — Semantic RAG, Step 5 (no BM25 yet)
+# SignalMira — Opinion extraction LangChain v2 (incremental patch)
 
-Adds **two small production-oriented Python modules and one SQL migration** to the existing SignalMira root:
-`retrieval/embedders.py`, `retrieval/semantic.py`, and
-`migrations/004_rag_embeddings.sql`, plus two tests. The original review,
-NER, NED, topics, language and chunking modules are unchanged.
+This is an **add-on to your current project** and to the previous `signalmira_langchain_upgrade` package, not a replacement for your sentiment or retrieval engines.
 
-## Architecture
+## Files
+- `enrichment/langchain_opinions.py` replaces the first-generation LangChain adapter (NOT `enrichment/opinions.py`). It keeps `OpinionConfig`, legacy Ollama digest checks, `extract`, `aextract`, `warmup`, and `config_hash` compatible with existing `sentiment_jobs.py`.
+- `enrichment/opinion_service.py` provides a reusable `analyze_review` and streaming `analyze_many` for API, CSV, and future analyst tools. It has **no database write side effects**.
+- `scripts/opinion_preview.py` shows a review or CSV output, without saving any data.
+- `tests/test_opinion_v2.py` tests the bounded adapter with a fake model.
 
-`feedback_reviews -> rag_chunks (existing 1024 char/64 overlap) -> Qwen3
-Embedding-0.6B -> rag_embeddings vector(1024) -> exact cosine search`.
-Optional HNSW is a separate admin command. BM25 + RRF + reranker will come next.
+## Installation (from ~/projects/signalmira)
 
-- **Versioning**: every vector stores exact Hugging Face model commit SHA,
-  backend, model contract hash, and original review hash. Different models and
-  revisions have different `model_key` values; searches never mix them.
-- **Secure ownership**: `rag_embeddings` has `(tenant_id, chunk_id)` composite FK
-  with ON DELETE CASCADE; RLS `USING` and `WITH CHECK` fail closed without tenant
-  context. App SQL still requires authenticated tenant authorization and a
-  restricted PostgreSQL role without SUPERUSER/BYPASSRLS.
-- **Bounded memory**: keyset pages (64), inference batches (8), no collection-wide
-  Python list, lazy model/GPU, no chunk-text cache and no per-batch GPU cache flush.
-  Embedding runs outside DB transactions; writes verify current source hashes.
-- **Multilingual**: one Qwen3 model for every language, document text unmodified,
-  English task instruction only on query. Search reads language from
-  `feedback_language` if current, falling back to the chunk metadata. Topic
-  embeddings remain separate.
-- **Local performance**: PyTorch CUDA FP16 if available; CPU FP32 fallback. vLLM
-  optional for a dedicated trusted local inference server; its checkpoint must
-  be pinned and its weights manually verified.
+**First** install the previously supplied `signalmira_langchain_upgrade` package, including its `llm_providers/llm_factory.py`, or ensure your factory supports `provider_override`, `model_override`, `max_output_tokens`, `context_tokens`, `timeout_s`, and `ollama_base_url`.
 
-## 1. Install dependencies (inside SignalMira WSL root)
+Then from your Windows Downloads folder:
 
 ```bash
-uv add "sentence-transformers>=3.0" "transformers>=4.51.0" numpy
-# psycopg already exists in SignalMira; no pgvector Python driver is needed:
-# vector values are validated and passed as parameters, cast by Postgres.
+cd ~/projects/signalmira
+unzip -o /mnt/c/Users/chaker/Downloads/signalmira_opinion_v2.zip -d .
+uv add 'langchain>=1,<2' langchain-ollama langchain-openai langchain-anthropic
+uv run python -m unittest discover -s tests -p 'test_opinion_v2.py' -v
 ```
 
-**Database requirement:** existing `feedback_language` table from Step 4 and
-server-side `pgvector` extension installed (PostgreSQL 17+
-preferred). Check from WSL:
+**Important:** do not overwrite `opinion_schema.py`, `opinions.py`, `sentiment.py`, `retrieval/hybrid.py`, or the existing database migration. Keep your versioned data.
+
+### Smoke test without writing to PostgreSQL
 
 ```bash
-docker compose exec db psql -U signalmira -d signalmira -c \
-  "SELECT name, default_version FROM pg_available_extensions WHERE name='vector';"
+ollama list
+export LLM_MODEL='qwen3.5:4b'
+export LLM_REVISION="$(uv run python - <<'PY'
+import json, os, urllib.request
+with urllib.request.urlopen('http://127.0.0.1:11434/api/tags') as r:
+    models=json.load(r)['models']
+found=[m for m in models if m.get('name') == os.environ['LLM_MODEL']]
+if len(found)!=1: raise RuntimeError('Model tag not found')
+print(found[0]['digest'])
+PY
+)"
+
+uv run python -m scripts.opinion_preview \
+  --model "$LLM_MODEL" --revision "$LLM_REVISION" \
+  --text 'The camera is excellent but the battery drains overnight.'
 ```
 
-If no row: your current PostgreSQL Docker image lacks pgvector. Install the
-extension for the **same PostgreSQL major version**, or use a compatible
-pgvector image (for example `pgvector/pgvector:pg17` for PG17). **Back up DB
-and check major version before changing an existing Docker image.**
-
-## 2. Initialize existing chunks, then vectors
+### Stream up to 10 CSV rows (does not load CSV into memory)
 
 ```bash
-# Only if you haven't already applied Step 2:
-uv run python -m indexing.chunk_store init
-uv run python -m indexing.chunk_store sync --tenant demo --batch-size 100
-# New additive Step 5 schema (requires DB schema owner/admin account):
-uv run python -m retrieval.semantic init
-# Embeds all missing chunks; first run downloads model weights.
-uv run python -m retrieval.semantic sync --tenant demo --batch-size 8 --page-size 64
-# Second run should show written: 0, assuming no source updates.
-uv run python -m retrieval.semantic sync --tenant demo --batch-size 8 --page-size 64
+uv run python -m scripts.opinion_preview \
+  --model "$LLM_MODEL" --revision "$LLM_REVISION" \
+  --csv /path/to/reviews.csv --limit 10
 ```
 
-On the first model download, the Hugging Face snapshot is resolved to an
-immutable commit SHA and stored in the vector metadata. Future runs using
-`--revision <sha>` keep the exact checkpoint. Set `--device cpu` for CPU only,
-`--device cuda` to **require** a working CUDA install, or omit for auto/CUDA.
-For previously cached model use `--offline`. On a 12 GB GPU, start with
-`--batch-size 8`; decrease to `--batch-size 2` if any OOM occurs. Do not
-change the embedding model/revision between indexing and search.
+CSV columns: `review_id,text` (UTF-8). Each output line has `tenant_id`, `review_id`, source-text SHA-256, selected model, model revision, extraction contract hash, and validated opinions.
 
-## 3. Search and add HNSW only if beneficial
+### Enable in existing persisted job
+
+In `enrichment/sentiment_jobs.py`, change **one import**:
+
+```python
+# Was:
+from enrichment.opinions import OpinionExtractor, OpinionConfig
+# Now:
+from enrichment.opinions import OpinionConfig
+from enrichment.langchain_opinions import LangChainOpinionExtractor as OpinionExtractor
+```
+
+Keep the remaining job unchanged. A new `config_hash` version avoids mixing old and new extraction results.
 
 ```bash
-uv run python -m retrieval.semantic search --tenant demo \
-  --query 'Battery drains quickly and phone overheats' --k 10
-# Exact search is the default, even after HNSW is installed.
-# Separate schema-owner/admin command; pgvector >=0.8:
-uv run python -m retrieval.semantic hnsw
-uv run python -m retrieval.semantic search --tenant demo \
-  --query 'Battery drains quickly and phone overheats' --mode hnsw --k 10
-uv run python -m retrieval.semantic benchmark --tenant demo \
-  --query 'Battery drains quickly and phone overheats' --repeats 5
+export DATABASE_URL='postgresql://signalmira:local_dev_only@127.0.0.1:5432/signalmira'
+uv run python -m enrichment.sentiment_jobs opinions \
+  --tenant demo --llm-model "$LLM_MODEL" --llm-revision "$LLM_REVISION" --limit 10
 ```
 
-Benchmark reports **agreement with exact top-k** and SQL search latency,
-NOT human relevance/accuracy. PostgreSQL may still choose an exact scan in
-`--mode hnsw` for very small tables; inspect `EXPLAIN (ANALYZE, BUFFERS)`
-when comparing ANN engine performance. With a few thousand chunks, **exact** is often
-faster and more reliable; HNSW can lose filtered recall with many tenants
-sharing its graph. Benchmark using different tenants, products and languages.
+Verify that the real installed model returns valid schema and correct quote offsets before processing bulk records.
 
-## 4. Optional dedicated vLLM server (not required locally)
+## Architecture and important limitations
 
-Qwen and vLLM support this model in embedding/pooling mode. Serve one pinned
-checkpoint on a **trusted local server** (model weights shared, review data not).
-Choose a vLLM version compatible with your CUDA/PyTorch GPU setup:
-
-```bash
-# Example; use the same 40-hex revision in the server and client.
-vllm serve Qwen/Qwen3-Embedding-0.6B \
-  --runner pooling --revision "$MODEL_SHA" \
-  --served-model-name Qwen/Qwen3-Embedding-0.6B \
-  --max-model-len 2048 --gpu-memory-utilization 0.65
-uv add openai
-uv run python -m retrieval.semantic sync --tenant demo \
-  --backend vllm --revision "$MODEL_SHA" --batch-size 8
-```
-
-vLLM embeddings are saved under a **different model_key** from local
-SentenceTransformers embeddings, intentionally, until you verify numeric
-compatibility; don't combine the two search contracts. Never transmit private
-review text to an untrusted or public vLLM endpoint. Only use an approved local
-or authenticated internal HTTPS service.
-
-## 5. Tests
-
-```bash
-uv run python -m pytest tests/test_semantic.py -q
-# Optional *separate disposable database*; never use production database:
-# The DB name MUST end with `_test`. Requires its own pgvector installation.
-export TEST_DATABASE_URL='postgresql://.../signalmira_test'
-uv run python -m pytest tests/test_semantic_postgres.py -q -rs
-```
-
-## Production boundary (not optional)
-
-Your earlier audit showed **11 existing tenant-owned tables without RLS**.
-The new embeddings table's policy alone does **not** secure the rest. Before
-public login, finish restricted-role/RLS migration for originals, NER, NED,
-Topics, chunks, language, and all future tables; run real two-tenant tests
-using non-bypassing runtime credentials. `--tenant` is a trusted local operator
-flag, not authorization.
-
-Never count vector hits as number of customer complaints. Aggregate issues,
-sentiment, product changes, periods and verified counts from SQL after
-NER/NED/opinion enrichment. Retrieval supplies cited evidence only.
+- Sentiment, language, NER, NED and topics remain independent. The LLM extracts **opinion-level** sentiment, customer-reported problems, and *explicit* customer suggestions; it **does not** invent root causes or business recommendations.
+- The reusable service can be called from a future authenticated API or exposed as a narrowly scoped LangChain tool. The **Analyst** should generate recommendations later, with its own provenance and evidence records.
+- `OpinionConfig` intentionally represents a **local Ollama model pinned by an installed 64-character digest**. A future provider-neutral extraction config must track OpenAI/Anthropic model IDs and server versions differently; don't falsely label their revision as an Ollama digest.
+- One inference slot per **Python process**, not across containers. A real global backpressure queue and GPU-service admission control are required for Cloud Run scaling. `aextract()` does not block the event loop; cancelling it **does not** cancel a running GPU inference.
+- LLM inference speed depends on the *serving engine*; this adapter alone does not add batched GPU inference. For real throughput use Ollama/vLLM/SGLang serving with measured batching, pinned quantizations and separate CPU sentiment workers.
+- This is a **tested integration patch**, not a full production certification: integration and load tests still required for actual PostgreSQL RLS, real Ollama response formats, memory limits, multilingual accuracy, worker crashes and API/CSV authentication.

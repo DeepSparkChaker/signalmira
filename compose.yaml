@@ -1,18 +1,34 @@
 # Local PostgreSQL only; production connects to Cloud SQL separately.
 services:
   db:
-    image: pgvector/pgvector:0.8.7-pg17-bookworm
+    build:
+      context: .
+      dockerfile: Dockerfile.pg-bm25
+
+    image: signalmira/postgres-bm25:pg17-v1.5.1
+
+    command:
+      - postgres
+      - -c
+      - shared_preload_libraries=pg_textsearch
+      - -c
+      - pg_textsearch.memory_limit=256MB
+
     environment:
       POSTGRES_DB: signalmira
       POSTGRES_USER: signalmira
       POSTGRES_PASSWORD: local_dev_only
+
     ports:
       - "127.0.0.1:5432:5432"
+
     volumes:
       - signalmira_pgdata:/var/lib/postgresql/data
+
     healthcheck:
       test: ["CMD-SHELL", "pg_isready -U signalmira -d signalmira"]
       interval: 3s
       retries: 15
+
 volumes:
   signalmira_pgdata:

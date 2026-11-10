@@ -1,0 +1,101 @@
+id,language,text,original,candidate,top_score,margin,candidate_correct
+en-01,en,Battery is terrible.,und,en,0.4699,0.3930,1
+en-02,en,Great product!,und,en,0.2698,0.1877,1
+en-03,en,Delivery arrived late.,en,en,0.7694,0.7248,1
+en-04,en,The app keeps crashing.,und,en,0.3367,0.2676,1
+en-05,en,Customer support was helpful.,en,en,0.7749,0.7124,1
+en-06,en,Refund never arrived.,und,en,0.4636,0.2889,1
+en-07,en,Packaging was damaged.,und,en,0.5320,0.4571,1
+en-08,en,Love the design.,und,und,0.1608,0.0917,0
+en-09,en,Too expensive for the quality.,und,en,0.4675,0.4029,1
+en-10,en,My order was cancelled.,und,en,0.2716,0.2165,1
+en-11,en,Easy to use.,und,und,0.0860,0.0206,0
+en-12,en,Payment failed twice.,en,en,0.6121,0.5513,1
+en-13,en,Very slow shipping.,und,en,0.3257,0.2040,1
+en-14,en,Excellent sound quality.,und,en,0.3882,0.3330,1
+en-15,en,The screen stopped working.,und,en,0.5468,0.4958,1
+en-16,en,Not worth the price.,und,en,0.2879,0.2309,1
+en-17,en,Works perfectly so far.,und,en,0.4593,0.3917,1
+en-18,en,Terrible customer service.,en,en,0.5722,0.4972,1
+en-19,en,I received the wrong size.,en,en,0.6595,0.6142,1
+en-20,en,The instructions were unclear.,en,en,0.7296,0.6961,1
+fr-01,fr,La batterie se décharge trop vite.,und,fr,0.3287,0.1752,1
+fr-02,fr,Excellent produit !,und,fr,0.3961,0.2803,1
+fr-03,fr,Ma livraison est arrivée en retard.,fr,fr,0.9798,0.9778,1
+fr-04,fr,L’application plante souvent.,fr,fr,0.6388,0.5346,1
+fr-05,fr,Le service client était très aimable.,fr,fr,0.9065,0.8817,1
+fr-06,fr,Je n’ai toujours pas reçu mon remboursement.,fr,fr,0.9715,0.9626,1
+fr-07,fr,Le colis était abîmé.,fr,fr,0.8898,0.8291,1
+fr-08,fr,J’adore le design.,und,und,0.0867,0.0090,0
+fr-09,fr,Beaucoup trop cher pour cette qualité.,fr,fr,0.9829,0.9785,1
+fr-10,fr,Ma commande a été annulée.,fr,fr,0.8890,0.8686,1
+fr-11,fr,Très facile à utiliser.,fr,fr,0.9693,0.9389,1
+fr-12,fr,Le paiement a échoué deux fois.,fr,fr,0.9064,0.8949,1
+fr-13,fr,La livraison est vraiment lente.,fr,fr,0.8508,0.8274,1
+fr-14,fr,Le son est excellent.,und,fr,0.2839,0.1431,1
+fr-15,fr,L’écran ne fonctionne plus.,fr,fr,0.8275,0.7946,1
+fr-16,fr,Cela ne vaut pas son prix.,und,und,0.1584,0.0889,0
+fr-17,fr,Tout fonctionne parfaitement.,fr,fr,0.9948,0.9938,1
+fr-18,fr,Service client décevant.,fr,fr,0.6766,0.6098,1
+fr-19,fr,J’ai reçu la mauvaise taille.,fr,fr,0.8362,0.7956,1
+fr-20,fr,Les instructions sont incompréhensibles.,fr,fr,0.9956,0.9946,1
+es-01,es,La batería dura muy poco.,und,es,0.4969,0.4158,1
+es-02,es,¡Excelente producto!,und,es,0.3951,0.2716,1
+es-03,es,Mi pedido llegó tarde.,und,es,0.5296,0.3609,1
+es-04,es,La aplicación se cierra sola.,es,es,0.8902,0.8217,1
+es-05,es,El soporte fue muy amable.,und,es,0.4508,0.3627,1
+es-06,es,Todavía no recibí el reembolso.,es,es,0.9098,0.8933,1
+es-07,es,El paquete llegó dañado.,es,es,1.0000,1.0000,1
+es-08,es,Me encanta el diseño.,und,es,0.3211,0.1854,1
+es-09,es,Demasiado caro para esta calidad.,es,es,0.7177,0.5002,1
+es-10,es,Cancelaron mi pedido.,und,es,0.5451,0.4315,1
+es-11,es,Muy fácil de usar.,und,es,0.4344,0.3218,1
+es-12,es,El pago falló dos veces.,und,es,0.4633,0.4027,1
+es-13,es,El envío es demasiado lento.,es,es,0.9217,0.8691,1
+es-14,es,La calidad del sonido es excelente.,es,es,0.8063,0.6765,1
+es-15,es,La pantalla dejó de funcionar.,es,es,0.5866,0.3574,1
+es-16,es,No vale lo que cuesta.,und,und,0.2209,0.0964,0
+es-17,es,Funciona perfectamente.,und,es,0.5079,0.1917,1
+es-18,es,El servicio al cliente es terrible.,es,es,0.6767,0.6041,1
+es-19,es,Recibí una talla equivocada.,es,es,0.6950,0.5616,1
+es-20,es,Las instrucciones son confusas.,es,es,0.7745,0.6413,1
+zh-01,zh,电池续航时间太短了。,zh,zh,1.0000,1.0000,1
+zh-02,zh,这个产品真的很好用。,zh,zh,1.0000,1.0000,1
+zh-03,zh,快递送得太慢了。,zh,zh,1.0000,1.0000,1
+zh-04,zh,这个应用经常闪退。,zh,zh,1.0000,1.0000,1
+zh-05,zh,客服态度非常友好。,zh,zh,1.0000,1.0000,1
+zh-06,zh,我还没有收到退款。,zh,zh,1.0000,1.0000,1
+zh-07,zh,包装到手时已经破损。,zh,zh,1.0000,1.0000,1
+zh-08,zh,我很喜欢这个设计。,zh,zh,1.0000,1.0000,1
+zh-09,zh,价格太贵了，不值得买。,zh,zh,1.0000,1.0000,1
+zh-10,zh,我的订单被取消了。,zh,zh,1.0000,1.0000,1
+zh-11,zh,操作简单，非常方便。,zh,zh,1.0000,1.0000,1
+zh-12,zh,付款失败了两次。,zh,zh,1.0000,1.0000,1
+zh-13,zh,物流速度实在太慢。,zh,zh,1.0000,1.0000,1
+zh-14,zh,音质非常清晰。,zh,zh,1.0000,1.0000,1
+zh-15,zh,屏幕突然不能用了。,zh,zh,1.0000,1.0000,1
+zh-16,zh,这个价格不太合理。,zh,zh,1.0000,1.0000,1
+zh-17,zh,目前使用起来很顺畅。,zh,zh,1.0000,1.0000,1
+zh-18,zh,售后服务让我很失望。,zh,zh,1.0000,1.0000,1
+zh-19,zh,收到的尺寸不正确。,zh,zh,1.0000,1.0000,1
+zh-20,zh,说明书写得不够清楚。,zh,zh,1.0000,1.0000,1
+ar-01,ar,عمر البطارية قصير جدا.,ar,ar,0.9984,0.9968,1
+ar-02,ar,المنتج ممتاز وسهل الاستخدام.,ar,ar,0.9602,0.9207,1
+ar-03,ar,وصل الطلب متأخرا.,ar,ar,0.9542,0.9089,1
+ar-04,ar,التطبيق يتوقف باستمرار.,ar,ar,0.9832,0.9664,1
+ar-05,ar,خدمة العملاء كانت رائعة.,ar,ar,0.9895,0.9792,1
+ar-06,ar,لم أستلم المبلغ المسترد بعد.,ar,ar,0.9923,0.9849,1
+ar-07,ar,وصلت العبوة تالفة.,ar,ar,0.9947,0.9919,1
+ar-08,ar,أعجبني التصميم كثيرا.,ar,ar,0.9951,0.9903,1
+ar-09,ar,السعر مرتفع مقابل الجودة.,ar,ar,0.9877,0.9779,1
+ar-10,ar,تم إلغاء طلبي دون سبب.,ar,ar,0.9313,0.8627,1
+ar-11,ar,استخدام المنتج سهل للغاية.,ar,ar,0.9972,0.9944,1
+ar-12,ar,فشلت عملية الدفع مرتين.,ar,ar,0.9984,0.9968,1
+ar-13,ar,الشحن بطيء جدا.,ar,ar,0.9764,0.9545,1
+ar-14,ar,جودة الصوت ممتازة.,ar,ar,0.9602,0.9213,1
+ar-15,ar,الشاشة توقفت عن العمل.,ar,ar,0.9526,0.9119,1
+ar-16,ar,لا يستحق هذا السعر.,ar,ar,0.9888,0.9815,1
+ar-17,ar,يعمل بشكل جيد حتى الآن.,ar,ar,0.9013,0.8032,1
+ar-18,ar,خدمة الدعم سيئة للغاية.,ar,ar,1.0000,0.9999,1
+ar-19,ar,وصلني المقاس الخطأ.,ar,ar,0.9549,0.9213,1
+ar-20,ar,التعليمات غير واضحة.,ar,ar,0.9895,0.9813,1
