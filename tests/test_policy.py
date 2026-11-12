@@ -8,7 +8,7 @@ from enrichment.topic_policy import Policy, allocate_strata, decide
 NOW = datetime(2026, 10, 31, tzinfo=timezone.utc)
 
 
-def decide_for(new=300, days=8, assigned=300, unassigned=0, pending=False, active=True, p=None):
+def decide_for(new=300, days=14, assigned=300, unassigned=0, pending=False, active=True, p=None):
     return decide(p or Policy(), new_count=new, assigned_count=assigned,
                   unassigned_count=unassigned, pending=pending, active=active,
                   last_discovery_at=None if days is None else NOW-timedelta(days=days), now=NOW)

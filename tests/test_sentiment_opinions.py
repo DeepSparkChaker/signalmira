@@ -8,6 +8,7 @@ import json
 import sys
 import unittest
 from pathlib import Path
+from unittest.mock import patch
 
 # The complete patch is also runnable standalone before being copied into the repo.
 _PATCH_ROOT = Path(__file__).resolve().parents[1]
@@ -108,7 +109,9 @@ class ExtractorTests(unittest.TestCase):
             captured.update(req)
             return {'message': {'content': json.dumps(sample_output(start_adjust=1))}}
         extractor = OpinionExtractor(OpinionConfig(model='qwen3:4b',model_revision='a'*64), transport)
-        result = extractor.extract(TEXT)
+        with patch("enrichment.opinions.verify_ollama_digest") as verify:
+            result = extractor.extract(TEXT)
+            verify.assert_called_once()
         self.assertEqual(result.opinions[0].evidence.quote, 'battery drains overnight')
         self.assertEqual(captured['format']['type'], 'object')
         self.assertFalse(captured['stream'])

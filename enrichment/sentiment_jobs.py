@@ -14,7 +14,10 @@ import os
 
 from security.tenant_context import tenant_transaction, validate_tenant
 from enrichment.sentiment import LocalSentimentClassifier, SentimentConfig, MODEL_ID
-from enrichment.opinions import OpinionExtractor, OpinionConfig
+from enrichment.opinions import OpinionConfig
+from enrichment.langchain_opinions import (
+    LangChainOpinionExtractor as OpinionExtractor
+)
 from enrichment.opinion_schema import SCHEMA_VERSION
 
 LOG = logging.getLogger(__name__)
@@ -252,11 +255,22 @@ def main():
                 result['sentiment'] = sync_sentiment(conn, args.tenant, classifier, limit=args.limit)
             finally:
                 classifier.close()
-        if args.command in ('opinions','both'):
-            extractor = OpinionExtractor(OpinionConfig(model=args.llm_model,
-                                                      model_revision=args.llm_revision))
-            extractor.verify_model_digest()
-            result['opinions'] = sync_opinions(conn, args.tenant, extractor, limit=args.limit)
+        if args.command in ("opinions", "both"):
+            extractor = OpinionExtractor(
+                OpinionConfig(
+                    model=args.llm_model,
+                    model_revision=args.llm_revision
+                )
+            )
+            try:
+                extractor.verify_model_digest()
+
+                result["opinions"] = sync_opinions(
+                    conn, args.tenant, extractor,
+                    limit=args.limit
+                )
+            finally:
+                extractor.close()
         print(json.dumps(result, indent=2))
 
 

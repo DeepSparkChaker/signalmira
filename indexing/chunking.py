@@ -35,7 +35,7 @@ class FeedbackLike(Protocol):
 class ChunkSettings:
     """Character lengths, not model tokens; changing settings changes version."""
 
-    max_chars: int = 1024
+    max_chars: int = 512
     overlap_chars: int = 64
     min_cut_fraction: float = 0.7
 

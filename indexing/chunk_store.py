@@ -57,7 +57,7 @@ def sync(conn, tenant: str, *, batch_size: int = 100,
     """Incremental, bounded-memory sync; each page is atomic and retry-safe."""
     if not tenant or not 1 <= batch_size <= 1000:
         raise ValueError("Provide a tenant and batch_size in 1..1000")
-    settings = settings or ChunkSettings(max_chars=1024, overlap_chars=64)
+    settings = settings or ChunkSettings(max_chars=512, overlap_chars=64)
     locked = conn.execute(
         "SELECT pg_try_advisory_lock(hashtext(%s), hashtext(%s)) AS locked",
         ("sm_chunk_sync", tenant),
