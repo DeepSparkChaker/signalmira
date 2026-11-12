@@ -78,6 +78,24 @@ class EvidenceTests(unittest.TestCase):
             ReviewOpinions.model_validate({"overall_sentiment": "mixed", "opinions": [], "invented": 1})
 
 
+class PromptRegressionTests(unittest.TestCase):
+    def test_multilingual_contract_is_included(self):
+        from enrichment.opinions import SYSTEM_PROMPT
+        self.assertIn('ENGLISH snake_case', SYSTEM_PROMPT)
+        self.assertIn('customer_suggestion', SYSTEM_PROMPT)
+        self.assertIn('Unicode', SYSTEM_PROMPT)
+        self.assertIn('Arabic:', SYSTEM_PROMPT)
+        self.assertIn('Spanish:', SYSTEM_PROMPT)
+        self.assertIn('neutral opinion', SYSTEM_PROMPT)
+
+    def test_prompt_change_updates_config_hash(self):
+        from enrichment import opinions
+        config = OpinionConfig('qwen3.5:4b', SHA64)
+        before = config.config_hash
+        with patch.object(opinions, 'SYSTEM_PROMPT', opinions.SYSTEM_PROMPT + '\nnew policy'):
+            self.assertNotEqual(config.config_hash, before)
+
+
 class ConfigTests(unittest.TestCase):
     def test_default_url_is_raw_not_markdown(self):
         self.assertEqual(OpinionConfig("qwen3.5:4b", SHA64).url,

@@ -1,0 +1,119 @@
+{
+  "source": "Multilingual-NLP/M-ABSA",
+  "reviews": 150,
+  "inference_success": 136,
+  "inference_failures": 14,
+  "successful_reviews_fraction": 0.9067,
+  "aspect_family_coarse": {
+    "all": {
+      "tp": 96,
+      "fp": 303,
+      "fn": 229,
+      "precision": 0.2406,
+      "recall": 0.2954,
+      "f1": 0.2652
+    },
+    "en": {
+      "tp": 17,
+      "fp": 46,
+      "fn": 40,
+      "precision": 0.2698,
+      "recall": 0.2982,
+      "f1": 0.2833
+    },
+    "fr": {
+      "tp": 24,
+      "fp": 45,
+      "fn": 31,
+      "precision": 0.3478,
+      "recall": 0.4364,
+      "f1": 0.3871
+    },
+    "es": {
+      "tp": 14,
+      "fp": 75,
+      "fn": 65,
+      "precision": 0.1573,
+      "recall": 0.1772,
+      "f1": 0.1667
+    },
+    "ar": {
+      "tp": 23,
+      "fp": 53,
+      "fn": 40,
+      "precision": 0.3026,
+      "recall": 0.3651,
+      "f1": 0.3309
+    },
+    "zh": {
+      "tp": 18,
+      "fp": 84,
+      "fn": 53,
+      "precision": 0.1765,
+      "recall": 0.2535,
+      "f1": 0.2081
+    }
+  },
+  "aspect_plus_polarity_coarse": {
+    "all": {
+      "tp": 91,
+      "fp": 313,
+      "fn": 245,
+      "precision": 0.2252,
+      "recall": 0.2708,
+      "f1": 0.2459
+    },
+    "en": {
+      "tp": 16,
+      "fp": 47,
+      "fn": 43,
+      "precision": 0.254,
+      "recall": 0.2712,
+      "f1": 0.2623
+    },
+    "fr": {
+      "tp": 23,
+      "fp": 48,
+      "fn": 34,
+      "precision": 0.3239,
+      "recall": 0.4035,
+      "f1": 0.3594
+    },
+    "es": {
+      "tp": 14,
+      "fp": 75,
+      "fn": 65,
+      "precision": 0.1573,
+      "recall": 0.1772,
+      "f1": 0.1667
+    },
+    "ar": {
+      "tp": 20,
+      "fp": 59,
+      "fn": 45,
+      "precision": 0.2532,
+      "recall": 0.3077,
+      "f1": 0.2778
+    },
+    "zh": {
+      "tp": 18,
+      "fp": 84,
+      "fn": 58,
+      "precision": 0.1765,
+      "recall": 0.2368,
+      "f1": 0.2022
+    }
+  },
+  "latency_ms": {
+    "p50": 2836.7,
+    "p95": 6561.6
+  },
+  "limitations": [
+    "A COARSE family proxy: M-ABSA labels are hierarchical, SignalMira labels are free text.",
+    "Duplicates within one category/polarity are collapsed to one; not exact aspect-triplet F1.",
+    "Input text may be machine-translated and human-reviewed; not all are naturally authored reviews.",
+    "Does not score customer suggestions, problems, or overall sentiment: no gold labels."
+  ],
+  "gold_file": "tests/data/opinion_eval/mabsa_phone_150.jsonl",
+  "predictions_file": "tests/data/opinion_eval/mabsa_qwen4b.jsonl"
+}

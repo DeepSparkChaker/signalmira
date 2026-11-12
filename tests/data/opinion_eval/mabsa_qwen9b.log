@@ -1,0 +1,134 @@
+Evaluated 10/150
+Evaluated 20/150
+Evaluated 30/150
+Evaluated 40/150
+Evaluated 50/150
+Evaluated 60/150
+Evaluated 70/150
+Evaluated 80/150
+Evaluated 90/150
+Evaluated 100/150
+Evaluated 110/150
+Evaluated 120/150
+Evaluated 130/150
+Evaluated 140/150
+Evaluated 150/150
+{
+  "source": "Multilingual-NLP/M-ABSA",
+  "reviews": 150,
+  "inference_success": 131,
+  "inference_failures": 19,
+  "successful_reviews_fraction": 0.8733,
+  "aspect_family_coarse": {
+    "all": {
+      "tp": 96,
+      "fp": 327,
+      "fn": 229,
+      "precision": 0.227,
+      "recall": 0.2954,
+      "f1": 0.2567
+    },
+    "en": {
+      "tp": 19,
+      "fp": 51,
+      "fn": 38,
+      "precision": 0.2714,
+      "recall": 0.3333,
+      "f1": 0.2992
+    },
+    "fr": {
+      "tp": 22,
+      "fp": 49,
+      "fn": 33,
+      "precision": 0.3099,
+      "recall": 0.4,
+      "f1": 0.3492
+    },
+    "es": {
+      "tp": 17,
+      "fp": 87,
+      "fn": 62,
+      "precision": 0.1635,
+      "recall": 0.2152,
+      "f1": 0.1858
+    },
+    "ar": {
+      "tp": 20,
+      "fp": 62,
+      "fn": 43,
+      "precision": 0.2439,
+      "recall": 0.3175,
+      "f1": 0.2759
+    },
+    "zh": {
+      "tp": 18,
+      "fp": 78,
+      "fn": 53,
+      "precision": 0.1875,
+      "recall": 0.2535,
+      "f1": 0.2156
+    }
+  },
+  "aspect_plus_polarity_coarse": {
+    "all": {
+      "tp": 92,
+      "fp": 332,
+      "fn": 244,
+      "precision": 0.217,
+      "recall": 0.2738,
+      "f1": 0.2421
+    },
+    "en": {
+      "tp": 19,
+      "fp": 51,
+      "fn": 40,
+      "precision": 0.2714,
+      "recall": 0.322,
+      "f1": 0.2946
+    },
+    "fr": {
+      "tp": 21,
+      "fp": 50,
+      "fn": 36,
+      "precision": 0.2958,
+      "recall": 0.3684,
+      "f1": 0.3281
+    },
+    "es": {
+      "tp": 17,
+      "fp": 87,
+      "fn": 62,
+      "precision": 0.1635,
+      "recall": 0.2152,
+      "f1": 0.1858
+    },
+    "ar": {
+      "tp": 18,
+      "fp": 65,
+      "fn": 47,
+      "precision": 0.2169,
+      "recall": 0.2769,
+      "f1": 0.2432
+    },
+    "zh": {
+      "tp": 17,
+      "fp": 79,
+      "fn": 59,
+      "precision": 0.1771,
+      "recall": 0.2237,
+      "f1": 0.1977
+    }
+  },
+  "latency_ms": {
+    "p50": 4142.1,
+    "p95": 9534.0
+  },
+  "limitations": [
+    "A COARSE family proxy: M-ABSA labels are hierarchical, SignalMira labels are free text.",
+    "Duplicates within one category/polarity are collapsed to one; not exact aspect-triplet F1.",
+    "Input text may be machine-translated and human-reviewed; not all are naturally authored reviews.",
+    "Does not score customer suggestions, problems, or overall sentiment: no gold labels."
+  ],
+  "gold_file": "tests/data/opinion_eval/mabsa_phone_150.jsonl",
+  "predictions_file": "tests/data/opinion_eval/mabsa_qwen9b.jsonl"
+}
